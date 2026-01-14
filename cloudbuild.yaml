@@ -1,0 +1,152 @@
+# cloudbuild.yaml
+timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY   # keep if your trigger uses a custom service account
+
+substitutions:
+  _CLUSTER_NAME: ppcluster-1
+  _CLUSTER_REGION: europe-north1
+  _K8S_NAMESPACE: default
+  _APP_NAME: newparhaatsuomi-games-ppc-social
+  _CONTAINER_PORT: "80"
+  _SERVICE_PORT: "80"
+  _AR_LOCATION: europe-north1
+  _AR_REPOSITORY: ourimages
+  _HOSTNAME: newparhaatsuomi.games
+  _ALT_HOSTNAME: www.newparhaatsuomi.games
+  # optional DNS automation, fill only if you want it
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    id: Build image
+    args: [
+      "build",
+      "-t","${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:$COMMIT_SHA",
+      "-t","${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:latest",
+      "."
+    ]
+
+  - name: gcr.io/cloud-builders/docker
+    id: Push commit tag
+    args: ["push","${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:$COMMIT_SHA"]
+
+  - name: gcr.io/cloud-builders/docker
+    id: Push latest tag
+    args: ["push","${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:latest"]
+
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    id: Deploy to GKE
+    entrypoint: bash
+    args:
+      - -ceu
+      - |
+        apt-get update >/dev/null
+        apt-get install -y kubectl google-cloud-sdk-gke-gcloud-auth-plugin >/dev/null
+        export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+        gcloud container clusters get-credentials ${_CLUSTER_NAME} --region=${_CLUSTER_REGION}
+
+        cat > k8s.yaml <<'EOF'
+        apiVersion: v1
+        kind: Namespace
+        metadata: { name: ${_K8S_NAMESPACE} }
+        ---
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: ${_APP_NAME}
+          namespace: ${_K8S_NAMESPACE}
+          labels: { app: ${_APP_NAME} }
+        spec:
+          replicas: 1
+          strategy:
+            type: RollingUpdate
+            rollingUpdate: { maxUnavailable: 0, maxSurge: 1 }
+          selector: { matchLabels: { app: ${_APP_NAME} } }
+          template:
+            metadata: { labels: { app: ${_APP_NAME} } }
+            spec:
+              containers:
+                - name: web
+                  image: ${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:${COMMIT_SHA}
+                  ports: [ { containerPort: ${_CONTAINER_PORT} } ]
+                  readinessProbe: { httpGet: { path: /, port: ${_CONTAINER_PORT} }, initialDelaySeconds: 2, periodSeconds: 5 }
+                  livenessProbe:  { httpGet: { path: /, port: ${_CONTAINER_PORT} }, initialDelaySeconds: 10, periodSeconds: 10 }
+        ---
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: ${_APP_NAME}
+          namespace: ${_K8S_NAMESPACE}
+        spec:
+          type: ClusterIP
+          selector: { app: ${_APP_NAME} }
+          ports:
+            - name: http
+              port: ${_SERVICE_PORT}
+              targetPort: ${_CONTAINER_PORT}
+        ---
+        apiVersion: networking.k8s.io/v1
+        kind: Ingress
+        metadata:
+          name: ${_APP_NAME}
+          namespace: ${_K8S_NAMESPACE}
+          annotations:
+            kubernetes.io/ingress.class: traefik
+            traefik.ingress.kubernetes.io/router.entrypoints: web
+        spec:
+          rules:
+            - host: ${_HOSTNAME}
+              http:
+                paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: ${_APP_NAME}
+                        port: { number: ${_SERVICE_PORT} }
+            - host: www.${_HOSTNAME}
+              http:
+                paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: ${_APP_NAME}
+                        port: { number: ${_SERVICE_PORT} }
+            - host: site.${_HOSTNAME}
+              http:
+                paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: ${_APP_NAME}
+                        port: { number: ${_SERVICE_PORT} }
+            - host: segment.${_HOSTNAME}
+              http:
+                paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: ${_APP_NAME}
+                        port: { number: ${_SERVICE_PORT} }
+            - host: ${_ALT_HOSTNAME}
+              http:
+                paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: ${_APP_NAME}
+                        port: { number: ${_SERVICE_PORT} }
+        EOF
+
+        kubectl apply -f k8s.yaml
+        kubectl -n ${_K8S_NAMESPACE} rollout status deployment/${_APP_NAME}
+
+
+images:
+  - ${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:$COMMIT_SHA
+  - ${_AR_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_APP_NAME}:latest

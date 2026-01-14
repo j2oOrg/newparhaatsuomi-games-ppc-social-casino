@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newparhaatsuomi-games-ppc-social
+  labels:
+    app: newparhaatsuomi-games-ppc-social
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newparhaatsuomi-games-ppc-social
+  template:
+    metadata:
+      labels:
+        app: newparhaatsuomi-games-ppc-social
+    spec:
+      containers:
+        - name: newparhaatsuomi-games-ppc-social
+          image: IMAGE_PLACEHOLDER
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: newparhaatsuomi-games-ppc-social
+  labels:
+    app: newparhaatsuomi-games-ppc-social
+spec:
+  type: LoadBalancer
+  selector:
+    app: newparhaatsuomi-games-ppc-social
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  loadBalancerIP: LOAD_BALANCER_IP_PLACEHOLDER

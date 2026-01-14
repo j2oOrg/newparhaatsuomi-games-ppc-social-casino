@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>404 - Page not found</title>
+    <meta
+      name="description"
+      content="Page not found. Check the address and try again."
+    >
+    <style>
+      :root {
+        --hs-404-ink: #1f2328;
+        --hs-404-muted: #4b5563;
+        --hs-404-line: rgba(31, 35, 40, 0.14);
+        --hs-404-paper: rgba(255, 255, 255, 0.92);
+        --hs-404-warm: #f2b95f;
+        --hs-404-cool: #8bc8c4;
+        --hs-404-shadow: rgba(15, 23, 42, 0.22);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        color: var(--hs-404-ink);
+        background:
+          radial-gradient(1100px 520px at 15% 10%, rgba(242, 185, 95, 0.35), transparent 60%),
+          radial-gradient(1000px 620px at 85% 80%, rgba(139, 200, 196, 0.35), transparent 65%),
+          linear-gradient(160deg, #f7f2e9 0%, #eef4f2 55%, #f8efe2 100%);
+        font-family: "Avenir Next", "Futura", "Gill Sans", "Trebuchet MS", sans-serif;
+      }
+
+      .hs-404-stage {
+        position: relative;
+        width: min(720px, 100%);
+      }
+
+      .hs-404-orbit {
+        position: absolute;
+        inset: -28px;
+        border-radius: 28px;
+        border: 1px dashed var(--hs-404-line);
+        transform: rotate(-2deg);
+        animation: slow-spin 26s linear infinite;
+        pointer-events: none;
+      }
+
+      .hs-404-orbit::before,
+      .hs-404-orbit::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(1px);
+        opacity: 0.7;
+      }
+
+      .hs-404-orbit::before {
+        width: 140px;
+        height: 140px;
+        top: -30px;
+        left: 12%;
+        background: radial-gradient(circle, rgba(242, 185, 95, 0.45), transparent 65%);
+        animation: drift 9s ease-in-out infinite;
+      }
+
+      .hs-404-orbit::after {
+        width: 190px;
+        height: 190px;
+        bottom: -50px;
+        right: 8%;
+        background: radial-gradient(circle, rgba(139, 200, 196, 0.45), transparent 65%);
+        animation: drift 11s ease-in-out infinite reverse;
+      }
+
+      .hs-404-card {
+        position: relative;
+        padding: 36px 38px;
+        border-radius: 22px;
+        background: var(--hs-404-paper);
+        border: 1px solid rgba(31, 35, 40, 0.08);
+        box-shadow: 0 24px 60px var(--hs-404-shadow);
+        backdrop-filter: blur(6px);
+        animation: rise-in 700ms ease-out both;
+      }
+
+      .hs-404-code {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(31, 35, 40, 0.08);
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+      }
+
+      .hs-404-title {
+        margin: 18px 0 8px;
+        font-size: clamp(2.1rem, 4vw, 2.8rem);
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        letter-spacing: 0.02em;
+      }
+
+      .hs-404-text {
+        margin: 0 0 14px;
+        line-height: 1.65;
+        color: var(--hs-404-muted);
+      }
+
+      .hs-404-meta {
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px solid var(--hs-404-line);
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--hs-404-muted);
+      }
+
+      @keyframes rise-in {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slow-spin {
+        from {
+          transform: rotate(-2deg);
+        }
+        to {
+          transform: rotate(358deg);
+        }
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 18px;
+        }
+
+        .hs-404-card {
+          padding: 28px 26px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hs-404-orbit,
+        .hs-404-orbit::before,
+        .hs-404-orbit::after,
+        .hs-404-card {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hs-404-stage">
+      <div class="hs-404-orbit" aria-hidden="true"></div>
+      <main class="hs-404-card">
+        <span class="hs-404-code">Error 404</span>
+        <h1 class="hs-404-title">Page not found</h1>
+        <p class="hs-404-text">
+          The page you are looking for is not here. It may have been moved, renamed, or typed
+          incorrectly.
+        </p>
+        <p class="hs-404-text">
+          Double-check the address and try again.
+        </p>
+        <div class="hs-404-meta">No links available on this page</div>
+      </main>
+    </div>
+  </body>
+</html>
