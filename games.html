@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Games | newparhaatsuomi</title>
+  <meta name="description" content="Explore Golden Goal at newparhaatsuomi, a free-play stadium game with quick rounds in practice mode.">
+  <style>
+  @font-face {
+    font-family: "Sefairy";
+    src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+    :root {
+      --ink: #1b1a16;
+      --ink-soft: #3a352d;
+      --cream: #fff6ea;
+      --sand: #f6efe6;
+      --sky: #e9f7ff;
+      --teal: #1f9ea0;
+      --coral: #ff7a59;
+      --gold: #f6b247;
+      --mint: #c7f1e1;
+      --shadow: 0 18px 40px rgba(27, 26, 22, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+      --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 500px at 10% -10%, rgba(255, 122, 89, 0.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(31, 158, 160, 0.22), transparent 60%),
+                  linear-gradient(180deg, #fff7ee 0%, #f0fbff 55%, #fff3ea 100%);
+      color: var(--ink);
+      font-family: var(--font-body);
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--teal);
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font: inherit;
+    }
+    input, textarea {
+      font: inherit;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    section {
+      margin-top: 56px;
+    }
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    p {
+      margin: 0 0 16px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    :focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .gms-header-2m4k9b {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 247, 234, 0.92);
+      border-bottom: 1px solid rgba(27, 26, 22, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    .gms-navwrap-7x0t2p {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+    }
+    .gms-brandbox-1c8f2a a {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+    }
+    .gms-nav-9n5k3d {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+    .gms-nav-9n5k3d a {
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .gms-nav-9n5k3d a[aria-current="page"] {
+      background: rgba(31, 158, 160, 0.18);
+      font-weight: 600;
+    }
+    .gms-nav-9n5k3d a:hover {
+      background: rgba(255, 122, 89, 0.2);
+    }
+    .gms-ctabox-4p7d1x a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--coral), var(--gold));
+      color: #1b1a16;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+    .gms-hero-3v9k2q {
+      display: grid;
+      gap: 16px;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62)),
+        url("abstract-3d-shapes-aesthetic-wallpaper.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: var(--shadow);
+      animation: rise 0.8s ease both;
+    }
+    .gms-chips-7g5m1d {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gms-chips-7g5m1d span {
+      background: rgba(255, 122, 89, 0.15);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .gms-note-6y4p7n {
+      font-size: 0.95rem;
+    }
+    .gms-grid-2t8c9r {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 24px;
+    }
+    .gms-grid-2t8c9r article {
+      background: #fff;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(27, 26, 22, 0.08);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 10px;
+      color: var(--ink);
+      --accent: var(--teal);
+    }
+    .gms-grid-2t8c9r article figure {
+      margin: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--ink);
+      background: #fffef5;
+      box-shadow: inset 0 0 0 2px var(--accent);
+    }
+    .gms-grid-2t8c9r article img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+    .gms-grid-2t8c9r article svg {
+      width: 56px;
+      height: 56px;
+      color: var(--accent);
+    }
+    .gms-grid-2t8c9r article span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .gms-grid-2t8c9r article p {
+      color: var(--ink-soft);
+    }
+    .gms-grid-2t8c9r article a {
+      display: inline-flex;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 700;
+      width: fit-content;
+    }
+    .gms-grid-2t8c9r article:nth-child(1) { --accent: #1f9ea0; }
+    .gms-grid-2t8c9r article:nth-child(2) { --accent: #ff7a59; }
+    .gms-grid-2t8c9r article:nth-child(3) { --accent: #f6b247; }
+    .gms-grid-2t8c9r article:nth-child(4) { --accent: #0f8a82; }
+    .gms-grid-2t8c9r article:nth-child(5) { --accent: #d86b3a; }
+    .gms-grid-2t8c9r article:nth-child(6) { --accent: #2d7f9d; }
+    .gms-grid-2t8c9r article:nth-child(7) { --accent: #c45f34; }
+    .gms-grid-2t8c9r article:nth-child(8) { --accent: #1e9a7c; }
+    .gms-grid-2t8c9r article:nth-child(9) { --accent: #e08a3c; }
+    .gms-grid-2t8c9r article:nth-child(10) { --accent: #3a7fa0; }
+    .gms-notes-7k3p1v {
+      margin-top: 56px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 14px;
+    }
+    .gms-notesgrid-4q9m2d {
+      display: grid;
+      gap: 18px;
+    }
+    .gms-noteslist-8t6c0x {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+      color: var(--ink-soft);
+      display: grid;
+      gap: 8px;
+    }
+    .gms-footer-7m2v6b {
+      margin-top: 80px;
+      background: rgba(255, 255, 255, 0.86);
+      border-top: 1px solid rgba(27, 26, 22, 0.08);
+    }
+    .gms-footergrid-1p5r8d {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px;
+      display: grid;
+      gap: 24px;
+    }
+    .gms-footerbrand-0q6t3x a {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .gms-footerlinks-4c8h2n {
+      display: grid;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+    .gms-footerlinks-4c8h2n a {
+      color: var(--ink-soft);
+    }
+    .gms-footernews-9z1s5w {
+      display: grid;
+      gap: 10px;
+    }
+    .gms-newsform-6e3k9p {
+      display: grid;
+      gap: 12px;
+    }
+    .gms-newsform-6e3k9p label {
+      display: grid;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+    .gms-newsform-6e3k9p input {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(27, 26, 22, 0.2);
+      background: #fff;
+    }
+    .gms-newsform-6e3k9p button {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #fff;
+      font-weight: 700;
+    }
+    .gms-newssuccess-2n7d4r {
+      background: rgba(31, 158, 160, 0.12);
+      padding: 12px;
+      border-radius: 12px;
+    }
+    .gms-disclaimer-5l1x8c {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 20px;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .gms-footnote-8w4q7b {
+      border-top: 1px solid rgba(27, 26, 22, 0.08);
+      padding: 12px 20px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+    .gms-cookie-6f3t1m {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      background: rgba(27, 26, 22, 0.92);
+      color: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      z-index: 20;
+      box-shadow: var(--shadow);
+    }
+    .gms-cookieinner-1k9d5v {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .gms-cookieactions-4b7h0n {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .gms-cookieactions-4b7h0n button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .gms-cookieactions-4b7h0n button:first-child {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .gms-cookieactions-4b7h0n button:last-child {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+    }
+    @media (min-width: 900px) {
+      .gms-hero-3v9k2q {
+        padding: 40px;
+      }
+      .gms-notesgrid-4q9m2d {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .gms-footergrid-1p5r8d {
+        grid-template-columns: 1.2fr 0.8fr 1fr;
+      }
+      .gms-cookieinner-1k9d5v {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    /* Retro remix overrides */
+    :root {
+      --ink: #1b1433;
+      --ink-soft: #2f2558;
+      --cream: #fff3c9;
+      --sand: #ffe3f1;
+      --sky: #d6f8ff;
+      --teal: #00b6b6;
+      --coral: #ff3d8f;
+      --gold: #ffd457;
+      --mint: #b7ff6a;
+      --shadow: 4px 4px 0 rgba(27, 20, 51, 0.6);
+      --radius-lg: 6px;
+      --radius-md: 4px;
+      --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
+      --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
+    }
+    body {
+      background:
+        repeating-linear-gradient(90deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
+        repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
+        linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
+    }
+    h1, h2, h3 {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    a:hover {
+      color: var(--coral);
+    }
+    [class*="header-"],
+    [class*="footer-"] {
+      background: linear-gradient(90deg, var(--cream), var(--sky));
+      border-bottom: 3px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+    [class*="footer-"] {
+      border-top: 3px solid var(--ink);
+      border-bottom: none;
+    }
+    [class*="header-"] {
+      backdrop-filter: none;
+    }
+    [class*="nav-"] a {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+      background: var(--cream);
+    }
+    [class*="nav-"] a[aria-current="page"] {
+      background: var(--gold);
+    }
+    section, article, form, details, [data-cookie-banner] {
+      outline: 2px solid var(--ink);
+      outline-offset: -2px;
+      box-shadow: var(--shadow);
+    }
+    article, details, form {
+      background: var(--cream);
+    }
+    button, [class*="ctabox"] a, [class*="heroactions"] a, [class*="controls"] a, [class*="newsform"] button, [class*="cookieactions"] button {
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-md);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    input, textarea {
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      background: #fffef5;
+    }
+  </style>
+</head>
+<body>
+  <header class="gms-header-2m4k9b">
+    <div class="gms-navwrap-7x0t2p">
+      <div class="gms-brandbox-1c8f2a">
+        <a href="index.html">newparhaatsuomi</a>
+      </div>
+      <nav class="gms-nav-9n5k3d" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="games.html" aria-current="page">Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms</a>
+        <a href="policy.html">Privacy</a>
+      </nav>
+      <div class="gms-ctabox-4p7d1x">
+        <a href="games.html">See Golden Goal</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="gms-hero-3v9k2q">
+      <h1>Golden Goal</h1>
+      <p>Golden Goal is the featured title in our social casino lounge. It runs in practice mode with clear rules and a quick start.</p>
+      <p>It is the only game on the site, so this page is more like a close-up than a catalog.</p>
+      <p>Expect bright shapes, clean edges, and short rounds that do not drag.</p>
+      <div class="gms-chips-7g5m1d">
+        <span>Sports</span>
+        <span>Stadium</span>
+        <span>Short rounds</span>
+        <span>High contrast</span>
+        <span>Practice mode</span>
+      </div>
+      <p class="gms-note-6y4p7n">Golden Goal runs in practice mode. No real money, no prizes, and no cash-out.</p>
+      <p>If you came for a long list, this place is intentionally smaller.</p>
+    </section>
+
+    <section>
+      <h2>Play Golden Goal</h2>
+      <p>One card, one game. Click through when you are ready to try it.</p>
+      <div class="gms-grid-2t8c9r">
+        <article>
+          <figure>
+            <img src="golden_goal.png" alt="Golden Goal preview artwork">
+          </figure>
+          <svg viewBox="0 0 120 80" aria-hidden="true">
+            <rect x="6" y="10" width="108" height="60" rx="14" fill="none" stroke="currentColor" stroke-width="4"></rect>
+            <circle cx="38" cy="40" r="10" fill="currentColor" opacity="0.3"></circle>
+            <path d="M60 28 L86 40 L60 52 Z" fill="currentColor" opacity="0.6"></path>
+          </svg>
+          <span>Sports</span>
+          <h3>Golden Goal</h3>
+          <p>Stadium lights and short rounds built for match-day energy.</p>
+          <p>Plays well in quick sessions, especially on a phone.</p>
+          <a href="play.html?game=goldengoal">Play</a>
+        </article>
+      </div>
+      <p>The preview image is just a cover; the live game runs on the play page.</p>
+    </section>
+
+    <section class="gms-notes-7k3p1v">
+      <h2>More about Golden Goal</h2>
+      <div class="gms-notesgrid-4q9m2d">
+        <div>
+          <p>We keep this page longer than a normal game card because people always ask how a one-game site makes sense. For us it is about focus: if the single game feels good, the whole site feels good.</p>
+          <p>Golden Goal leans on big shapes and a scoreboard vibe. The symbols are chunky and the color blocks are on purpose, so the screen stays readable when you are tired or on a small phone.</p>
+          <p>There is no scoreboard chasing and no pressure to stick around. It is a short, calm loop that you can leave whenever you want.</p>
+        </div>
+        <div>
+          <p>The play page runs the game in practice mode through a hosted frame. That keeps the site light and lets us focus on the layout, the rules, and the pacing.</p>
+          <p>We test it on campus Wi-Fi and older laptops. If it loads slowly, give it a moment or open it in a new tab and it should catch up.</p>
+          <p>Because this is a social casino, everything is just for entertainment. No real money, no prizes, no hidden steps, and no cash-out.</p>
+          <p>No purchase is required to play.</p>
+          <p>Any on-screen credits are for play only and have no real-world value.</p>
+        </div>
+      </div>
+      <h3>Quick session tips</h3>
+      <ul class="gms-noteslist-8t6c0x">
+        <li>Skim the paytable once so the symbols make sense.</li>
+        <li>Try a few spins, then take a break and reset your focus.</li>
+        <li>If you are on mobile, rotate the screen for a wider view.</li>
+        <li>Lower sound or mute if you are in a library or shared space.</li>
+      </ul>
+      <p>If you have ideas for tweaks or clarity, send them our way. We are still polishing and we are listening.</p>
+    </section>
+  </main>
+
+  <footer class="gms-footer-7m2v6b">
+    <div class="gms-footergrid-1p5r8d">
+      <div class="gms-footerbrand-0q6t3x">
+        <a href="index.html">newparhaatsuomi</a>
+        <p>Retro-leaning free-play lounge with a stadium vibe and an easy pace.</p>
+      </div>
+      <div class="gms-footerlinks-4c8h2n">
+        <strong>Explore</strong>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms</a>
+        <a href="policy.html">Privacy</a>
+      </div>
+      <div class="gms-footernews-9z1s5w">
+        <strong>Newsletter</strong>
+        <p>Occasional notes about Golden Goal and site tweaks. Signups are stored locally for now.</p>
+        <form class="gms-newsform-6e3k9p" data-newsletter-form>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <button type="submit">Sign up</button>
+        </form>
+        <div class="gms-newssuccess-2n7d4r" data-newsletter-success hidden>
+          <p>Thanks for signing up. This signup is stored locally on your device for now.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gms-disclaimer-5l1x8c">
+      <p>18+ only. For entertainment only; no real money, no prizes, and no cash-out. Not real-money gambling. Please play responsibly and take breaks.</p>
+    </div>
+    <div class="gms-footnote-8w4q7b">
+      <p>(c) 2026 newparhaatsuomi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="gms-cookie-6f3t1m" data-cookie-banner hidden>
+    <div class="gms-cookieinner-1k9d5v">
+      <p>We use cookies to remember your choices and keep the site running smoothly.</p>
+      <div class="gms-cookieactions-4b7h0n">
+        <button type="button" data-cookie-accept>Accept</button>
+        <button type="button" data-cookie-decline>Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple front-end helpers for cookie choice, newsletter, and contact.
+    (function () {
+      // Cookie banner: remember the choice and hide the banner.
+      const banner = document.querySelector('[data-cookie-banner]');
+      const acceptBtn = document.querySelector('[data-cookie-accept]');
+      const declineBtn = document.querySelector('[data-cookie-decline]');
+      const key = 'nps-cookie-choice';
+
+      if (banner && acceptBtn && declineBtn) {
+        try {
+          const stored = localStorage.getItem(key);
+          banner.hidden = !!stored;
+        } catch (e) {
+          banner.hidden = false;
+        }
+        const setChoice = (value) => {
+          try {
+            localStorage.setItem(key, value);
+          } catch (e) {
+          }
+          banner.hidden = true;
+        };
+        acceptBtn.addEventListener('click', () => setChoice('accepted'));
+        declineBtn.addEventListener('click', () => setChoice('declined'));
+      }
+
+      // Newsletter form: store locally and show a success state.
+      const newsForm = document.querySelector('[data-newsletter-form]');
+      const newsSuccess = document.querySelector('[data-newsletter-success]');
+      if (newsForm && newsSuccess) {
+        newsForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          try {
+            const nameField = newsForm.elements.name;
+            const emailField = newsForm.elements.email;
+            const payload = {
+              name: nameField ? nameField.value.trim() : '',
+              email: emailField ? emailField.value.trim() : '',
+              ts: new Date().toISOString()
+            };
+            localStorage.setItem('nps-newsletter', JSON.stringify(payload));
+          } catch (e) {
+          }
+          newsForm.reset();
+          newsForm.hidden = true;
+          newsSuccess.hidden = false;
+        });
+      }
+
+      // Contact form: show a confirmation state without a backend.
+      const contactForm = document.querySelector('[data-contact-form]');
+      const contactSuccess = document.querySelector('[data-contact-success]');
+      if (contactForm && contactSuccess) {
+        contactForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          contactForm.reset();
+          contactForm.hidden = true;
+          contactSuccess.hidden = false;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
