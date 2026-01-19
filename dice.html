@@ -3,8 +3,8 @@
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Terms of Use | Newparhaatsuomi</title>
- <meta name="description" content="Read the Terms of Use for the Newparhaatsuomi free-play lounge. 21+ only. No real money, prizes, or cash-out.">
+ <title>Dice Drift | Newparhaatsuomi</title>
+ <meta name="description" content="Play Dice Drift at Newparhaatsuomi. Free-play only, 21+ only. No real money, prizes, or cash-out.">
  <style>
  @font-face {
   font-family: "Sefairy";
@@ -93,7 +93,7 @@
     transition-duration: 0.01ms !important;
    }
   }
-  .trm-header-2m4k9b {
+  .ply-header-2m4k9b {
    position: sticky;
    top: 0;
    z-index: 10;
@@ -101,7 +101,7 @@
    border-bottom: 1px solid rgba(27, 26, 22, 0.08);
    backdrop-filter: blur(10px);
   }
-  .trm-navwrap-7x0t2p {
+  .ply-navwrap-7x0t2p {
    max-width: 1200px;
    margin: 0 auto;
    padding: 16px 20px;
@@ -111,31 +111,31 @@
    justify-content: space-between;
    gap: 12px 20px;
   }
-  .trm-brandbox-1c8f2a a {
+  .ply-brandbox-1c8f2a a {
    font-family: var(--font-display);
    font-size: 1.35rem;
    letter-spacing: 1px;
    text-transform: none;
   }
-  .trm-nav-9n5k3d {
+  .ply-nav-9n5k3d {
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
    font-size: 0.95rem;
   }
-  .trm-nav-9n5k3d a {
+  .ply-nav-9n5k3d a {
    padding: 6px 12px;
    border-radius: 999px;
    transition: background 0.2s ease, color 0.2s ease;
   }
-  .trm-nav-9n5k3d a[aria-current="page"] {
+  .ply-nav-9n5k3d a[aria-current="page"] {
    background: rgba(31, 158, 160, 0.18);
    font-weight: 600;
   }
-  .trm-nav-9n5k3d a:hover {
+  .ply-nav-9n5k3d a:hover {
    background: rgba(255, 122, 89, 0.2);
   }
-  .trm-ctabox-4p7d1x a {
+  .ply-ctabox-4p7d1x a {
    display: inline-flex;
    align-items: center;
    gap: 8px;
@@ -146,7 +146,9 @@
    font-weight: 700;
    box-shadow: var(--shadow);
   }
-  .trm-hero-3v9k2q {
+  .ply-hero-3v9k2q {
+   display: grid;
+   gap: 24px;
    padding: 28px;
    border-radius: var(--radius-lg);
    background:
@@ -158,104 +160,260 @@
    box-shadow: var(--shadow);
    animation: rise 0.8s ease both;
   }
-  .trm-content-7g5m1d {
-   margin-top: 24px;
+  .ply-herocopy-7g5m1d h1 {
+   font-size: clamp(2rem, 5vw, 3.1rem);
+  }
+  .ply-notices-2t8c9r {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin: 12px 0;
+  }
+  .ply-notices-2t8c9r span {
+   background: rgba(31, 158, 160, 0.12);
+   padding: 6px 12px;
+   border-radius: 999px;
+   font-size: 0.75rem;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+  }
+  .ply-controls-9p6d2f {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+   margin-top: 16px;
+  }
+  .ply-controls-9p6d2f button {
+   padding: 10px 16px;
+   border-radius: 999px;
+   background: var(--ink);
+   color: #fff;
+   font-weight: 700;
+  }
+  .ply-controls-9p6d2f a {
+   padding: 10px 16px;
+   border-radius: 999px;
+   border: 1px solid rgba(27, 26, 22, 0.2);
+  }
+  .ply-preview-6y4p7n {
+   position: relative;
+   min-height: 220px;
+   border-radius: var(--radius-lg);
+   overflow: hidden;
+   background: #fff;
+   box-shadow: var(--shadow);
+   display: grid;
+   align-items: end;
+  }
+  .ply-preview-6y4p7n img {
+   width: 100%;
+   height: auto;
+  }
+  .ply-infobox-5r8d1f {
+   position: absolute;
+   left: 16px;
+   bottom: 16px;
+   background: rgba(255, 255, 255, 0.92);
+   padding: 10px 12px;
+   border-radius: 12px;
+   font-size: 0.85rem;
+   display: grid;
+   gap: 4px;
+  }
+  .ply-gamegrid-8h2w5s {
+   margin-top: 32px;
+   background: #fff;
+   padding: 22px;
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow);
    animation: rise 0.9s ease both;
   }
-  .trm-card-2t8c9r {
-   background: #fff;
-   padding: 24px;
+  .ply-cards-9p6d2f {
+   display: grid;
+   gap: 18px;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   margin-top: 18px;
+  }
+  .ply-card-3m6p2q {
+   padding: 18px;
    border-radius: var(--radius-md);
    border: 1px solid rgba(27, 26, 22, 0.08);
    box-shadow: var(--shadow);
+   display: grid;
+   gap: 10px;
+   background: #fff;
   }
-  .trm-card-2t8c9r ol {
+  .ply-card-3m6p2q a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px 14px;
+   border-radius: 999px;
+   background: var(--ink);
+   color: #fff;
+   font-weight: 700;
+   width: fit-content;
+  }
+  .ply-tag-1n5b8x {
+   display: inline-flex;
+   align-items: center;
+   padding: 6px 10px;
+   border-radius: 999px;
+   background: rgba(31, 158, 160, 0.12);
+   font-size: 0.72rem;
+   text-transform: uppercase;
+   letter-spacing: 1.2px;
+   width: fit-content;
+  }
+  .dice-panel-7p2h5n {
    display: grid;
    gap: 16px;
-   padding-left: 20px;
-   margin: 0;
+   margin-top: 16px;
   }
-  .trm-card-2t8c9r li {
-   padding: 12px 14px;
-   border-radius: 14px;
-   background: rgba(31, 158, 160, 0.06);
+  .dice-display-6t1m4b {
+   display: flex;
+   gap: 12px;
+   flex-wrap: wrap;
   }
-  .trm-card-2t8c9r h2 {
-   font-size: 1.1rem;
-   margin-top: 0;
+  .dice-face-9k3p1x {
+   width: 72px;
+   height: 72px;
+   border-radius: 16px;
+   border: 2px solid var(--ink);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.6rem;
+   font-weight: 700;
+   background: #fffef5;
   }
-  .trm-footer-7m2v6b {
+  .dice-stats-3f8q2z {
+   display: grid;
+   gap: 12px;
+   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .dice-stat-2m7k1v {
+   background: rgba(31, 158, 160, 0.12);
+   border-radius: 12px;
+   padding: 10px 12px;
+   display: grid;
+   gap: 6px;
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+  }
+  .dice-stat-2m7k1v strong {
+   font-size: 1.2rem;
+   color: var(--ink);
+  }
+  .dice-controls-8h4p6d {
+   display: flex;
+   gap: 12px;
+   flex-wrap: wrap;
+  }
+  .dice-controls-8h4p6d button {
+   padding: 10px 16px;
+   border-radius: 999px;
+   background: var(--ink);
+   color: #fff;
+   font-weight: 700;
+  }
+  .dice-controls-8h4p6d button:last-child {
+   background: transparent;
+   color: var(--ink);
+   border: 1px solid rgba(27, 26, 22, 0.2);
+  }
+  .ply-framewrap-8h2w5s {
+   margin-top: 32px;
+   background: #fff;
+   padding: 20px;
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow);
+   animation: rise 0.9s ease both;
+  }
+  .ply-framewrap-8h2w5s p {
+   font-weight: 600;
+   color: var(--ink);
+  }
+  .ply-frameinner-1n5b8x {
+   width: 100%;
+   aspect-ratio: 16 / 9;
+   border-radius: 16px;
+   overflow: hidden;
+   border: 1px solid rgba(27, 26, 22, 0.12);
+   background: #000;
+  }
+.ply-footer-7m2v6b {
    margin-top: 80px;
    background: rgba(255, 255, 255, 0.86);
    border-top: 1px solid rgba(27, 26, 22, 0.08);
   }
-  .trm-footergrid-1p5r8d {
+  .ply-footergrid-1p5r8d {
    max-width: 1200px;
    margin: 0 auto;
    padding: 32px 20px;
    display: grid;
    gap: 24px;
   }
-  .trm-footerbrand-0q6t3x a {
+  .ply-footerbrand-0q6t3x a {
    font-family: var(--font-display);
    font-size: 1.2rem;
    display: inline-block;
    margin-bottom: 10px;
   }
-  .trm-footerlinks-4c8h2n {
+  .ply-footerlinks-4c8h2n {
    display: grid;
    gap: 8px;
    font-size: 0.95rem;
   }
-  .trm-footerlinks-4c8h2n a {
+  .ply-footerlinks-4c8h2n a {
    color: var(--ink-soft);
   }
-  .trm-footernews-9z1s5w {
+  .ply-footernews-9z1s5w {
    display: grid;
    gap: 10px;
   }
-  .trm-newsform-6e3k9p {
+  .ply-newsform-6e3k9p {
    display: grid;
    gap: 12px;
   }
-  .trm-newsform-6e3k9p label {
+  .ply-newsform-6e3k9p label {
    display: grid;
    gap: 6px;
    font-size: 0.9rem;
   }
-  .trm-newsform-6e3k9p input {
+  .ply-newsform-6e3k9p input {
    padding: 10px 12px;
    border-radius: 12px;
    border: 1px solid rgba(27, 26, 22, 0.2);
    background: #fff;
   }
-  .trm-newsform-6e3k9p button {
+  .ply-newsform-6e3k9p button {
    padding: 10px 14px;
    border-radius: 999px;
    background: var(--teal);
    color: #fff;
    font-weight: 700;
   }
-  .trm-newssuccess-2n7d4r {
+  .ply-newssuccess-2n7d4r {
    background: rgba(31, 158, 160, 0.12);
    padding: 12px;
    border-radius: 12px;
   }
-  .trm-disclaimer-5l1x8c {
+  .ply-disclaimer-5l1x8c {
    max-width: 1200px;
    margin: 0 auto;
    padding: 0 20px 20px;
    font-size: 0.9rem;
    color: var(--ink-soft);
   }
-  .trm-footnote-8w4q7b {
+  .ply-footnote-8w4q7b {
    border-top: 1px solid rgba(27, 26, 22, 0.08);
    padding: 12px 20px 24px;
    text-align: center;
    font-size: 0.85rem;
    color: var(--ink-soft);
   }
-  .trm-cookie-6f3t1m {
+  .ply-cookie-6f3t1m {
    position: fixed;
    left: 16px;
    right: 16px;
@@ -267,38 +425,40 @@
    z-index: 20;
    box-shadow: var(--shadow);
   }
-  .trm-cookieinner-1k9d5v {
+  .ply-cookieinner-1k9d5v {
    display: flex;
    flex-direction: column;
    gap: 12px;
   }
-  .trm-cookieactions-4b7h0n {
+  .ply-cookieactions-4b7h0n {
    display: flex;
    gap: 10px;
    flex-wrap: wrap;
   }
-  .trm-cookieactions-4b7h0n button {
+  .ply-cookieactions-4b7h0n button {
    padding: 8px 14px;
    border-radius: 999px;
    font-weight: 700;
   }
-  .trm-cookieactions-4b7h0n button:first-child {
+  .ply-cookieactions-4b7h0n button:first-child {
    background: var(--gold);
    color: var(--ink);
   }
-  .trm-cookieactions-4b7h0n button:last-child {
+  .ply-cookieactions-4b7h0n button:last-child {
    background: transparent;
    border: 1px solid rgba(255, 255, 255, 0.4);
    color: #fff;
   }
   @media (min-width: 900px) {
-   .trm-hero-3v9k2q {
+   .ply-hero-3v9k2q {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
     padding: 40px;
    }
-   .trm-footergrid-1p5r8d {
+   .ply-footergrid-1p5r8d {
     grid-template-columns: 1.2fr 0.8fr 1fr;
    }
-   .trm-cookieinner-1k9d5v {
+   .ply-cookieinner-1k9d5v {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -381,90 +541,92 @@
  </style>
 </head>
 <body>
- <header class="trm-header-2m4k9b">
-  <div class="trm-navwrap-7x0t2p">
-   <div class="trm-brandbox-1c8f2a">
+ <header class="ply-header-2m4k9b">
+  <div class="ply-navwrap-7x0t2p">
+   <div class="ply-brandbox-1c8f2a">
     <a href="index.html">Newparhaatsuomi</a>
    </div>
-   <nav class="trm-nav-9n5k3d" aria-label="Primary">
+   <nav class="ply-nav-9n5k3d" aria-label="Primary">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="games.html">Games</a>
     <a href="contact.html">Contact</a>
-    <a href="terms.html" aria-current="page">Terms</a>
+    <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </nav>
-   <div class="trm-ctabox-4p7d1x">
+   <div class="ply-ctabox-4p7d1x">
     <a href="games.html">See games</a>
    </div>
   </div>
  </header>
 
  <main>
-  <section class="trm-hero-3v9k2q">
-   <h1>Terms of Use</h1>
-   <p>Last updated: January 19, 2026</p>
-   <p>By using the Newparhaatsuomi free-play lounge, you agree to these terms.</p>
-   <p>We wrote this in plain language on purpose. If anything feels unclear, email us.</p>
-   <p>Free-play only. No real money, prizes, cash-out, or purchase required.</p>
+  <section class="ply-hero-3v9k2q">
+   <div class="ply-herocopy-7g5m1d">
+    <h1>Dice Drift</h1>
+    <p>Roll two dice and try to beat your best total.</p>
+    <p>Short rounds and easy to pause.</p>
+    <div class="ply-notices-2t8c9r">
+     <span>Practice mode only</span>
+     <span>21+ only</span>
+     <span>For entertainment only</span>
+    </div>
+    <p>21+ only. Intended for users over the legal gambling age. Not for minors. Free-play only. No real money gambling or prizes of real-world value. No cash-out or in-app purchases. In-game credits have no real-world value.</p>
+   </div>
+   <div class="ply-preview-6y4p7n">
+    <img src="dice.webp" alt="Dice Drift artwork">
+    <div class="ply-infobox-5r8d1f">
+     <strong>Best total</strong>
+     <span>Try to hit 12</span>
+    </div>
+   </div>
   </section>
 
-  <section class="trm-content-7g5m1d">
-   <div class="trm-card-2t8c9r">
-    <ol>
-     <li>
-      <h2>Eligibility</h2>
-      <p>You must be 21+ to use this site. By using the site, you confirm you meet that requirement.</p>
-      <p>If you are under 21, please do not use the site.</p>
-     </li>
-     <li>
-      <h2>Entertainment Only</h2>
-      <p>Everything here is for fun and practice. There is no real money play and no prizes.</p>
-      <p>There are no deposits, withdrawals, or items of real-world value tied to play.</p>
-      <p>No purchase is required. Any in-game credits are for play only and have no cash value.</p>
-     </li>
-     <li>
-      <h2>Acceptable Use</h2>
-      <p>Please do not misuse the site, interfere with gameplay, or access the service in ways that could harm others or the site.</p>
-      <p>Do not attempt to probe, scrape, or overload the service.</p>
-     </li>
-     <li>
-      <h2>Intellectual Property</h2>
-      <p>Site content, designs, and branding are owned by Newparhaatsuomi or its licensors and are protected by law.</p>
-      <p>You may not copy, reuse, or redistribute site visuals without written permission.</p>
-     </li>
-     <li>
-      <h2>Disclaimers</h2>
-      <p>The site is provided \"as is\" and \"as available\". We cannot promise uninterrupted access or error-free operation.</p>
-      <p>We do not guarantee that the games will work on every device, browser, or connection.</p>
-     </li>
-     <li>
-      <h2>Limitation of Liability</h2>
-      <p>To the fullest extent permitted by law, Newparhaatsuomi is not liable for direct or indirect damages from your use of the site.</p>
-      <p>You use the site at your own risk, including any device or connectivity issues.</p>
-     </li>
-     <li>
-      <h2>Changes to These Terms</h2>
-      <p>We may update these Terms of Use from time to time. Continued use of the site means you accept the updated terms.</p>
-      <p>When we update the terms, we will revise the date at the top of this page.</p>
-     </li>
-     <li>
-      <h2>Contact</h2>
-      <p>If you have questions about these terms, contact us at hello@newparhaatsuomi.games.</p>
-      <p>Email is the best way to reach us. We do not offer phone support.</p>
-     </li>
-    </ol>
+  <!-- Game play area: dice roll results are shown on screen only. -->
+  <section class="ply-gamegrid-8h2w5s">
+   <h2>Roll the dice</h2>
+   <p>Press Roll to throw both dice and track your best total.</p>
+   <div class="dice-panel-7p2h5n">
+    <div class="dice-display-6t1m4b">
+     <div class="dice-face-9k3p1x" data-die="1">1</div>
+     <div class="dice-face-9k3p1x" data-die="2">1</div>
+    </div>
+    <div class="dice-stats-3f8q2z">
+     <div class="dice-stat-2m7k1v">
+      <span>Last total</span>
+      <strong data-total>2</strong>
+     </div>
+     <div class="dice-stat-2m7k1v">
+      <span>Best total</span>
+      <strong data-best>2</strong>
+     </div>
+     <div class="dice-stat-2m7k1v">
+      <span>Rolls</span>
+      <strong data-rolls>0</strong>
+     </div>
+    </div>
+    <div class="dice-controls-8h4p6d">
+     <button type="button" data-roll>Roll dice</button>
+     <button type="button" data-reset>Reset</button>
+    </div>
    </div>
+   <p>Tip: Doubles feel great. A 12 is the max.</p>
+  </section>
+
+  <section class="ply-framewrap-8h2w5s">
+   <h2>How it works</h2>
+   <p>Each roll is random. There is no real money gambling, no prizes of real-world value, and no cash-out.</p>
+   <p>Play for a few minutes and step away whenever you want.</p>
   </section>
  </main>
 
- <footer class="trm-footer-7m2v6b">
-  <div class="trm-footergrid-1p5r8d">
-   <div class="trm-footerbrand-0q6t3x">
+ <footer class="ply-footer-7m2v6b">
+  <div class="ply-footergrid-1p5r8d">
+   <div class="ply-footerbrand-0q6t3x">
     <a href="index.html">Newparhaatsuomi</a>
     <p>Retro-style free-play lounge with a small set of low-key games.</p>
    </div>
-   <div class="trm-footerlinks-4c8h2n">
+   <div class="ply-footerlinks-4c8h2n">
     <strong>Explore</strong>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -473,10 +635,10 @@
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
-   <div class="trm-footernews-9z1s5w">
+   <div class="ply-footernews-9z1s5w">
     <strong>Newsletter</strong>
     <p>A few updates about new games and site tweaks. Signups are stored locally on your device.</p>
-    <form class="trm-newsform-6e3k9p" data-newsletter-form>
+    <form class="ply-newsform-6e3k9p" data-newsletter-form>
      <label>
       <span>Name</span>
       <input type="text" name="name" autocomplete="name" required>
@@ -487,28 +649,84 @@
      </label>
      <button type="submit">Sign up</button>
     </form>
-    <div class="trm-newssuccess-2n7d4r" data-newsletter-success hidden>
+    <div class="ply-newssuccess-2n7d4r" data-newsletter-success hidden>
      <p>Thanks for signing up. We store this on your device only.</p>
     </div>
    </div>
   </div>
-  <div class="trm-disclaimer-5l1x8c">
+  <div class="ply-disclaimer-5l1x8c">
    <p>21+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
   </div>
-  <div class="trm-footnote-8w4q7b">
+  <div class="ply-footnote-8w4q7b">
    <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
   </div>
  </footer>
 
- <div class="trm-cookie-6f3t1m" data-cookie-banner hidden>
-  <div class="trm-cookieinner-1k9d5v">
+ <div class="ply-cookie-6f3t1m" data-cookie-banner hidden>
+  <div class="ply-cookieinner-1k9d5v">
    <p>We use local storage to remember your choices and keep the site running smoothly.</p>
-   <div class="trm-cookieactions-4b7h0n">
+   <div class="ply-cookieactions-4b7h0n">
     <button type="button" data-cookie-accept>Accept</button>
     <button type="button" data-cookie-decline>Decline</button>
    </div>
   </div>
  </div>
+
+ <script>
+  // Dice Drift: simple dice roll game (free-play only).
+  // This script is client-side only and does not make network calls or payments.
+  (function () {
+   // Grab the on-page elements used by the game.
+   const dieA = document.querySelector('[data-die="1"]');
+   const dieB = document.querySelector('[data-die="2"]');
+   const totalEl = document.querySelector('[data-total]');
+   const bestEl = document.querySelector('[data-best]');
+   const rollsEl = document.querySelector('[data-rolls]');
+   const rollBtn = document.querySelector('[data-roll]');
+   const resetBtn = document.querySelector('[data-reset]');
+
+   // Exit early if the controls are missing.
+   if (!rollBtn || !resetBtn) {
+    return;
+   }
+
+   // Track best total and roll count for this session.
+   let best = 2;
+   let rolls = 0;
+
+   // Update the UI with the current dice values and totals.
+   const setValues = (a, b) => {
+    const total = a + b;
+    dieA.textContent = String(a);
+    dieB.textContent = String(b);
+    totalEl.textContent = String(total);
+    if (total > best) {
+     best = total;
+     bestEl.textContent = String(best);
+    }
+   };
+
+   // Randomly roll two dice and refresh the display.
+   const roll = () => {
+    const a = Math.floor(Math.random() * 6) + 1;
+    const b = Math.floor(Math.random() * 6) + 1;
+    rolls += 1;
+    rollsEl.textContent = String(rolls);
+    setValues(a, b);
+   };
+
+   // Wire up the buttons.
+   rollBtn.addEventListener('click', roll);
+   resetBtn.addEventListener('click', () => {
+    // Reset the session stats and the visible dice.
+    best = 2;
+    rolls = 0;
+    rollsEl.textContent = '0';
+    bestEl.textContent = '2';
+    setValues(1, 1);
+   });
+  })();
+ </script>
 
  <script>
   // Simple front-end helpers for cookie choice and newsletter.

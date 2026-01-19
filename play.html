@@ -1,666 +1,659 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Play | newparhaatsuomi</title>
-  <meta name="description" content="Play Golden Goal in practice mode at newparhaatsuomi. 18+ only, no real money or prizes.">
-  <style>
-  @font-face {
-    font-family: "Sefairy";
-    src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Play | Newparhaatsuomi</title>
+ <meta name="description" content="Play Dice Drift, Match Mosaic, and Retro Reels. Free-play only, 21+ only. No real money, prizes, or cash-out.">
+ <style>
+ @font-face {
+  font-family: "Sefairy";
+  src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+ }
+  :root {
+   --ink: #1b1a16;
+   --ink-soft: #3a352d;
+   --cream: #fff6ea;
+   --sand: #f6efe6;
+   --sky: #e9f7ff;
+   --teal: #1f9ea0;
+   --coral: #ff7a59;
+   --gold: #f6b247;
+   --mint: #c7f1e1;
+   --shadow: 0 18px 40px rgba(27, 26, 22, 0.12);
+   --radius-lg: 28px;
+   --radius-md: 18px;
+   --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+   --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
   }
-    :root {
-      --ink: #1b1a16;
-      --ink-soft: #3a352d;
-      --cream: #fff6ea;
-      --sand: #f6efe6;
-      --sky: #e9f7ff;
-      --teal: #1f9ea0;
-      --coral: #ff7a59;
-      --gold: #f6b247;
-      --mint: #c7f1e1;
-      --shadow: 0 18px 40px rgba(27, 26, 22, 0.12);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
-      --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      background: radial-gradient(1200px 500px at 10% -10%, rgba(255, 122, 89, 0.25), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(31, 158, 160, 0.22), transparent 60%),
-                  linear-gradient(180deg, #fff7ee 0%, #f0fbff 55%, #fff3ea 100%);
-      color: var(--ink);
-      font-family: var(--font-body);
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:hover {
-      color: var(--teal);
-    }
-    button {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font: inherit;
-    }
-    input, textarea {
-      font: inherit;
-    }
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 20px 80px;
-    }
-    section {
-      margin-top: 56px;
-    }
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      margin: 0 0 12px;
-      color: var(--ink);
-    }
-    p {
-      margin: 0 0 16px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
-    :focus-visible {
-      outline: 2px solid var(--teal);
-      outline-offset: 3px;
-    }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    .ply-header-2m4k9b {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 247, 234, 0.92);
-      border-bottom: 1px solid rgba(27, 26, 22, 0.08);
-      backdrop-filter: blur(10px);
-    }
-    .ply-navwrap-7x0t2p {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px 20px;
-    }
-    .ply-brandbox-1c8f2a a {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      letter-spacing: 1px;
-      text-transform: lowercase;
-    }
-    .ply-nav-9n5k3d {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.95rem;
-    }
-    .ply-nav-9n5k3d a {
-      padding: 6px 12px;
-      border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .ply-nav-9n5k3d a[aria-current="page"] {
-      background: rgba(31, 158, 160, 0.18);
-      font-weight: 600;
-    }
-    .ply-nav-9n5k3d a:hover {
-      background: rgba(255, 122, 89, 0.2);
-    }
-    .ply-ctabox-4p7d1x a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: linear-gradient(120deg, var(--coral), var(--gold));
-      color: #1b1a16;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-    .ply-hero-3v9k2q {
-      display: grid;
-      gap: 24px;
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62)),
-        url("abstract-3d-shapes-aesthetic-wallpaper.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow: var(--shadow);
-      animation: rise 0.8s ease both;
-    }
-    .ply-herocopy-7g5m1d h1 {
-      font-size: clamp(2rem, 5vw, 3.1rem);
-    }
-    .ply-notices-2t8c9r {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 12px 0;
-    }
-    .ply-notices-2t8c9r span {
-      background: rgba(31, 158, 160, 0.12);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .ply-controls-9p6d2f {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .ply-controls-9p6d2f button {
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--ink);
-      color: #fff;
-      font-weight: 700;
-    }
-    .ply-controls-9p6d2f a {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(27, 26, 22, 0.2);
-    }
-    .ply-preview-6y4p7n {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .ply-preview-6y4p7n img {
-      width: 100%;
-      height: auto;
-    }
-    .ply-infobox-5r8d1f {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      background: rgba(255, 255, 255, 0.92);
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      display: grid;
-      gap: 4px;
-    }
-    .ply-framewrap-8h2w5s {
-      margin-top: 32px;
-      background: #fff;
-      padding: 20px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      animation: rise 0.9s ease both;
-    }
-    .ply-framewrap-8h2w5s p {
-      font-weight: 600;
-      color: var(--ink);
-    }
-    .ply-frameinner-1n5b8x {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(27, 26, 22, 0.12);
-      background: #000;
-    }
-    .ply-frameinner-1n5b8x iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .ply-footer-7m2v6b {
-      margin-top: 80px;
-      background: rgba(255, 255, 255, 0.86);
-      border-top: 1px solid rgba(27, 26, 22, 0.08);
-    }
-    .ply-footergrid-1p5r8d {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 20px;
-      display: grid;
-      gap: 24px;
-    }
-    .ply-footerbrand-0q6t3x a {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .ply-footerlinks-4c8h2n {
-      display: grid;
-      gap: 8px;
-      font-size: 0.95rem;
-    }
-    .ply-footerlinks-4c8h2n a {
-      color: var(--ink-soft);
-    }
-    .ply-footernews-9z1s5w {
-      display: grid;
-      gap: 10px;
-    }
-    .ply-newsform-6e3k9p {
-      display: grid;
-      gap: 12px;
-    }
-    .ply-newsform-6e3k9p label {
-      display: grid;
-      gap: 6px;
-      font-size: 0.9rem;
-    }
-    .ply-newsform-6e3k9p input {
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(27, 26, 22, 0.2);
-      background: #fff;
-    }
-    .ply-newsform-6e3k9p button {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: var(--teal);
-      color: #fff;
-      font-weight: 700;
-    }
-    .ply-newssuccess-2n7d4r {
-      background: rgba(31, 158, 160, 0.12);
-      padding: 12px;
-      border-radius: 12px;
-    }
-    .ply-disclaimer-5l1x8c {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px 20px;
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-    .ply-footnote-8w4q7b {
-      border-top: 1px solid rgba(27, 26, 22, 0.08);
-      padding: 12px 20px 24px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-    }
-    .ply-cookie-6f3t1m {
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      background: rgba(27, 26, 22, 0.92);
-      color: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      z-index: 20;
-      box-shadow: var(--shadow);
-    }
-    .ply-cookieinner-1k9d5v {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .ply-cookieactions-4b7h0n {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .ply-cookieactions-4b7h0n button {
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-    .ply-cookieactions-4b7h0n button:first-child {
-      background: var(--gold);
-      color: var(--ink);
-    }
-    .ply-cookieactions-4b7h0n button:last-child {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #fff;
-    }
-    @media (min-width: 900px) {
-      .ply-hero-3v9k2q {
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        padding: 40px;
-      }
-      .ply-footergrid-1p5r8d {
-        grid-template-columns: 1.2fr 0.8fr 1fr;
-      }
-      .ply-cookieinner-1k9d5v {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-    /* Retro remix overrides */
-    :root {
-      --ink: #1b1433;
-      --ink-soft: #2f2558;
-      --cream: #fff3c9;
-      --sand: #ffe3f1;
-      --sky: #d6f8ff;
-      --teal: #00b6b6;
-      --coral: #ff3d8f;
-      --gold: #ffd457;
-      --mint: #b7ff6a;
-      --shadow: 4px 4px 0 rgba(27, 20, 51, 0.6);
-      --radius-lg: 6px;
-      --radius-md: 4px;
-      --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
-      --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
-    }
-    body {
-      background:
-        repeating-linear-gradient(90deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
-        repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
-        linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
-    }
-    h1, h2, h3 {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    a:hover {
-      color: var(--coral);
-    }
-    [class*="header-"],
-    [class*="footer-"] {
-      background: linear-gradient(90deg, var(--cream), var(--sky));
-      border-bottom: 3px solid var(--ink);
-      box-shadow: var(--shadow);
-    }
-    [class*="footer-"] {
-      border-top: 3px solid var(--ink);
-      border-bottom: none;
-    }
-    [class*="header-"] {
-      backdrop-filter: none;
-    }
-    [class*="nav-"] a {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-radius: var(--radius-md);
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      background: var(--cream);
-    }
-    [class*="nav-"] a[aria-current="page"] {
-      background: var(--gold);
-    }
-    section, article, form, details, [data-cookie-banner] {
-      outline: 2px solid var(--ink);
-      outline-offset: -2px;
-      box-shadow: var(--shadow);
-    }
-    article, details, form {
-      background: var(--cream);
-    }
-    button, [class*="ctabox"] a, [class*="heroactions"] a, [class*="controls"] a, [class*="newsform"] button, [class*="cookieactions"] button {
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius-md);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    input, textarea {
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-md);
-      background: #fffef5;
-    }
-  </style>
+  * {
+   box-sizing: border-box;
+  }
+  body {
+   margin: 0;
+   background: radial-gradient(1200px 500px at 10% -10%, rgba(255, 122, 89, 0.25), transparent 60%),
+         radial-gradient(900px 500px at 90% 10%, rgba(31, 158, 160, 0.22), transparent 60%),
+         linear-gradient(180deg, #fff7ee 0%, #f0fbff 55%, #fff3ea 100%);
+   color: var(--ink);
+   font-family: var(--font-body);
+  }
+  img {
+   max-width: 100%;
+   display: block;
+  }
+  a {
+   color: inherit;
+   text-decoration: none;
+  }
+  a:hover {
+   color: var(--teal);
+  }
+  button {
+   cursor: pointer;
+   border: none;
+   background: none;
+   font: inherit;
+  }
+  input, textarea {
+   font: inherit;
+  }
+  main {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 32px 20px 80px;
+  }
+  section {
+   margin-top: 56px;
+  }
+  h1, h2, h3 {
+   font-family: var(--font-display);
+   margin: 0 0 12px;
+   color: var(--ink);
+  }
+  p {
+   margin: 0 0 16px;
+   line-height: 1.6;
+   color: var(--ink-soft);
+  }
+  :focus-visible {
+   outline: 2px solid var(--teal);
+   outline-offset: 3px;
+  }
+  @keyframes rise {
+   from { opacity: 0; transform: translateY(16px); }
+   to { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+   * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+   }
+  }
+  .ply-header-2m4k9b {
+   position: sticky;
+   top: 0;
+   z-index: 10;
+   background: rgba(255, 247, 234, 0.92);
+   border-bottom: 1px solid rgba(27, 26, 22, 0.08);
+   backdrop-filter: blur(10px);
+  }
+  .ply-navwrap-7x0t2p {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 16px 20px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: 12px 20px;
+  }
+  .ply-brandbox-1c8f2a a {
+   font-family: var(--font-display);
+   font-size: 1.35rem;
+   letter-spacing: 1px;
+   text-transform: none;
+  }
+  .ply-nav-9n5k3d {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   font-size: 0.95rem;
+  }
+  .ply-nav-9n5k3d a {
+   padding: 6px 12px;
+   border-radius: 999px;
+   transition: background 0.2s ease, color 0.2s ease;
+  }
+  .ply-nav-9n5k3d a[aria-current="page"] {
+   background: rgba(31, 158, 160, 0.18);
+   font-weight: 600;
+  }
+  .ply-nav-9n5k3d a:hover {
+   background: rgba(255, 122, 89, 0.2);
+  }
+  .ply-ctabox-4p7d1x a {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 10px 18px;
+   border-radius: 999px;
+   background: linear-gradient(120deg, var(--coral), var(--gold));
+   color: #1b1a16;
+   font-weight: 700;
+   box-shadow: var(--shadow);
+  }
+  .ply-hero-3v9k2q {
+   display: grid;
+   gap: 24px;
+   padding: 28px;
+   border-radius: var(--radius-lg);
+   background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62)),
+    url("abstract-3d-shapes-aesthetic-wallpaper.webp");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   box-shadow: var(--shadow);
+   animation: rise 0.8s ease both;
+  }
+  .ply-herocopy-7g5m1d h1 {
+   font-size: clamp(2rem, 5vw, 3.1rem);
+  }
+  .ply-notices-2t8c9r {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin: 12px 0;
+  }
+  .ply-notices-2t8c9r span {
+   background: rgba(31, 158, 160, 0.12);
+   padding: 6px 12px;
+   border-radius: 999px;
+   font-size: 0.75rem;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+  }
+  .ply-controls-9p6d2f {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+   margin-top: 16px;
+  }
+  .ply-controls-9p6d2f button {
+   padding: 10px 16px;
+   border-radius: 999px;
+   background: var(--ink);
+   color: #fff;
+   font-weight: 700;
+  }
+  .ply-controls-9p6d2f a {
+   padding: 10px 16px;
+   border-radius: 999px;
+   border: 1px solid rgba(27, 26, 22, 0.2);
+  }
+  .ply-preview-6y4p7n {
+   position: relative;
+   min-height: 220px;
+   border-radius: var(--radius-lg);
+   overflow: hidden;
+   background: #fff;
+   box-shadow: var(--shadow);
+   display: grid;
+   align-items: end;
+  }
+  .ply-preview-6y4p7n img {
+   width: 100%;
+   height: auto;
+  }
+  .ply-infobox-5r8d1f {
+   position: absolute;
+   left: 16px;
+   bottom: 16px;
+   background: rgba(255, 255, 255, 0.92);
+   padding: 10px 12px;
+   border-radius: 12px;
+   font-size: 0.85rem;
+   display: grid;
+   gap: 4px;
+  }
+  .ply-gamegrid-8h2w5s {
+   margin-top: 32px;
+   background: #fff;
+   padding: 22px;
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow);
+   animation: rise 0.9s ease both;
+  }
+  .ply-cards-9p6d2f {
+   display: grid;
+   gap: 18px;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   margin-top: 18px;
+  }
+  .ply-card-3m6p2q {
+   padding: 18px;
+   border-radius: var(--radius-md);
+   border: 1px solid rgba(27, 26, 22, 0.08);
+   box-shadow: var(--shadow);
+   display: grid;
+   gap: 10px;
+   background: #fff;
+  }
+  .ply-card-3m6p2q a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px 14px;
+   border-radius: 999px;
+   background: var(--ink);
+   color: #fff;
+   font-weight: 700;
+   width: fit-content;
+  }
+  .ply-tag-1n5b8x {
+   display: inline-flex;
+   align-items: center;
+   padding: 6px 10px;
+   border-radius: 999px;
+   background: rgba(31, 158, 160, 0.12);
+   font-size: 0.72rem;
+   text-transform: uppercase;
+   letter-spacing: 1.2px;
+   width: fit-content;
+  }
+  .ply-framewrap-8h2w5s {
+   margin-top: 32px;
+   background: #fff;
+   padding: 20px;
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow);
+   animation: rise 0.9s ease both;
+  }
+  .ply-framewrap-8h2w5s p {
+   font-weight: 600;
+   color: var(--ink);
+  }
+  .ply-frameinner-1n5b8x {
+   width: 100%;
+   aspect-ratio: 16 / 9;
+   border-radius: 16px;
+   overflow: hidden;
+   border: 1px solid rgba(27, 26, 22, 0.12);
+   background: #000;
+  }
+.ply-footer-7m2v6b {
+   margin-top: 80px;
+   background: rgba(255, 255, 255, 0.86);
+   border-top: 1px solid rgba(27, 26, 22, 0.08);
+  }
+  .ply-footergrid-1p5r8d {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 32px 20px;
+   display: grid;
+   gap: 24px;
+  }
+  .ply-footerbrand-0q6t3x a {
+   font-family: var(--font-display);
+   font-size: 1.2rem;
+   display: inline-block;
+   margin-bottom: 10px;
+  }
+  .ply-footerlinks-4c8h2n {
+   display: grid;
+   gap: 8px;
+   font-size: 0.95rem;
+  }
+  .ply-footerlinks-4c8h2n a {
+   color: var(--ink-soft);
+  }
+  .ply-footernews-9z1s5w {
+   display: grid;
+   gap: 10px;
+  }
+  .ply-newsform-6e3k9p {
+   display: grid;
+   gap: 12px;
+  }
+  .ply-newsform-6e3k9p label {
+   display: grid;
+   gap: 6px;
+   font-size: 0.9rem;
+  }
+  .ply-newsform-6e3k9p input {
+   padding: 10px 12px;
+   border-radius: 12px;
+   border: 1px solid rgba(27, 26, 22, 0.2);
+   background: #fff;
+  }
+  .ply-newsform-6e3k9p button {
+   padding: 10px 14px;
+   border-radius: 999px;
+   background: var(--teal);
+   color: #fff;
+   font-weight: 700;
+  }
+  .ply-newssuccess-2n7d4r {
+   background: rgba(31, 158, 160, 0.12);
+   padding: 12px;
+   border-radius: 12px;
+  }
+  .ply-disclaimer-5l1x8c {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px 20px;
+   font-size: 0.9rem;
+   color: var(--ink-soft);
+  }
+  .ply-footnote-8w4q7b {
+   border-top: 1px solid rgba(27, 26, 22, 0.08);
+   padding: 12px 20px 24px;
+   text-align: center;
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+  }
+  .ply-cookie-6f3t1m {
+   position: fixed;
+   left: 16px;
+   right: 16px;
+   bottom: 16px;
+   background: rgba(27, 26, 22, 0.92);
+   color: #fff;
+   border-radius: 16px;
+   padding: 16px;
+   z-index: 20;
+   box-shadow: var(--shadow);
+  }
+  .ply-cookieinner-1k9d5v {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+  }
+  .ply-cookieactions-4b7h0n {
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap;
+  }
+  .ply-cookieactions-4b7h0n button {
+   padding: 8px 14px;
+   border-radius: 999px;
+   font-weight: 700;
+  }
+  .ply-cookieactions-4b7h0n button:first-child {
+   background: var(--gold);
+   color: var(--ink);
+  }
+  .ply-cookieactions-4b7h0n button:last-child {
+   background: transparent;
+   border: 1px solid rgba(255, 255, 255, 0.4);
+   color: #fff;
+  }
+  @media (min-width: 900px) {
+   .ply-hero-3v9k2q {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    padding: 40px;
+   }
+   .ply-footergrid-1p5r8d {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+   }
+   .ply-cookieinner-1k9d5v {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   }
+  }
+  /* Retro remix overrides */
+  :root {
+   --ink: #1b1433;
+   --ink-soft: #2f2558;
+   --cream: #fff3c9;
+   --sand: #ffe3f1;
+   --sky: #d6f8ff;
+   --teal: #00b6b6;
+   --coral: #ff3d8f;
+   --gold: #ffd457;
+   --mint: #b7ff6a;
+   --shadow: 4px 4px 0 rgba(27, 20, 51, 0.6);
+   --radius-lg: 6px;
+   --radius-md: 4px;
+   --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
+   --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
+  }
+  body {
+   background:
+    repeating-linear-gradient(90deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
+    repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
+    linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
+  }
+  h1, h2, h3 {
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  a:hover {
+   color: var(--coral);
+  }
+  [class*="header-"],
+  [class*="footer-"] {
+   background: linear-gradient(90deg, var(--cream), var(--sky));
+   border-bottom: 3px solid var(--ink);
+   box-shadow: var(--shadow);
+  }
+  [class*="footer-"] {
+   border-top: 3px solid var(--ink);
+   border-bottom: none;
+  }
+  [class*="header-"] {
+   backdrop-filter: none;
+  }
+  [class*="nav-"] a {
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   border-radius: var(--radius-md);
+   border: 2px solid var(--ink);
+   box-shadow: var(--shadow);
+   background: var(--cream);
+  }
+  [class*="nav-"] a[aria-current="page"] {
+   background: var(--gold);
+  }
+  section, article, form, details, [data-cookie-banner] {
+   outline: 2px solid var(--ink);
+   outline-offset: -2px;
+   box-shadow: var(--shadow);
+  }
+  article, details, form {
+   background: var(--cream);
+  }
+  button, [class*="ctabox"] a, [class*="heroactions"] a, [class*="controls"] a, [class*="newsform"] button, [class*="cookieactions"] button {
+   border: 2px solid var(--ink);
+   box-shadow: var(--shadow);
+   border-radius: var(--radius-md);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  input, textarea {
+   border: 2px solid var(--ink);
+   border-radius: var(--radius-md);
+   background: #fffef5;
+  }
+ </style>
 </head>
 <body>
-  <header class="ply-header-2m4k9b">
-    <div class="ply-navwrap-7x0t2p">
-      <div class="ply-brandbox-1c8f2a">
-        <a href="index.html">newparhaatsuomi</a>
-      </div>
-      <nav class="ply-nav-9n5k3d" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-        <a href="policy.html">Privacy</a>
-      </nav>
-      <div class="ply-ctabox-4p7d1x">
-        <a href="games.html">See Golden Goal</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="ply-hero-3v9k2q">
-      <div class="ply-herocopy-7g5m1d">
-        <h1 data-game-title>Golden Goal</h1>
-        <p><strong>Category:</strong> <span data-game-category>Sports</span></p>
-        <p data-game-desc>Stadium energy, bold colors, and short rounds in a social casino setting that's easy to pick up.</p>
-        <p>Think of it as a practice round with no stakes. Try a few spins, then bail when you are done.</p>
-        <p>No purchase is required to play.</p>
-        <p>Not real-money gambling.</p>
-        <div class="ply-notices-2t8c9r">
-          <span>Practice mode only</span>
-          <span>18+ only</span>
-          <span>For entertainment only</span>
-        </div>
-        <p>If the embed does not load, use the open-in-new-tab link and it should play there.</p>
-        <div class="ply-controls-9p6d2f">
-          <button type="button" data-game-pick>Pick another game</button>
-          <a href="https://asccw.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=goldengoal&lang=en_GB&practice=1&channel=desktop&demo=2" data-game-link target="_blank" rel="noopener">Open in a new tab</a>
-        </div>
-      </div>
-      <div class="ply-preview-6y4p7n">
-        <img src="golden_goal.png" alt="Golden Goal preview" data-game-preview>
-        <div class="ply-infobox-5r8d1f">
-          <strong>Practice mode</strong>
-          <span>Golden Goal in practice mode</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="ply-framewrap-8h2w5s">
-      <p>Practice mode only. 18+ only. For entertainment only; no real money and no prizes. No cash-out or withdrawals. Not real-money gambling.</p>
-      <div class="ply-frameinner-1n5b8x">
-        <iframe
-          data-game-iframe
-          title="Golden Goal practice"
-          src="https://asccw.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=goldengoal&lang=en_GB&practice=1&channel=desktop&demo=2"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p>If the frame takes a moment, give it a second to load.</p>
-    </section>
-  </main>
-
-  <footer class="ply-footer-7m2v6b">
-    <div class="ply-footergrid-1p5r8d">
-      <div class="ply-footerbrand-0q6t3x">
-        <a href="index.html">newparhaatsuomi</a>
-        <p>Retro-leaning free-play lounge with a stadium vibe and an easy pace.</p>
-      </div>
-      <div class="ply-footerlinks-4c8h2n">
-        <strong>Explore</strong>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-        <a href="policy.html">Privacy</a>
-      </div>
-      <div class="ply-footernews-9z1s5w">
-        <strong>Newsletter</strong>
-        <p>Occasional notes about Golden Goal and site tweaks. Signups are stored locally on your device.</p>
-        <form class="ply-newsform-6e3k9p" data-newsletter-form>
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" autocomplete="name" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
-          <button type="submit">Sign up</button>
-        </form>
-        <div class="ply-newssuccess-2n7d4r" data-newsletter-success hidden>
-          <p>Thanks for signing up. This signup is stored locally on your device.</p>
-        </div>
-      </div>
-    </div>
-    <div class="ply-disclaimer-5l1x8c">
-      <p>18+ only. For entertainment only; no real money, no prizes, and no cash-out. Not real-money gambling. Please play responsibly and take breaks.</p>
-    </div>
-    <div class="ply-footnote-8w4q7b">
-      <p>(c) 2026 newparhaatsuomi. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <div class="ply-cookie-6f3t1m" data-cookie-banner hidden>
-    <div class="ply-cookieinner-1k9d5v">
-      <p>We use cookies to remember your choices and keep the site running smoothly.</p>
-      <div class="ply-cookieactions-4b7h0n">
-        <button type="button" data-cookie-accept>Accept</button>
-        <button type="button" data-cookie-decline>Decline</button>
-      </div>
-    </div>
+ <header class="ply-header-2m4k9b">
+  <div class="ply-navwrap-7x0t2p">
+   <div class="ply-brandbox-1c8f2a">
+    <a href="index.html">Newparhaatsuomi</a>
+   </div>
+   <nav class="ply-nav-9n5k3d" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Privacy</a>
+   </nav>
+   <div class="ply-ctabox-4p7d1x">
+    <a href="games.html">See games</a>
+   </div>
   </div>
+ </header>
 
-  <script>
-    // Simple front-end helpers for cookie choice, newsletter, contact, and the game loader.
-    (function () {
-      // Cookie banner: remember the choice and hide the banner.
-      const banner = document.querySelector('[data-cookie-banner]');
-      const acceptBtn = document.querySelector('[data-cookie-accept]');
-      const declineBtn = document.querySelector('[data-cookie-decline]');
-      const key = 'nps-cookie-choice';
+ <main>
+  <section class="ply-hero-3v9k2q">
+   <div class="ply-herocopy-7g5m1d">
+    <h1>Play</h1>
+    <p>Pick a game and jump in. Dice Drift, Match Mosaic, and Retro Reels are ready to go.</p>
+    <p>Short rounds, clear rules, no rush.</p>
+    <div class="ply-notices-2t8c9r">
+     <span>Practice mode only</span>
+     <span>21+ only</span>
+     <span>For entertainment only</span>
+    </div>
+    <p>21+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
+   </div>
+   <div class="ply-preview-6y4p7n">
+    <div class="ply-infobox-5r8d1f">
+     <strong>Three games</strong>
+     <span>Dice, Match, and Reels</span>
+    </div>
+   </div>
+  </section>
 
-      if (banner && acceptBtn && declineBtn) {
-        try {
-          const stored = localStorage.getItem(key);
-          banner.hidden = !!stored;
-        } catch (e) {
-          banner.hidden = false;
-        }
-        const setChoice = (value) => {
-          try {
-            localStorage.setItem(key, value);
-          } catch (e) {
-          }
-          banner.hidden = true;
-        };
-        acceptBtn.addEventListener('click', () => setChoice('accepted'));
-        declineBtn.addEventListener('click', () => setChoice('declined'));
-      }
+  <section class="ply-gamegrid-8h2w5s">
+   <h2>Pick a game</h2>
+   <p>Each game has its own page so the rules stay close to the action.</p>
+   <div class="ply-cards-9p6d2f">
+    <article class="ply-card-3m6p2q">
+     <span class="ply-tag-1n5b8x">Dice</span>
+     <h3>Dice Drift</h3>
+     <p>Roll two dice and chase your best total.</p>
+     <a href="dice.html">Play Dice Drift</a>
+    </article>
+    <article class="ply-card-3m6p2q">
+     <span class="ply-tag-1n5b8x">Match</span>
+     <h3>Match Mosaic</h3>
+     <p>Flip cards, find pairs, and clear the grid.</p>
+     <a href="match.html">Play Match Mosaic</a>
+    </article>
+    <article class="ply-card-3m6p2q">
+     <span class="ply-tag-1n5b8x">Reels</span>
+     <h3>Retro Reels</h3>
+     <p>A reel-style spin with bold, readable symbols.</p>
+     <a href="reels.html">Play Retro Reels</a>
+    </article>
+   </div>
+  </section>
+ </main>
 
-      // Newsletter form: store locally and show a success state.
-      const newsForm = document.querySelector('[data-newsletter-form]');
-      const newsSuccess = document.querySelector('[data-newsletter-success]');
-      if (newsForm && newsSuccess) {
-        newsForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          try {
-            const nameField = newsForm.elements.name;
-            const emailField = newsForm.elements.email;
-            const payload = {
-              name: nameField ? nameField.value.trim() : '',
-              email: emailField ? emailField.value.trim() : '',
-              ts: new Date().toISOString()
-            };
-            localStorage.setItem('nps-newsletter', JSON.stringify(payload));
-          } catch (e) {
-          }
-          newsForm.reset();
-          newsForm.hidden = true;
-          newsSuccess.hidden = false;
-        });
-      }
+ <footer class="ply-footer-7m2v6b">
+  <div class="ply-footergrid-1p5r8d">
+   <div class="ply-footerbrand-0q6t3x">
+    <a href="index.html">Newparhaatsuomi</a>
+    <p>Retro-style free-play lounge with a small set of low-key games.</p>
+   </div>
+   <div class="ply-footerlinks-4c8h2n">
+    <strong>Explore</strong>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Privacy</a>
+   </div>
+   <div class="ply-footernews-9z1s5w">
+    <strong>Newsletter</strong>
+    <p>A few updates about new games and site tweaks. Signups are stored locally on your device.</p>
+    <form class="ply-newsform-6e3k9p" data-newsletter-form>
+     <label>
+      <span>Name</span>
+      <input type="text" name="name" autocomplete="name" required>
+     </label>
+     <label>
+      <span>Email</span>
+      <input type="email" name="email" autocomplete="email" required>
+     </label>
+     <button type="submit">Sign up</button>
+    </form>
+    <div class="ply-newssuccess-2n7d4r" data-newsletter-success hidden>
+     <p>Thanks for signing up. We store this on your device only.</p>
+    </div>
+   </div>
+  </div>
+  <div class="ply-disclaimer-5l1x8c">
+   <p>21+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
+  </div>
+  <div class="ply-footnote-8w4q7b">
+   <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
+  </div>
+ </footer>
 
-      // Contact form: show a confirmation state without a backend.
-      const contactForm = document.querySelector('[data-contact-form]');
-      const contactSuccess = document.querySelector('[data-contact-success]');
-      if (contactForm && contactSuccess) {
-        contactForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          contactForm.reset();
-          contactForm.hidden = true;
-          contactSuccess.hidden = false;
-        });
-      }
+ <div class="ply-cookie-6f3t1m" data-cookie-banner hidden>
+  <div class="ply-cookieinner-1k9d5v">
+   <p>We use local storage to remember your choices and keep the site running smoothly.</p>
+   <div class="ply-cookieactions-4b7h0n">
+    <button type="button" data-cookie-accept>Accept</button>
+    <button type="button" data-cookie-decline>Decline</button>
+   </div>
+  </div>
+ </div>
 
-      // Game data (single allowed game).
-      const gameUrl = 'https://asccw.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=goldengoal&lang=en_GB&practice=1&channel=desktop&demo=2';
-      const games = [
-        { key: 'goldengoal', name: 'Golden Goal', category: 'Sports', desc: 'Stadium energy, bold colors, and short rounds in a social casino setting that\\'s easy to pick up.', url: gameUrl }
-      ];
+ <script>
+  // Simple front-end helpers for cookie choice and newsletter.
+  // Client-side only: uses local storage, no network calls, no payments.
+  (function () {
+   // Cookie banner: remember the choice and hide the banner.
+   const banner = document.querySelector('[data-cookie-banner]');
+   const acceptBtn = document.querySelector('[data-cookie-accept]');
+   const declineBtn = document.querySelector('[data-cookie-decline]');
+   const key = 'nps-cookie-choice';
 
-      // Cache UI nodes once so updates stay simple.
-      const titleEl = document.querySelector('[data-game-title]');
-      const categoryEl = document.querySelector('[data-game-category]');
-      const descEl = document.querySelector('[data-game-desc]');
-      const iframeEl = document.querySelector('[data-game-iframe]');
-      const linkEl = document.querySelector('[data-game-link]');
-      const previewEl = document.querySelector('[data-game-preview]');
-      const pickBtn = document.querySelector('[data-game-pick]');
+   if (banner && acceptBtn && declineBtn) {
+    try {
+     const stored = localStorage.getItem(key);
+     banner.hidden = !!stored;
+    } catch (e) {
+     banner.hidden = false;
+    }
+    const setChoice = (value) => {
+     try {
+      localStorage.setItem(key, value);
+     } catch (e) {
+     }
+     banner.hidden = true;
+    };
+    acceptBtn.addEventListener('click', () => setChoice('accepted'));
+    declineBtn.addEventListener('click', () => setChoice('declined'));
+   }
 
-      // If a valid ?game= key is present, honor it; otherwise use the default.
-      const params = new URLSearchParams(window.location.search);
-      const requested = params.get('game');
-      const initial = games.find((game) => game.key === requested) || games[0];
-
-      // Apply the selected game to the hero, preview, and iframe.
-      const renderGame = (game) => {
-        if (titleEl) { titleEl.textContent = game.name; }
-        if (categoryEl) { categoryEl.textContent = game.category; }
-        if (descEl) { descEl.textContent = game.desc; }
-        if (iframeEl) {
-          iframeEl.src = game.url;
-          iframeEl.title = game.name + ' practice';
-        }
-        if (linkEl) { linkEl.href = game.url; }
-        if (previewEl) { previewEl.alt = game.name + ' preview'; }
+   // Newsletter form: store locally and show a success state.
+   const newsForm = document.querySelector('[data-newsletter-form]');
+   const newsSuccess = document.querySelector('[data-newsletter-success]');
+   if (newsForm && newsSuccess) {
+    newsForm.addEventListener('submit', (event) => {
+     event.preventDefault();
+     try {
+      const nameField = newsForm.elements.name;
+      const emailField = newsForm.elements.email;
+      const payload = {
+       name: nameField ? nameField.value.trim() : '',
+       email: emailField ? emailField.value.trim() : '',
+       ts: new Date().toISOString()
       };
-
-      // Initial render on load.
-      renderGame(initial);
-
-      // Reroll button just re-applies the single game without a page reload.
-      if (pickBtn) {
-        pickBtn.addEventListener('click', () => {
-          renderGame(games[0]);
-        });
-      }
-    })();
-  </script>
+      localStorage.setItem('nps-newsletter', JSON.stringify(payload));
+     } catch (e) {
+     }
+     newsForm.reset();
+     newsForm.hidden = true;
+     newsSuccess.hidden = false;
+    });
+   }
+  })();
+ </script>
 </body>
 </html>
 

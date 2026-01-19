@@ -1,933 +1,937 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>newparhaatsuomi | Retro free-play lounge</title>
-  <meta name="description" content="newparhaatsuomi is a retro-leaning free-play lounge with Golden Goal at the center, built for relaxed, no-stakes sessions.">
-  <style>
-  @font-face {
-    font-family: "Sefairy";
-    src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Newparhaatsuomi | Retro free-play lounge</title>
+ <meta name="description" content="Newparhaatsuomi is a retro free-play lounge with Dice Drift, Match Mosaic, and Retro Reels. 21+ only. No real money, prizes, or cash-out.">
+ <style>
+ @font-face {
+  font-family: "Sefairy";
+  src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+ }
+  :root {
+   --ink: #1b1a16;
+   --ink-soft: #3a352d;
+   --cream: #fff6ea;
+   --sand: #f6efe6;
+   --sky: #e9f7ff;
+   --teal: #1f9ea0;
+   --coral: #ff7a59;
+   --gold: #f6b247;
+   --mint: #c7f1e1;
+   --shadow: 0 18px 40px rgba(27, 26, 22, 0.12);
+   --radius-lg: 28px;
+   --radius-md: 18px;
+   --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+   --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
   }
-    :root {
-      --ink: #1b1a16;
-      --ink-soft: #3a352d;
-      --cream: #fff6ea;
-      --sand: #f6efe6;
-      --sky: #e9f7ff;
-      --teal: #1f9ea0;
-      --coral: #ff7a59;
-      --gold: #f6b247;
-      --mint: #c7f1e1;
-      --shadow: 0 18px 40px rgba(27, 26, 22, 0.12);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
-      --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      background: radial-gradient(1200px 500px at 10% -10%, rgba(255, 122, 89, 0.25), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(31, 158, 160, 0.22), transparent 60%),
-                  linear-gradient(180deg, #fff7ee 0%, #f0fbff 55%, #fff3ea 100%);
-      color: var(--ink);
-      font-family: var(--font-body);
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:hover {
-      color: var(--teal);
-    }
-    button {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font: inherit;
-    }
-    input, textarea {
-      font: inherit;
-    }
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 20px 80px;
-    }
-    section {
-      margin-top: 56px;
-    }
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      margin: 0 0 12px;
-      color: var(--ink);
-    }
-    p {
-      margin: 0 0 16px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    :focus-visible {
-      outline: 2px solid var(--teal);
-      outline-offset: 3px;
-    }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes drift {
-      from { transform: translateY(0); }
-      to { transform: translateY(-6px); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    .idx-header-2m4k9b {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 247, 234, 0.92);
-      border-bottom: 1px solid rgba(27, 26, 22, 0.08);
-      backdrop-filter: blur(10px);
-    }
-    .idx-navwrap-7x0t2p {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px 20px;
-    }
-    .idx-brandbox-1c8f2a a {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      letter-spacing: 1px;
-      text-transform: lowercase;
-    }
-    .idx-nav-9n5k3d {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.95rem;
-    }
-    .idx-nav-9n5k3d a {
-      padding: 6px 12px;
-      border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .idx-nav-9n5k3d a[aria-current="page"] {
-      background: rgba(31, 158, 160, 0.18);
-      font-weight: 600;
-    }
-    .idx-nav-9n5k3d a:hover {
-      background: rgba(255, 122, 89, 0.2);
-    }
-    .idx-ctabox-4p7d1x a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: linear-gradient(120deg, var(--coral), var(--gold));
-      color: #1b1a16;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-    .idx-hero-3v9k2q {
-      display: grid;
-      gap: 24px;
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62)),
-        url("abstract-3d-shapes-aesthetic-wallpaper.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow: var(--shadow);
-      animation: rise 0.8s ease both;
-    }
-    .idx-herocopy-7g5m1d h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-    }
-    .idx-herobadge-2t8c9r {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(31, 158, 160, 0.15);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-    }
-    .idx-heroactions-6y4p7n {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .idx-heroactions-6y4p7n a {
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      background: var(--ink);
-      color: #fff;
-    }
-    .idx-heroactions-6y4p7n a:last-child {
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid rgba(27, 26, 22, 0.2);
-    }
-    .idx-heroart-8h2w5s {
-      position: relative;
-      min-height: 240px;
-      border-radius: var(--radius-lg);
-      background: radial-gradient(circle at top, rgba(246, 178, 71, 0.5), transparent 60%),
-                  linear-gradient(160deg, rgba(31, 158, 160, 0.2), rgba(255, 122, 89, 0.2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      animation: drift 5s ease-in-out infinite alternate;
-    }
-    .idx-heroart-8h2w5s svg {
-      width: 88%;
-      height: auto;
-      opacity: 0.85;
-    }
-    .idx-gamepanel-p7z3k1 {
-      display: grid;
-      gap: 20px;
-      padding: 22px;
-      border-radius: var(--radius-lg);
-      background: #fff;
-      border: 1px solid rgba(27, 26, 22, 0.08);
-      box-shadow: var(--shadow);
-      margin-top: 32px;
-    }
-    .idx-gameimgwrap-m4q8t2 {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid rgba(27, 26, 22, 0.15);
-      background: rgba(246, 178, 71, 0.12);
-    }
-    .idx-gameimg-n9c5r7 {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .idx-gametext-v6b2x8 {
-      display: grid;
-      gap: 8px;
-      align-content: start;
-    }
-    .idx-gametitle-s3h9j4 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      margin: 0;
-    }
-    .idx-gamecta-l5d8w2 {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--ink);
-      color: #fff;
-      font-weight: 700;
-      width: fit-content;
-    }
-    .idx-herocard-9p6d2f {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 12px 14px;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      font-size: 0.85rem;
-      display: grid;
-      gap: 4px;
-    }
-    .idx-benefits-5r8d1f {
-      animation: rise 0.9s ease both;
-    }
-    .idx-benefitsgrid-9k1s6p {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .idx-benefitsgrid-9k1s6p article {
-      padding: 18px;
-      border-radius: var(--radius-md);
-      background: #fff;
-      border: 1px solid rgba(27, 26, 22, 0.08);
-      box-shadow: 0 10px 22px rgba(27, 26, 22, 0.08);
-    }
-    .idx-benefitsgrid-9k1s6p article:nth-child(odd) {
-      background: linear-gradient(160deg, #ffffff, #fff6ea);
-    }
-    .idx-featured-4m7c2v {
-      animation: rise 1s ease both;
-    }
-    .idx-featuredgrid-1n5b8x {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-    .idx-featuredgrid-1n5b8x article {
-      padding: 18px;
-      border-radius: var(--radius-md);
-      background: #fff;
-      border: 1px solid rgba(27, 26, 22, 0.08);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 12px;
-    }
-    .idx-featuredgrid-1n5b8x svg {
-      width: 100%;
-      height: 80px;
-    }
-    .idx-featuredgrid-1n5b8x a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
-      color: var(--teal);
-    }
-    .idx-stats-3q6j9a {
-      margin-top: 48px;
-    }
-    .idx-statsgrid-7t2f5m {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 16px;
-      background: rgba(31, 158, 160, 0.08);
-      border-radius: var(--radius-md);
-      padding: 18px;
-    }
-    .idx-statsgrid-7t2f5m div {
-      text-align: center;
-    }
-    .idx-statsgrid-7t2f5m strong {
-      display: block;
-      font-size: 1.8rem;
-      font-family: var(--font-display);
-      color: var(--ink);
-    }
-    .idx-how-8c4l1y {
-      animation: rise 1.1s ease both;
-    }
-    .idx-stepsgrid-2p9h6d {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .idx-stepsgrid-2p9h6d article {
-      padding: 18px;
-      border-radius: var(--radius-md);
-      background: #fff;
-      border: 1px dashed rgba(27, 26, 22, 0.2);
-      display: grid;
-      gap: 8px;
-    }
-    .idx-stepsgrid-2p9h6d span {
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--coral);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-    }
-    .idx-notes-7f3k1m {
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.85);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 12px;
-    }
-    .idx-noteslist-9r2b5c {
-      margin: 0;
-      padding-left: 20px;
-      list-style: disc;
-      color: var(--ink-soft);
-      display: grid;
-      gap: 8px;
-    }
-    .idx-longread-4t9x2m {
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 14px;
-    }
-    .idx-longgrid-7p1c8d {
-      display: grid;
-      gap: 18px;
-    }
-    .idx-longcallout-6v0k3q {
-      background: rgba(31, 158, 160, 0.1);
-      border: 1px solid rgba(27, 26, 22, 0.1);
-      border-radius: 14px;
-      padding: 16px;
-    }
-    .idx-longlist-2n8b5j {
-      margin: 0;
-      padding-left: 20px;
-      list-style: disc;
-      color: var(--ink-soft);
-      display: grid;
-      gap: 8px;
-    }
-    .idx-footer-7m2v6b {
-      margin-top: 80px;
-      background: rgba(255, 255, 255, 0.86);
-      border-top: 1px solid rgba(27, 26, 22, 0.08);
-    }
-    .idx-footergrid-1p5r8d {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 20px;
-      display: grid;
-      gap: 24px;
-    }
-    .idx-footerbrand-0q6t3x a {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .idx-footerlinks-4c8h2n {
-      display: grid;
-      gap: 8px;
-      font-size: 0.95rem;
-    }
-    .idx-footerlinks-4c8h2n a {
-      color: var(--ink-soft);
-    }
-    .idx-footernews-9z1s5w {
-      display: grid;
-      gap: 10px;
-    }
-    .idx-newsform-6e3k9p {
-      display: grid;
-      gap: 12px;
-    }
-    .idx-newsform-6e3k9p label {
-      display: grid;
-      gap: 6px;
-      font-size: 0.9rem;
-    }
-    .idx-newsform-6e3k9p input {
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(27, 26, 22, 0.2);
-      background: #fff;
-    }
-    .idx-newsform-6e3k9p button {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: var(--teal);
-      color: #fff;
-      font-weight: 700;
-    }
-    .idx-newssuccess-2n7d4r {
-      background: rgba(31, 158, 160, 0.12);
-      padding: 12px;
-      border-radius: 12px;
-    }
-    .idx-disclaimer-5l1x8c {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px 20px;
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-    .idx-footnote-8w4q7b {
-      border-top: 1px solid rgba(27, 26, 22, 0.08);
-      padding: 12px 20px 24px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-    }
-    .idx-cookie-6f3t1m {
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      background: rgba(27, 26, 22, 0.92);
-      color: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      z-index: 20;
-      box-shadow: var(--shadow);
-    }
-    .idx-cookieinner-1k9d5v {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .idx-cookieactions-4b7h0n {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .idx-cookieactions-4b7h0n button {
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-    .idx-cookieactions-4b7h0n button:first-child {
-      background: var(--gold);
-      color: var(--ink);
-    }
-    .idx-cookieactions-4b7h0n button:last-child {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #fff;
-    }
-    @media (min-width: 900px) {
-      .idx-hero-3v9k2q {
-        grid-template-columns: 1.1fr 0.9fr;
-        padding: 40px;
-      }
-      .idx-gamepanel-p7z3k1 {
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: center;
-      }
-      .idx-longgrid-7p1c8d {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .idx-footergrid-1p5r8d {
-        grid-template-columns: 1.2fr 0.8fr 1fr;
-      }
-      .idx-cookieinner-1k9d5v {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-    /* Retro remix overrides */
-    :root {
-      --ink: #1b1433;
-      --ink-soft: #2f2558;
-      --cream: #fff3c9;
-      --sand: #ffe3f1;
-      --sky: #d6f8ff;
-      --teal: #00b6b6;
-      --coral: #ff3d8f;
-      --gold: #ffd457;
-      --mint: #b7ff6a;
-      --shadow: 4px 4px 0 rgba(27, 20, 51, 0.6);
-      --radius-lg: 6px;
-      --radius-md: 4px;
-      --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
-      --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
-    }
-    body {
-      background:
-        repeating-linear-gradient(90deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
-        repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
-        linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
-    }
-    h1, h2, h3 {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    a:hover {
-      color: var(--coral);
-    }
-    [class*="header-"],
-    [class*="footer-"] {
-      background: linear-gradient(90deg, var(--cream), var(--sky));
-      border-bottom: 3px solid var(--ink);
-      box-shadow: var(--shadow);
-    }
-    [class*="footer-"] {
-      border-top: 3px solid var(--ink);
-      border-bottom: none;
-    }
-    [class*="header-"] {
-      backdrop-filter: none;
-    }
-    [class*="nav-"] a {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-radius: var(--radius-md);
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      background: var(--cream);
-    }
-    [class*="nav-"] a[aria-current="page"] {
-      background: var(--gold);
-    }
-    section, article, form, details, [data-cookie-banner] {
-      outline: 2px solid var(--ink);
-      outline-offset: -2px;
-      box-shadow: var(--shadow);
-    }
-    article, details, form {
-      background: var(--cream);
-    }
-    button, [class*="ctabox"] a, [class*="heroactions"] a, [class*="controls"] a, [class*="newsform"] button, [class*="cookieactions"] button {
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius-md);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    input, textarea {
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-md);
-      background: #fffef5;
-    }
-  </style>
+  * {
+   box-sizing: border-box;
+  }
+  body {
+   margin: 0;
+   background: radial-gradient(1200px 500px at 10% -10%, rgba(255, 122, 89, 0.25), transparent 60%),
+         radial-gradient(900px 500px at 90% 10%, rgba(31, 158, 160, 0.22), transparent 60%),
+         linear-gradient(180deg, #fff7ee 0%, #f0fbff 55%, #fff3ea 100%);
+   color: var(--ink);
+   font-family: var(--font-body);
+  }
+  img {
+   max-width: 100%;
+   display: block;
+  }
+  a {
+   color: inherit;
+   text-decoration: none;
+  }
+  a:hover {
+   color: var(--teal);
+  }
+  button {
+   cursor: pointer;
+   border: none;
+   background: none;
+   font: inherit;
+  }
+  input, textarea {
+   font: inherit;
+  }
+  main {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 32px 20px 80px;
+  }
+  section {
+   margin-top: 56px;
+  }
+  h1, h2, h3 {
+   font-family: var(--font-display);
+   margin: 0 0 12px;
+   color: var(--ink);
+  }
+  p {
+   margin: 0 0 16px;
+   line-height: 1.6;
+   color: var(--ink-soft);
+  }
+  ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+  }
+  :focus-visible {
+   outline: 2px solid var(--teal);
+   outline-offset: 3px;
+  }
+  @keyframes rise {
+   from { opacity: 0; transform: translateY(16px); }
+   to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes drift {
+   from { transform: translateY(0); }
+   to { transform: translateY(-6px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+   * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+   }
+  }
+  .idx-header-2m4k9b {
+   position: sticky;
+   top: 0;
+   z-index: 10;
+   background: rgba(255, 247, 234, 0.92);
+   border-bottom: 1px solid rgba(27, 26, 22, 0.08);
+   backdrop-filter: blur(10px);
+  }
+  .idx-navwrap-7x0t2p {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 16px 20px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: 12px 20px;
+  }
+  .idx-brandbox-1c8f2a a {
+   font-family: var(--font-display);
+   font-size: 1.35rem;
+   letter-spacing: 1px;
+   text-transform: none;
+  }
+  .idx-nav-9n5k3d {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   font-size: 0.95rem;
+  }
+  .idx-nav-9n5k3d a {
+   padding: 6px 12px;
+   border-radius: 999px;
+   transition: background 0.2s ease, color 0.2s ease;
+  }
+  .idx-nav-9n5k3d a[aria-current="page"] {
+   background: rgba(31, 158, 160, 0.18);
+   font-weight: 600;
+  }
+  .idx-nav-9n5k3d a:hover {
+   background: rgba(255, 122, 89, 0.2);
+  }
+  .idx-ctabox-4p7d1x a {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 10px 18px;
+   border-radius: 999px;
+   background: linear-gradient(120deg, var(--coral), var(--gold));
+   color: #1b1a16;
+   font-weight: 700;
+   box-shadow: var(--shadow);
+  }
+  .idx-hero-3v9k2q {
+   display: grid;
+   gap: 24px;
+   padding: 28px;
+   border-radius: var(--radius-lg);
+   background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62)),
+    url("abstract-3d-shapes-aesthetic-wallpaper.webp");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   box-shadow: var(--shadow);
+   animation: rise 0.8s ease both;
+  }
+  .idx-herocopy-7g5m1d h1 {
+   font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+  .idx-herobadge-2t8c9r {
+   display: inline-block;
+   padding: 6px 12px;
+   border-radius: 999px;
+   background: rgba(31, 158, 160, 0.15);
+   font-size: 0.78rem;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   margin-bottom: 12px;
+  }
+  .idx-heroactions-6y4p7n {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+   margin-top: 16px;
+  }
+  .idx-heroactions-6y4p7n a {
+   padding: 12px 18px;
+   border-radius: 999px;
+   font-weight: 700;
+   background: var(--ink);
+   color: #fff;
+  }
+  .idx-heroactions-6y4p7n a:last-child {
+   background: transparent;
+   color: var(--ink);
+   border: 1px solid rgba(27, 26, 22, 0.2);
+  }
+  .idx-heroart-8h2w5s {
+   position: relative;
+   min-height: 240px;
+   border-radius: var(--radius-lg);
+   background: radial-gradient(circle at top, rgba(246, 178, 71, 0.5), transparent 60%),
+         linear-gradient(160deg, rgba(31, 158, 160, 0.2), rgba(255, 122, 89, 0.2));
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   animation: drift 5s ease-in-out infinite alternate;
+  }
+  .idx-heroart-8h2w5s svg {
+   width: 88%;
+   height: auto;
+   opacity: 0.85;
+  }
+  .idx-gamepanel-p7z3k1 {
+   display: grid;
+   gap: 20px;
+   padding: 22px;
+   border-radius: var(--radius-lg);
+   background: #fff;
+   border: 1px solid rgba(27, 26, 22, 0.08);
+   box-shadow: var(--shadow);
+   margin-top: 32px;
+  }
+  .idx-gameimgwrap-m4q8t2 {
+   border-radius: var(--radius-md);
+   overflow: hidden;
+   border: 1px solid rgba(27, 26, 22, 0.15);
+   background: rgba(246, 178, 71, 0.12);
+  }
+  .idx-gameimggrid-6p3k8x {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 8px;
+   padding: 10px;
+  }
+  .idx-gameimggrid-6p3k8x img {
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+   border-radius: 12px;
+   display: block;
+   border: 1px solid rgba(27, 26, 22, 0.18);
+  }
+  .idx-gametext-v6b2x8 {
+   display: grid;
+   gap: 8px;
+   align-content: start;
+  }
+  .idx-gametitle-s3h9j4 {
+   font-size: clamp(1.6rem, 3vw, 2.2rem);
+   margin: 0;
+  }
+  .idx-gamelist-3h9x2k {
+   display: grid;
+   gap: 8px;
+   padding: 0;
+   margin: 12px 0 8px;
+  }
+  .idx-gamelist-3h9x2k li {
+   padding: 8px 10px;
+   border-radius: 12px;
+   background: rgba(31, 158, 160, 0.08);
+  }
+  .idx-gamecta-l5d8w2 {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px 16px;
+   border-radius: 999px;
+   background: var(--ink);
+   color: #fff;
+   font-weight: 700;
+   width: fit-content;
+  }
+  .idx-herocard-9p6d2f {
+   position: absolute;
+   right: 18px;
+   bottom: 18px;
+   background: rgba(255, 255, 255, 0.9);
+   padding: 12px 14px;
+   border-radius: 16px;
+   box-shadow: var(--shadow);
+   font-size: 0.85rem;
+   display: grid;
+   gap: 4px;
+  }
+  .idx-benefits-5r8d1f {
+   animation: rise 0.9s ease both;
+  }
+  .idx-benefitsgrid-9k1s6p {
+   display: grid;
+   gap: 16px;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .idx-benefitsgrid-9k1s6p article {
+   padding: 18px;
+   border-radius: var(--radius-md);
+   background: #fff;
+   border: 1px solid rgba(27, 26, 22, 0.08);
+   box-shadow: 0 10px 22px rgba(27, 26, 22, 0.08);
+  }
+  .idx-benefitsgrid-9k1s6p article:nth-child(odd) {
+   background: linear-gradient(160deg, #ffffff, #fff6ea);
+  }
+  .idx-featured-4m7c2v {
+   animation: rise 1s ease both;
+  }
+  .idx-featuredgrid-1n5b8x {
+   display: grid;
+   gap: 18px;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .idx-featuredgrid-1n5b8x article {
+   padding: 18px;
+   border-radius: var(--radius-md);
+   background: #fff;
+   border: 1px solid rgba(27, 26, 22, 0.08);
+   box-shadow: var(--shadow);
+   display: grid;
+   gap: 12px;
+  }
+  .idx-featuredgrid-1n5b8x img {
+   width: 100%;
+   height: 120px;
+   object-fit: cover;
+   border-radius: 14px;
+   border: 1px solid rgba(27, 26, 22, 0.15);
+  }
+  .idx-featuredgrid-1n5b8x a {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   font-weight: 700;
+   color: var(--teal);
+  }
+  .idx-stats-3q6j9a {
+   margin-top: 48px;
+  }
+  .idx-statsgrid-7t2f5m {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+   gap: 16px;
+   background: rgba(31, 158, 160, 0.08);
+   border-radius: var(--radius-md);
+   padding: 18px;
+  }
+  .idx-statsgrid-7t2f5m div {
+   text-align: center;
+  }
+  .idx-statsgrid-7t2f5m strong {
+   display: block;
+   font-size: 1.8rem;
+   font-family: var(--font-display);
+   color: var(--ink);
+  }
+  .idx-how-8c4l1y {
+   animation: rise 1.1s ease both;
+  }
+  .idx-stepsgrid-2p9h6d {
+   display: grid;
+   gap: 16px;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .idx-stepsgrid-2p9h6d article {
+   padding: 18px;
+   border-radius: var(--radius-md);
+   background: #fff;
+   border: 1px dashed rgba(27, 26, 22, 0.2);
+   display: grid;
+   gap: 8px;
+  }
+  .idx-stepsgrid-2p9h6d span {
+   font-family: var(--font-display);
+   font-weight: 700;
+   color: var(--coral);
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-size: 0.85rem;
+  }
+  .idx-notes-7f3k1m {
+   padding: 24px;
+   border-radius: var(--radius-lg);
+   background: rgba(255, 255, 255, 0.85);
+   box-shadow: var(--shadow);
+   display: grid;
+   gap: 12px;
+  }
+  .idx-noteslist-9r2b5c {
+   margin: 0;
+   padding-left: 20px;
+   list-style: disc;
+   color: var(--ink-soft);
+   display: grid;
+   gap: 8px;
+  }
+  .idx-longread-4t9x2m {
+   padding: 24px;
+   border-radius: var(--radius-lg);
+   background: rgba(255, 255, 255, 0.9);
+   box-shadow: var(--shadow);
+   display: grid;
+   gap: 14px;
+  }
+  .idx-longgrid-7p1c8d {
+   display: grid;
+   gap: 18px;
+  }
+  .idx-longcallout-6v0k3q {
+   background: rgba(31, 158, 160, 0.1);
+   border: 1px solid rgba(27, 26, 22, 0.1);
+   border-radius: 14px;
+   padding: 16px;
+  }
+  .idx-longlist-2n8b5j {
+   margin: 0;
+   padding-left: 20px;
+   list-style: disc;
+   color: var(--ink-soft);
+   display: grid;
+   gap: 8px;
+  }
+  .idx-footer-7m2v6b {
+   margin-top: 80px;
+   background: rgba(255, 255, 255, 0.86);
+   border-top: 1px solid rgba(27, 26, 22, 0.08);
+  }
+  .idx-footergrid-1p5r8d {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 32px 20px;
+   display: grid;
+   gap: 24px;
+  }
+  .idx-footerbrand-0q6t3x a {
+   font-family: var(--font-display);
+   font-size: 1.2rem;
+   display: inline-block;
+   margin-bottom: 10px;
+  }
+  .idx-footerlinks-4c8h2n {
+   display: grid;
+   gap: 8px;
+   font-size: 0.95rem;
+  }
+  .idx-footerlinks-4c8h2n a {
+   color: var(--ink-soft);
+  }
+  .idx-footernews-9z1s5w {
+   display: grid;
+   gap: 10px;
+  }
+  .idx-newsform-6e3k9p {
+   display: grid;
+   gap: 12px;
+  }
+  .idx-newsform-6e3k9p label {
+   display: grid;
+   gap: 6px;
+   font-size: 0.9rem;
+  }
+  .idx-newsform-6e3k9p input {
+   padding: 10px 12px;
+   border-radius: 12px;
+   border: 1px solid rgba(27, 26, 22, 0.2);
+   background: #fff;
+  }
+  .idx-newsform-6e3k9p button {
+   padding: 10px 14px;
+   border-radius: 999px;
+   background: var(--teal);
+   color: #fff;
+   font-weight: 700;
+  }
+  .idx-newssuccess-2n7d4r {
+   background: rgba(31, 158, 160, 0.12);
+   padding: 12px;
+   border-radius: 12px;
+  }
+  .idx-disclaimer-5l1x8c {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px 20px;
+   font-size: 0.9rem;
+   color: var(--ink-soft);
+  }
+  .idx-footnote-8w4q7b {
+   border-top: 1px solid rgba(27, 26, 22, 0.08);
+   padding: 12px 20px 24px;
+   text-align: center;
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+  }
+  .idx-cookie-6f3t1m {
+   position: fixed;
+   left: 16px;
+   right: 16px;
+   bottom: 16px;
+   background: rgba(27, 26, 22, 0.92);
+   color: #fff;
+   border-radius: 16px;
+   padding: 16px;
+   z-index: 20;
+   box-shadow: var(--shadow);
+  }
+  .idx-cookieinner-1k9d5v {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+  }
+  .idx-cookieactions-4b7h0n {
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap;
+  }
+  .idx-cookieactions-4b7h0n button {
+   padding: 8px 14px;
+   border-radius: 999px;
+   font-weight: 700;
+  }
+  .idx-cookieactions-4b7h0n button:first-child {
+   background: var(--gold);
+   color: var(--ink);
+  }
+  .idx-cookieactions-4b7h0n button:last-child {
+   background: transparent;
+   border: 1px solid rgba(255, 255, 255, 0.4);
+   color: #fff;
+  }
+  @media (min-width: 900px) {
+   .idx-hero-3v9k2q {
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: 40px;
+   }
+   .idx-gamepanel-p7z3k1 {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+   }
+   .idx-longgrid-7p1c8d {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+   .idx-footergrid-1p5r8d {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+   }
+   .idx-cookieinner-1k9d5v {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   }
+  }
+  /* Retro remix overrides */
+  :root {
+   --ink: #1b1433;
+   --ink-soft: #2f2558;
+   --cream: #fff3c9;
+   --sand: #ffe3f1;
+   --sky: #d6f8ff;
+   --teal: #00b6b6;
+   --coral: #ff3d8f;
+   --gold: #ffd457;
+   --mint: #b7ff6a;
+   --shadow: 4px 4px 0 rgba(27, 20, 51, 0.6);
+   --radius-lg: 6px;
+   --radius-md: 4px;
+   --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
+   --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
+  }
+  body {
+   background:
+    repeating-linear-gradient(90deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
+    repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
+    linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
+  }
+  h1, h2, h3 {
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  a:hover {
+   color: var(--coral);
+  }
+  [class*="header-"],
+  [class*="footer-"] {
+   background: linear-gradient(90deg, var(--cream), var(--sky));
+   border-bottom: 3px solid var(--ink);
+   box-shadow: var(--shadow);
+  }
+  [class*="footer-"] {
+   border-top: 3px solid var(--ink);
+   border-bottom: none;
+  }
+  [class*="header-"] {
+   backdrop-filter: none;
+  }
+  [class*="nav-"] a {
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   border-radius: var(--radius-md);
+   border: 2px solid var(--ink);
+   box-shadow: var(--shadow);
+   background: var(--cream);
+  }
+  [class*="nav-"] a[aria-current="page"] {
+   background: var(--gold);
+  }
+  section, article, form, details, [data-cookie-banner] {
+   outline: 2px solid var(--ink);
+   outline-offset: -2px;
+   box-shadow: var(--shadow);
+  }
+  article, details, form {
+   background: var(--cream);
+  }
+  button, [class*="ctabox"] a, [class*="heroactions"] a, [class*="controls"] a, [class*="newsform"] button, [class*="cookieactions"] button {
+   border: 2px solid var(--ink);
+   box-shadow: var(--shadow);
+   border-radius: var(--radius-md);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  input, textarea {
+   border: 2px solid var(--ink);
+   border-radius: var(--radius-md);
+   background: #fffef5;
+  }
+ </style>
 </head>
 <body>
-  <header class="idx-header-2m4k9b">
-    <div class="idx-navwrap-7x0t2p">
-      <div class="idx-brandbox-1c8f2a">
-        <a href="index.html">newparhaatsuomi</a>
-      </div>
-      <nav class="idx-nav-9n5k3d" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-        <a href="policy.html">Privacy</a>
-      </nav>
-      <div class="idx-ctabox-4p7d1x">
-        <a href="games.html">See Golden Goal</a>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="idx-hero-3v9k2q">
-      <div class="idx-herocopy-7g5m1d">
-        <span class="idx-herobadge-2t8c9r">Free-play lounge</span>
-        <h1>A retro reel lounge for quick, no-stakes play.</h1>
-        <p>newparhaatsuomi is a small, arcade-inspired social casino lounge built for short breaks, with a nod to kasinot culture. Golden Goal is front and center, with clear rules, readable cues, and a relaxed pace.</p>
-        <p>We built this the way we wanted it between classes: quick to load, easy to understand, and fine to close after a couple of spins.</p>
-        <p>The vibe is more arcade night than high-stakes anything. You can hang for a few minutes or just peek and leave.</p>
-        <div class="idx-heroactions-6y4p7n">
-          <a href="play.html">Play now</a>
-          <a href="games.html">See the game</a>
-        </div>
-        <p>18+ only. Free-play only; no real money, no prizes, no cash-out, and no purchase required. Not real-money gambling.</p>
-      </div>
-      <div class="idx-heroart-8h2w5s">
-        <svg viewBox="0 0 320 220" aria-hidden="true">
-          <rect x="20" y="20" width="280" height="140" rx="24" fill="rgba(255,255,255,0.55)" stroke="#1f9ea0" stroke-width="4"></rect>
-          <circle cx="80" cy="90" r="22" fill="#ff7a59" opacity="0.7"></circle>
-          <rect x="130" y="60" width="140" height="60" rx="14" fill="#f6b247" opacity="0.7"></rect>
-          <path d="M60 170 C110 120, 210 120, 260 170" stroke="#1b1a16" stroke-width="6" fill="none" opacity="0.6"></path>
-        </svg>
-        <div class="idx-herocard-9p6d2f">
-          <strong>Tonight's vibe</strong>
-          <span>Stadium energy with a retro glow</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="idx-gamepanel-p7z3k1">
-      <div class="idx-gameimgwrap-m4q8t2">
-        <img class="idx-gameimg-n9c5r7" src="golden_goal.png" alt="Golden Goal game artwork">
-      </div>
-      <div class="idx-gametext-v6b2x8">
-        <h2 class="idx-gametitle-s3h9j4">Golden Goal</h2>
-        <p>Golden Goal brings stadium energy, bold color, and quick rounds you can pick up in seconds.</p>
-        <p>The art leans into scoreboard blocks and chunky color, so you can read the reels without squinting.</p>
-        <p>If you only have a short break, it still feels complete. If you want longer, the pace doesn't rush you.</p>
-        <a class="idx-gamecta-l5d8w2" href="games.html">Game details</a>
-      </div>
-    </section>
-
-    <section class="idx-benefits-5r8d1f">
-      <h2>Why people come back</h2>
-      <div class="idx-benefitsgrid-9k1s6p">
-        <article>
-          <h3>Instant play</h3>
-          <p>Start immediately in your browser with no downloads and no account.</p>
-        </article>
-        <article>
-          <h3>Retro stadium feel</h3>
-          <p>Bright scoreboards and warm colors keep the screen lively without feeling busy.</p>
-        </article>
-        <article>
-          <h3>Clear rules</h3>
-          <p>Symbol guides and match rules are easy to read, so you always know what happened.</p>
-        </article>
-        <article>
-          <h3>Gentle pace</h3>
-          <p>Short rounds make it easy to stop and return later.</p>
-        </article>
-      </div>
-      <p>We also kept the site light so it doesn't choke on campus Wi-Fi or an older laptop.</p>
-      <p>The point is to keep it casual and easy to pause, not to keep you locked in.</p>
-    </section>
-
-    <section class="idx-featured-4m7c2v">
-      <h2>Golden Goal highlights</h2>
-      <p>These are the small details we notice when we play a few rounds. It's the little stuff that makes it feel tidy.</p>
-      <div class="idx-featuredgrid-1n5b8x">
-        <article>
-          <svg viewBox="0 0 160 80" aria-hidden="true">
-            <rect x="8" y="12" width="144" height="56" rx="16" fill="#e9f7ff"></rect>
-            <circle cx="44" cy="40" r="16" fill="#1f9ea0"></circle>
-            <circle cx="80" cy="40" r="10" fill="#ff7a59"></circle>
-            <rect x="98" y="30" width="42" height="20" rx="10" fill="#f6b247"></rect>
-          </svg>
-          <h3>Stadium Lights</h3>
-          <p>High contrast keeps symbols readable, even on small screens.</p>
-          <a href="games.html">See details</a>
-        </article>
-        <article>
-          <svg viewBox="0 0 160 80" aria-hidden="true">
-            <rect x="10" y="10" width="140" height="60" rx="18" fill="#fff3ea"></rect>
-            <path d="M30 54 L60 24 L90 54 Z" fill="#ff7a59"></path>
-            <circle cx="115" cy="40" r="14" fill="#1f9ea0"></circle>
-          </svg>
-          <h3>Crowd Wave</h3>
-          <p>Simple feedback and short rounds make it easy to jump in.</p>
-          <a href="games.html">See details</a>
-        </article>
-        <article>
-          <svg viewBox="0 0 160 80" aria-hidden="true">
-            <rect x="8" y="12" width="144" height="56" rx="16" fill="#fef7df"></rect>
-            <rect x="28" y="24" width="36" height="32" rx="8" fill="#1f9ea0"></rect>
-            <rect x="70" y="24" width="62" height="32" rx="8" fill="#ff7a59"></rect>
-          </svg>
-          <h3>Victory Run</h3>
-          <p>Gold accents and a clean layout keep the focus on the spin.</p>
-          <a href="games.html">See details</a>
-        </article>
-      </div>
-      <p>We keep this short on purpose. The game should speak for itself.</p>
-    </section>
-
-    <section class="idx-stats-3q6j9a">
-      <div class="idx-statsgrid-7t2f5m">
-        <div>
-          <strong>100%</strong>
-          <span>Practice mode</span>
-        </div>
-        <div>
-          <strong>0</strong>
-          <span>Real money</span>
-        </div>
-        <div>
-          <strong>3</strong>
-          <span>Minute breaks</span>
-        </div>
-      </div>
-      <p>The numbers are plain because we don't want fine print to be the loudest part of the page.</p>
-    </section>
-
-    <section class="idx-how-8c4l1y">
-      <h2>How it works</h2>
-      <div class="idx-stepsgrid-2p9h6d">
-        <article>
-          <span>Step 1</span>
-          <h3>Open the game</h3>
-          <p>Open Golden Goal and settle into the rhythm.</p>
-        </article>
-        <article>
-          <span>Step 2</span>
-          <h3>Play a few rounds</h3>
-          <p>Try a handful of spins and learn the cues.</p>
-        </article>
-        <article>
-          <span>Step 3</span>
-          <h3>Pause anytime</h3>
-          <p>Step away whenever you want and return later.</p>
-        </article>
-      </div>
-      <p>That's the whole loop. Open it, play a little, and step away whenever you want.</p>
-    </section>
-
-    <section class="idx-notes-7f3k1m">
-      <h2>Notes from the lounge</h2>
-      <p>We kept the project small on purpose. One game means we can focus on pacing instead of a huge menu.</p>
-      <p>It's low-key by design. Think of it like a quick reset when your day is full of little gaps.</p>
-      <p>Any on-screen credits are for play only and have no real-world value.</p>
-      <p>If something feels confusing or too loud, that's on us. Send a note and we will fix it.</p>
-      <ul class="idx-noteslist-9r2b5c">
-        <li>Short sessions work best.</li>
-        <li>No account or download needed.</li>
-        <li>Entertainment only, no real money or prizes.</li>
-        <li>No cash-out or withdrawals.</li>
-      </ul>
-    </section>
-
-    <section class="idx-longread-4t9x2m">
-      <h2>Why it feels different</h2>
-      <div class="idx-longgrid-7p1c8d">
-        <div>
-          <p>We made newparhaatsuomi for short breaks. It is the kind of site you open while waiting for the bus or while your coffee cools down.</p>
-          <p>Instead of a big menu, we kept one game and cleaned up the layout. That makes the page faster to scan and less exhausting to look at.</p>
-          <p>Golden Goal is built around a stadium theme because it reads clearly, even when your screen is small or your eyes are tired.</p>
-        </div>
-        <div>
-          <p>We test it the way we actually use it: on campus Wi-Fi, on phones with a cracked screen, and on laptops that have seen too many all-nighters.</p>
-          <p>We are not chasing streaks or leaderboards here. The goal is a calm loop that you can step away from without feeling guilty.</p>
-          <p>If you want to compare spins with a friend, go for it. If you want quiet time, that works too.</p>
-        </div>
-      </div>
-      <div class="idx-longcallout-6v0k3q">
-        <h3>What "social" means here</h3>
-        <p>It means a shared vibe, not a feed. This is a social casino lounge in the sense that it is light, casual, and easy to enjoy with friends.</p>
-        <p>It is simulated play only, with no real money wagering or cash-out options.</p>
-      </div>
-      <h3>Quick pocket guide</h3>
-      <ul class="idx-longlist-2n8b5j">
-        <li>Start with a few spins just to see the symbols and pacing.</li>
-        <li>Keep your volume low if you are in public spaces.</li>
-        <li>Step away after a short set; the game is built for that.</li>
-        <li>Remember: no purchase required, practice mode only, no real money, no prizes, and no cash-out.</li>
-      </ul>
-      <p>We are still polishing the details, so if something feels off, let us know. Small fixes make the biggest difference here.</p>
-    </section>
-  </main>
-
-  <footer class="idx-footer-7m2v6b">
-    <div class="idx-footergrid-1p5r8d">
-      <div class="idx-footerbrand-0q6t3x">
-        <a href="index.html">newparhaatsuomi</a>
-        <p>Retro-leaning free-play lounge with a stadium vibe and an easy pace.</p>
-      </div>
-      <div class="idx-footerlinks-4c8h2n">
-        <strong>Explore</strong>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-        <a href="policy.html">Privacy</a>
-      </div>
-      <div class="idx-footernews-9z1s5w">
-        <strong>Newsletter</strong>
-        <p>Occasional notes about Golden Goal and site tweaks. Signups are stored locally on your device.</p>
-        <form class="idx-newsform-6e3k9p" data-newsletter-form>
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" autocomplete="name" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
-          <button type="submit">Sign up</button>
-        </form>
-        <div class="idx-newssuccess-2n7d4r" data-newsletter-success hidden>
-          <p>Thanks for signing up. This signup is stored locally on your device.</p>
-        </div>
-      </div>
-    </div>
-    <div class="idx-disclaimer-5l1x8c">
-      <p>18+ only. For entertainment only; no real money, no prizes, and no cash-out. Not real-money gambling. Please play responsibly and take breaks.</p>
-    </div>
-    <div class="idx-footnote-8w4q7b">
-      <p>(c) 2026 newparhaatsuomi. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <div class="idx-cookie-6f3t1m" data-cookie-banner hidden>
-    <div class="idx-cookieinner-1k9d5v">
-      <p>We use cookies to remember your choices and keep the site running smoothly.</p>
-      <div class="idx-cookieactions-4b7h0n">
-        <button type="button" data-cookie-accept>Accept</button>
-        <button type="button" data-cookie-decline>Decline</button>
-      </div>
+ <header class="idx-header-2m4k9b">
+  <div class="idx-navwrap-7x0t2p">
+   <div class="idx-brandbox-1c8f2a">
+    <a href="index.html">Newparhaatsuomi</a>
+   </div>
+   <nav class="idx-nav-9n5k3d" aria-label="Primary">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Privacy</a>
+   </nav>
+   <div class="idx-ctabox-4p7d1x">
+    <a href="games.html">See games</a>
+   </div>
+  </div>
+ </header>
+ <main>
+  <section class="idx-hero-3v9k2q">
+   <div class="idx-herocopy-7g5m1d">
+    <span class="idx-herobadge-2t8c9r">Free-play lounge</span>
+    <h1>Free-play games for short breaks.</h1>
+    <p>21+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
+    <p>Pick Dice Drift, Match Mosaic, or Retro Reels. Each one is easy to learn, and you can stop whenever.</p>
+    <div class="idx-heroactions-6y4p7n">
+     <a href="play.html">Play now</a>
+     <a href="games.html">See the games</a>
     </div>
   </div>
+   <div class="idx-heroart-8h2w5s">
+    <svg viewBox="0 0 320 220" aria-hidden="true">
+     <rect x="20" y="20" width="280" height="140" rx="24" fill="rgba(255,255,255,0.55)" stroke="#1f9ea0" stroke-width="4"></rect>
+     <circle cx="80" cy="90" r="22" fill="#ff7a59" opacity="0.7"></circle>
+     <rect x="130" y="60" width="140" height="60" rx="14" fill="#f6b247" opacity="0.7"></rect>
+     <path d="M60 170 C110 120, 210 120, 260 170" stroke="#1b1a16" stroke-width="6" fill="none" opacity="0.6"></path>
+    </svg>
+    <div class="idx-herocard-9p6d2f">
+     <strong>Tonight's vibe</strong>
+     <span>Three small games with a retro glow</span>
+    </div>
+   </div>
+  </section>
 
-  <script>
-    // Simple front-end helpers for cookie choice, newsletter, and contact.
-    (function () {
-      // Cookie banner: remember the choice and hide the banner.
-      const banner = document.querySelector('[data-cookie-banner]');
-      const acceptBtn = document.querySelector('[data-cookie-accept]');
-      const declineBtn = document.querySelector('[data-cookie-decline]');
-      const key = 'nps-cookie-choice';
+  <section class="idx-gamepanel-p7z3k1">
+   <div class="idx-gameimgwrap-m4q8t2">
+    <div class="idx-gameimggrid-6p3k8x" aria-label="Game previews">
+     <img src="dice.webp" alt="Dice Drift preview">
+     <img src="match.webp" alt="Match Mosaic preview">
+     <img src="reels.webp" alt="Retro Reels preview">
+    </div>
+   </div>
+   <div class="idx-gametext-v6b2x8">
+    <h2 class="idx-gametitle-s3h9j4">Pick your game</h2>
+    <p>Pick a vibe and jump in. The rounds are short and the rules are simple.</p>
+    <ul class="idx-gamelist-3h9x2k">
+     <li><strong>Dice Drift:</strong> Roll two dice and chase your best total.</li>
+     <li><strong>Match Mosaic:</strong> Flip cards and clear pairs in a tidy grid.</li>
+     <li><strong>Retro Reels:</strong> A reel-style spin with bold, readable symbols.</li>
+    </ul>
+    <a class="idx-gamecta-l5d8w2" href="games.html">Browse games</a>
+   </div>
+  </section>
 
-      if (banner && acceptBtn && declineBtn) {
-        try {
-          const stored = localStorage.getItem(key);
-          banner.hidden = !!stored;
-        } catch (e) {
-          banner.hidden = false;
-        }
-        const setChoice = (value) => {
-          try {
-            localStorage.setItem(key, value);
-          } catch (e) {
-          }
-          banner.hidden = true;
-        };
-        acceptBtn.addEventListener('click', () => setChoice('accepted'));
-        declineBtn.addEventListener('click', () => setChoice('declined'));
-      }
+  <section class="idx-benefits-5r8d1f">
+   <h2>Why people come back</h2>
+   <div class="idx-benefitsgrid-9k1s6p">
+    <article>
+     <h3>Jump in easily</h3>
+     <p>No downloads, no accounts. Just open a page and play.</p>
+    </article>
+    <article>
+     <h3>Readable design</h3>
+     <p>High-contrast art keeps everything easy to see.</p>
+    </article>
+    <article>
+     <h3>Simple rules</h3>
+     <p>You can tell what happened without digging for a guide.</p>
+    </article>
+    <article>
+     <h3>Easy to pause</h3>
+     <p>Short rounds make it simple to stop and come back.</p>
+    </article>
+   </div>
+   <p>We try to keep the site simple so the pages feel calm and easy to read.</p>
+   <p>The goal is a relaxed break, not a time sink.</p>
+  </section>
 
-      // Newsletter form: store locally and show a success state.
-      const newsForm = document.querySelector('[data-newsletter-form]');
-      const newsSuccess = document.querySelector('[data-newsletter-success]');
-      if (newsForm && newsSuccess) {
-        newsForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          try {
-            const nameField = newsForm.elements.name;
-            const emailField = newsForm.elements.email;
-            const payload = {
-              name: nameField ? nameField.value.trim() : '',
-              email: emailField ? emailField.value.trim() : '',
-              ts: new Date().toISOString()
-            };
-            localStorage.setItem('nps-newsletter', JSON.stringify(payload));
-          } catch (e) {
-          }
-          newsForm.reset();
-          newsForm.hidden = true;
-          newsSuccess.hidden = false;
-        });
-      }
+  <section class="idx-featured-4m7c2v">
+   <h2>Game highlights</h2>
+   <p>Three vibes, same low-key pace. Pick what fits.</p>
+   <div class="idx-featuredgrid-1n5b8x">
+    <article>
+     <img src="dice.webp" alt="Dice Drift preview">
+     <h3>Dice Drift</h3>
+     <p>Quick rolls, clear totals, and a pace you can pause anytime.</p>
+     <a href="dice.html">Play Dice Drift</a>
+    </article>
+    <article>
+     <img src="match.webp" alt="Match Mosaic preview">
+     <h3>Match Mosaic</h3>
+     <p>Flip, find pairs, and clear the board with no timer pressure.</p>
+     <a href="match.html">Play Match Mosaic</a>
+    </article>
+    <article>
+     <img src="reels.webp" alt="Retro Reels preview">
+     <h3>Retro Reels</h3>
+     <p>A reel-style spin with bold symbols and simple outcomes.</p>
+     <a href="reels.html">Play Retro Reels</a>
+    </article>
+   </div>
+   <p>We keep this short on purpose. Try one and see what clicks.</p>
+  </section>
 
-      // Contact form: show a confirmation state without a backend.
-      const contactForm = document.querySelector('[data-contact-form]');
-      const contactSuccess = document.querySelector('[data-contact-success]');
-      if (contactForm && contactSuccess) {
-        contactForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          contactForm.reset();
-          contactForm.hidden = true;
-          contactSuccess.hidden = false;
-        });
-      }
-    })();
-  </script>
+  <section class="idx-stats-3q6j9a">
+   <div class="idx-statsgrid-7t2f5m">
+    <div>
+     <strong>100%</strong>
+     <span>Practice mode</span>
+    </div>
+    <div>
+     <strong>0</strong>
+     <span>Real money</span>
+    </div>
+    <div>
+     <strong>3</strong>
+     <span>Games</span>
+    </div>
+   </div>
+   <p>We keep the stats simple so nothing feels hidden.</p>
+  </section>
+
+  <section class="idx-how-8c4l1y">
+   <h2>How it works</h2>
+   <div class="idx-stepsgrid-2p9h6d">
+    <article>
+     <span>Step 1</span>
+     <h3>Choose a game</h3>
+     <p>Pick Dice Drift, Match Mosaic, or Retro Reels.</p>
+    </article>
+    <article>
+     <span>Step 2</span>
+     <h3>Play a few rounds</h3>
+     <p>Play a few rounds and get the hang of it.</p>
+    </article>
+    <article>
+     <span>Step 3</span>
+     <h3>Pause anytime</h3>
+     <p>Stop whenever you want and come back later.</p>
+    </article>
+   </div>
+   <p>That is the loop: open a game, play a bit, and close the tab when you are done.</p>
+  </section>
+
+  <section class="idx-notes-7f3k1m">
+   <h2>Notes from the lounge</h2>
+   <p>We keep the lineup small so the pacing stays tight and the pages stay clean.</p>
+   <p>Think of it as a small reset when you have a few minutes to spare.</p>
+   <p>Any on-screen credits are just for play and have no real-world value.</p>
+   <p>If something feels off, tell us. We actually read it.</p>
+   <ul class="idx-noteslist-9r2b5c">
+    <li>Short sessions work best.</li>
+    <li>No account or download needed.</li>
+    <li>Free-play only, no real money or prizes.</li>
+    <li>No cash-out or withdrawals.</li>
+   </ul>
+  </section>
+
+  <section class="idx-longread-4t9x2m">
+   <h2>Why it feels different</h2>
+   <div class="idx-longgrid-7p1c8d">
+    <div>
+     <p>We built Newparhaatsuomi for short breaks. It is the kind of site you open while waiting for a ride or while your coffee cools down.</p>
+     <p>Three games keep the menu simple and the page easy on the eyes.</p>
+     <p>Dice Drift uses bold numbers, Match Mosaic keeps the grid tidy, and Retro Reels keeps symbols chunky and readable.</p>
+    </div>
+    <div>
+     <p>We try it the way we actually use it and keep it readable across different screens.</p>
+     <p>No streak chasing or leaderboards here. The point is a calm loop you can walk away from.</p>
+     <p>Compare rounds with a friend or keep it quiet. Both work.</p>
+    </div>
+   </div>
+   <div class="idx-longcallout-6v0k3q">
+    <h3>What "free-play" means here</h3>
+    <p>It means you can play for fun without money on the line. The lounge stays light, casual, and easy to enjoy with friends.</p>
+    <p>It's simulated play only, with no real money or cash-out.</p>
+   </div>
+   <h3>Pocket guide</h3>
+   <ul class="idx-longlist-2n8b5j">
+    <li>Start with a few rounds to get the feel.</li>
+    <li>Keep your volume low if you are in public spaces.</li>
+    <li>Step away after a short set. The games are built for that.</li>
+    <li>Remember: free-play only, no real money, prizes, or cash-out.</li>
+   </ul>
+   <p>We are still polishing details, so if something feels off, let us know. Small fixes help.</p>
+  </section>
+ </main>
+
+ <footer class="idx-footer-7m2v6b">
+  <div class="idx-footergrid-1p5r8d">
+   <div class="idx-footerbrand-0q6t3x">
+    <a href="index.html">Newparhaatsuomi</a>
+    <p>Retro-style free-play lounge with a small set of low-key games.</p>
+   </div>
+   <div class="idx-footerlinks-4c8h2n">
+    <strong>Explore</strong>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Privacy</a>
+   </div>
+   <div class="idx-footernews-9z1s5w">
+    <strong>Newsletter</strong>
+    <p>A few updates about new games and site tweaks. Signups are stored locally on your device.</p>
+    <form class="idx-newsform-6e3k9p" data-newsletter-form>
+     <label>
+      <span>Name</span>
+      <input type="text" name="name" autocomplete="name" required>
+     </label>
+     <label>
+      <span>Email</span>
+      <input type="email" name="email" autocomplete="email" required>
+     </label>
+     <button type="submit">Sign up</button>
+    </form>
+    <div class="idx-newssuccess-2n7d4r" data-newsletter-success hidden>
+     <p>Thanks for signing up. We store this on your device only.</p>
+    </div>
+   </div>
+  </div>
+  <div class="idx-disclaimer-5l1x8c">
+   <p>21+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
+  </div>
+  <div class="idx-footnote-8w4q7b">
+   <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
+  </div>
+ </footer>
+
+ <div class="idx-cookie-6f3t1m" data-cookie-banner hidden>
+  <div class="idx-cookieinner-1k9d5v">
+   <p>We use local storage to remember your choices and keep the site running smoothly.</p>
+   <div class="idx-cookieactions-4b7h0n">
+    <button type="button" data-cookie-accept>Accept</button>
+    <button type="button" data-cookie-decline>Decline</button>
+   </div>
+  </div>
+ </div>
+
+ <script>
+  // Simple front-end helpers for cookie choice and newsletter.
+  // Client-side only: uses local storage, no network calls, no payments.
+  (function () {
+   // Cookie banner: remember the choice and hide the banner.
+   const banner = document.querySelector('[data-cookie-banner]');
+   const acceptBtn = document.querySelector('[data-cookie-accept]');
+   const declineBtn = document.querySelector('[data-cookie-decline]');
+   const key = 'nps-cookie-choice';
+
+   if (banner && acceptBtn && declineBtn) {
+    try {
+     const stored = localStorage.getItem(key);
+     banner.hidden = !!stored;
+    } catch (e) {
+     banner.hidden = false;
+    }
+    const setChoice = (value) => {
+     try {
+      localStorage.setItem(key, value);
+     } catch (e) {
+     }
+     banner.hidden = true;
+    };
+    acceptBtn.addEventListener('click', () => setChoice('accepted'));
+    declineBtn.addEventListener('click', () => setChoice('declined'));
+   }
+
+   // Newsletter form: store locally and show a success state.
+   const newsForm = document.querySelector('[data-newsletter-form]');
+   const newsSuccess = document.querySelector('[data-newsletter-success]');
+   if (newsForm && newsSuccess) {
+    newsForm.addEventListener('submit', (event) => {
+     event.preventDefault();
+     try {
+      const nameField = newsForm.elements.name;
+      const emailField = newsForm.elements.email;
+      const payload = {
+       name: nameField ? nameField.value.trim() : '',
+       email: emailField ? emailField.value.trim() : '',
+       ts: new Date().toISOString()
+      };
+      localStorage.setItem('nps-newsletter', JSON.stringify(payload));
+     } catch (e) {
+     }
+     newsForm.reset();
+     newsForm.hidden = true;
+     newsSuccess.hidden = false;
+    });
+   }
+  })();
+ </script>
 </body>
 </html>
 
