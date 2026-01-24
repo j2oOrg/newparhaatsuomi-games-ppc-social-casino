@@ -4,7 +4,7 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Match Mosaic | Newparhaatsuomi</title>
- <meta name="description" content="Play Match Mosaic at Newparhaatsuomi. Free-play only, 21+ only. No real money, prizes, or cash-out.">
+ <meta name="description" content="Play Match Mosaic at Newparhaatsuomi. Free-play only, 18+ only. No real money, prizes, or cash-out.">
  <style>
  @font-face {
   font-family: "Sefairy";
@@ -538,9 +538,81 @@
    border-radius: var(--radius-md);
    background: #fffef5;
   }
+ 
+  .age-gate {
+   position: fixed;
+   inset: 0;
+   background: rgba(27, 20, 51, 0.85);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 24px;
+   z-index: 999;
+  }
+  .age-gate[hidden] {
+   display: none;
+  }
+  .age-gate__card {
+   max-width: 520px;
+   width: min(520px, 100%);
+   background: var(--cream);
+   color: var(--ink);
+   padding: 24px;
+   border-radius: var(--radius-md);
+   border: 2px solid var(--ink);
+   box-shadow: var(--shadow);
+   display: grid;
+   gap: 12px;
+  }
+  .age-gate__actions {
+   display: flex;
+   gap: 12px;
+   flex-wrap: wrap;
+  }
+  .age-gate__actions button {
+   padding: 10px 16px;
+   border-radius: var(--radius-md);
+   font-weight: 700;
+  }
+  .age-gate__actions button:first-child {
+   background: var(--ink);
+   color: #fff;
+  }
+  .age-gate__actions button:last-child {
+   background: transparent;
+   border: 2px solid var(--ink);
+   color: var(--ink);
+  }
+  .age-gate__note {
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+   margin: 0;
+  }
+  .age-gate__title {
+   margin: 0;
+  }
+  .age-gate--declined .age-gate__actions {
+   display: none;
+  }
+  .age-locked {
+   overflow: hidden;
+  }
  </style>
 </head>
 <body>
+
+ <div class="age-gate" data-age-gate hidden>
+  <div class="age-gate__card" role="dialog" aria-modal="true" aria-labelledby="age-gate-title" aria-describedby="age-gate-message">
+   <h2 class="age-gate__title" id="age-gate-title">Confirm your age</h2>
+   <p id="age-gate-message" data-age-message>You must be 18+ (legal gambling age) to enter. Free-play only. No real money, prizes, or cash-out.</p>
+   <div class="age-gate__actions">
+    <button type="button" data-age-accept>Yes, I am 18+</button>
+    <button type="button" data-age-decline>No, exit</button>
+   </div>
+   <p class="age-gate__note">Your choice is stored on your device.</p>
+  </div>
+ </div>
+
  <header class="ply-header-2m4k9b">
   <div class="ply-navwrap-7x0t2p">
    <div class="ply-brandbox-1c8f2a">
@@ -568,10 +640,10 @@
     <p>Short rounds and easy to pause.</p>
     <div class="ply-notices-2t8c9r">
      <span>Practice mode only</span>
-     <span>21+ only</span>
+     <span>18+ only</span>
      <span>For entertainment only</span>
     </div>
-    <p>21+ only. Intended for users over the legal gambling age. Not for minors. Free-play only. No real money gambling or prizes of real-world value. No cash-out or in-app purchases. In-game credits have no real-world value.</p>
+    <p>18+ only. Intended for users over the legal gambling age. Not for minors. Free-play only. No real money gambling or prizes of real-world value. No cash-out or in-app purchases. In-game credits have no real-world value.</p>
    </div>
    <div class="ply-preview-6y4p7n">
     <img src="match.webp" alt="Match Mosaic artwork">
@@ -644,7 +716,7 @@
    </div>
   </div>
   <div class="ply-disclaimer-5l1x8c">
-   <p>21+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
+   <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
   </div>
   <div class="ply-footnote-8w4q7b">
    <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
@@ -847,6 +919,78 @@
    }
   })();
  </script>
+
+ <script>
+  // Age gate: blocks page access until 18+ confirmation.
+  // Client-side only: uses local storage, no network calls, no payments.
+  (function () {
+   // Grab the on-page age gate elements.
+   const gate = document.querySelector('[data-age-gate]');
+   const accept = document.querySelector('[data-age-accept]');
+   const decline = document.querySelector('[data-age-decline]');
+   const message = document.querySelector('[data-age-message]');
+   const key = 'nps-age-gate';
+
+   // Exit early if the gate is not present on this page.
+   if (!gate || !accept || !decline) {
+    return;
+   }
+
+   // Show the gate and optionally lock it in a declined state.
+   const showGate = (declined) => {
+    gate.hidden = false;
+    document.body.classList.add('age-locked');
+    if (declined) {
+     gate.classList.add('age-gate--declined');
+     if (message) {
+      message.textContent = 'Sorry, you must be 18+ to enter this free-play site.';
+     }
+    }
+   };
+
+   // Hide the gate and allow page access.
+   const hideGate = () => {
+    gate.hidden = true;
+    document.body.classList.remove('age-locked');
+    gate.classList.remove('age-gate--declined');
+   };
+
+   // Check stored choice from local storage.
+   let stored = null;
+   try {
+    stored = localStorage.getItem(key);
+   } catch (e) {
+    stored = null;
+   }
+
+   if (stored === 'accepted') {
+    hideGate();
+   } else if (stored === 'declined') {
+    showGate(true);
+   } else {
+    showGate(false);
+   }
+
+   // Accept: allow entry and remember the choice.
+   accept.addEventListener('click', () => {
+    try {
+     localStorage.setItem(key, 'accepted');
+    } catch (e) {
+    }
+    hideGate();
+   });
+
+   // Decline: keep the gate visible and remember the choice.
+   decline.addEventListener('click', () => {
+    try {
+     localStorage.setItem(key, 'declined');
+    } catch (e) {
+    }
+    showGate(true);
+   });
+  })();
+ </script>
+
 </body>
 </html>
 
