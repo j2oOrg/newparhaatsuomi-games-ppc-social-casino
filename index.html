@@ -234,12 +234,15 @@
    border: 1px solid rgba(27, 26, 22, 0.15);
    background: rgba(246, 178, 71, 0.12);
   }
-  .idx-gameimggrid-6p3k8x {
-   display: grid;
-   grid-template-columns: repeat(3, minmax(0, 1fr));
-   gap: 8px;
-   padding: 10px;
-  }
+ .idx-gameimggrid-6p3k8x {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px;
+ }
+ .idx-gameimggrid-6p3k8x a {
+  display: block;
+ }
   .idx-gameimggrid-6p3k8x img {
    width: 100%;
    aspect-ratio: 1 / 1;
@@ -326,13 +329,16 @@
    display: grid;
    gap: 12px;
   }
-  .idx-featuredgrid-1n5b8x img {
-   width: 100%;
-   height: 120px;
-   object-fit: cover;
-   border-radius: 14px;
-   border: 1px solid rgba(27, 26, 22, 0.15);
-  }
+ .idx-featuredgrid-1n5b8x img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(27, 26, 22, 0.15);
+ }
+ .idx-featuredgrid-1n5b8x a.preview {
+  display: block;
+ }
   .idx-featuredgrid-1n5b8x a {
    display: inline-flex;
    align-items: center;
@@ -745,9 +751,15 @@
   <section class="idx-gamepanel-p7z3k1">
    <div class="idx-gameimgwrap-m4q8t2">
     <div class="idx-gameimggrid-6p3k8x" aria-label="Game previews">
-     <img src="winterland.webp" alt="Finnish Winter Land preview">
-     <img src="match.webp" alt="Match Mosaic preview">
-     <img src="reels.webp" alt="Retro Reels preview">
+     <a href="dice.html" aria-label="Play Finnish Winter Land">
+      <img src="winterland.webp" alt="Finnish Winter Land preview">
+     </a>
+     <a href="match.html" aria-label="Play Match Mosaic">
+      <img src="match.webp" alt="Match Mosaic preview">
+     </a>
+     <a href="reels.html" aria-label="Play Retro Reels">
+      <img src="reels.webp" alt="Retro Reels preview">
+     </a>
     </div>
    </div>
    <div class="idx-gametext-v6b2x8">
@@ -791,19 +803,25 @@
    <p>Three vibes, same low-key pace. Pick what fits.</p>
    <div class="idx-featuredgrid-1n5b8x">
     <article>
-     <img src="winterland.webp" alt="Finnish Winter Land preview">
+     <a class="preview" href="dice.html" aria-label="Play Finnish Winter Land">
+      <img src="winterland.webp" alt="Finnish Winter Land preview">
+     </a>
      <h3>Finnish Winter Land</h3>
      <p>Winter-themed play with a calm, easy-to-pause rhythm.</p>
      <a href="dice.html">Play Finnish Winter Land</a>
     </article>
     <article>
-     <img src="match.webp" alt="Match Mosaic preview">
+     <a class="preview" href="match.html" aria-label="Play Match Mosaic">
+      <img src="match.webp" alt="Match Mosaic preview">
+     </a>
      <h3>Match Mosaic</h3>
      <p>Flip, find pairs, and clear the board with no timer pressure.</p>
      <a href="match.html">Play Match Mosaic</a>
     </article>
     <article>
-     <img src="reels.webp" alt="Retro Reels preview">
+     <a class="preview" href="reels.html" aria-label="Play Retro Reels">
+      <img src="reels.webp" alt="Retro Reels preview">
+     </a>
      <h3>Retro Reels</h3>
      <p>A reel-style spin with bold symbols and simple outcomes.</p>
      <a href="reels.html">Play Retro Reels</a>
@@ -940,7 +958,7 @@
 
  <div class="idx-cookie-6f3t1m" data-cookie-banner hidden>
   <div class="idx-cookieinner-1k9d5v">
-   <p>We use local storage to remember your choices and keep the site running smoothly.</p>
+   <p>shite</p>
    <div class="idx-cookieactions-4b7h0n">
     <button type="button" data-cookie-accept>Accept</button>
     <button type="button" data-cookie-decline>Decline</button>
