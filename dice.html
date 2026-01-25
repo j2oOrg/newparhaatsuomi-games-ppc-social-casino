@@ -606,12 +606,12 @@
   <!-- Game play area: embedded game. -->
   <section class="ply-gamegrid-8h2w5s">
    <h2>Play Finnish Winter Land</h2>
-   <p>Use the embedded window below to start playing. If it does not load, open it in a new tab.</p>
-   <div class="ply-frameinner-1n5b8x">
-    <iframe src="https://socialgamesstudio.com/winterland" title="Finnish Winter Land game" loading="lazy" allowfullscreen></iframe>
+   <p>Use the embedded window below to start playing. Toggle fullscreen for a larger view.</p>
+   <div class="ply-frameinner-1n5b8x" data-embed-wrap>
+    <iframe src="https://socialgamesstudio.com/winterland" title="Finnish Winter Land game" loading="lazy" allow="fullscreen" allowfullscreen data-embed-frame></iframe>
    </div>
    <div class="ply-controls-9p6d2f">
-    <a href="https://socialgamesstudio.com/winterland" target="_blank" rel="noopener noreferrer">Open in a new tab</a>
+    <button type="button" data-fullscreen>Fullscreen</button>
    </div>
   </section>
 
@@ -673,6 +673,34 @@
    </div>
   </div>
  </div>
+
+ <script>
+  // Embedded fullscreen toggle for the game iframe.
+  (function () {
+   const button = document.querySelector('[data-fullscreen]');
+   const frame = document.querySelector('[data-embed-frame]');
+   const wrap = document.querySelector('[data-embed-wrap]');
+   if (!button || (!frame && !wrap)) {
+    return;
+   }
+   const target = frame || wrap;
+   const request = target.requestFullscreen
+    || target.webkitRequestFullscreen
+    || target.mozRequestFullScreen
+    || target.msRequestFullscreen;
+   if (!request) {
+    button.disabled = true;
+    button.textContent = 'Fullscreen unavailable';
+    return;
+   }
+   button.addEventListener('click', () => {
+    try {
+     request.call(target);
+    } catch (e) {
+    }
+   });
+  })();
+ </script>
 
  <script>
   // Simple front-end helpers for cookie choice and newsletter.
