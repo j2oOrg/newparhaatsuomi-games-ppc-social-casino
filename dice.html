@@ -3,8 +3,8 @@
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Dice Drift | Newparhaatsuomi</title>
- <meta name="description" content="Play Dice Drift at Newparhaatsuomi. Free-play only, 18+ only. No real money, prizes, or cash-out.">
+ <title>Finnish Winter Land | Newparhaatsuomi</title>
+ <meta name="description" content="Play Finnish Winter Land at Newparhaatsuomi. Free-play only, 18+ only. No real money, prizes, or cash-out.">
  <style>
  @font-face {
   font-family: "Sefairy";
@@ -265,63 +265,6 @@
    letter-spacing: 1.2px;
    width: fit-content;
   }
-  .dice-panel-7p2h5n {
-   display: grid;
-   gap: 16px;
-   margin-top: 16px;
-  }
-  .dice-display-6t1m4b {
-   display: flex;
-   gap: 12px;
-   flex-wrap: wrap;
-  }
-  .dice-face-9k3p1x {
-   width: 72px;
-   height: 72px;
-   border-radius: 16px;
-   border: 2px solid var(--ink);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-size: 1.6rem;
-   font-weight: 700;
-   background: #fffef5;
-  }
-  .dice-stats-3f8q2z {
-   display: grid;
-   gap: 12px;
-   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-  .dice-stat-2m7k1v {
-   background: rgba(31, 158, 160, 0.12);
-   border-radius: 12px;
-   padding: 10px 12px;
-   display: grid;
-   gap: 6px;
-   font-size: 0.85rem;
-   color: var(--ink-soft);
-  }
-  .dice-stat-2m7k1v strong {
-   font-size: 1.2rem;
-   color: var(--ink);
-  }
-  .dice-controls-8h4p6d {
-   display: flex;
-   gap: 12px;
-   flex-wrap: wrap;
-  }
-  .dice-controls-8h4p6d button {
-   padding: 10px 16px;
-   border-radius: 999px;
-   background: var(--ink);
-   color: #fff;
-   font-weight: 700;
-  }
-  .dice-controls-8h4p6d button:last-child {
-   background: transparent;
-   color: var(--ink);
-   border: 1px solid rgba(27, 26, 22, 0.2);
-  }
   .ply-framewrap-8h2w5s {
    margin-top: 32px;
    background: #fff;
@@ -336,11 +279,17 @@
   }
   .ply-frameinner-1n5b8x {
    width: 100%;
-   aspect-ratio: 16 / 9;
+   aspect-ratio: 4 / 3;
+   min-height: 560px;
    border-radius: 16px;
    overflow: hidden;
    border: 1px solid rgba(27, 26, 22, 0.12);
    background: #000;
+  }
+  .ply-frameinner-1n5b8x iframe {
+   width: 100%;
+   height: 100%;
+   border: 0;
   }
 .ply-footer-7m2v6b {
    margin-top: 80px;
@@ -635,59 +584,40 @@
  <main>
   <section class="ply-hero-3v9k2q">
    <div class="ply-herocopy-7g5m1d">
-    <h1>Dice Drift</h1>
-    <p>Roll two dice and try to beat your best total.</p>
-    <p>Short rounds and easy to pause.</p>
+    <h1>Finnish Winter Land</h1>
+    <p>Step into a winter-themed free-play escape.</p>
+    <p>Embedded below for quick sessions.</p>
     <div class="ply-notices-2t8c9r">
-     <span>Practice mode only</span>
+     <span>Embedded game</span>
      <span>18+ only</span>
      <span>For entertainment only</span>
     </div>
     <p>18+ only. Intended for users over the legal gambling age. Not for minors. Free-play only. No real money gambling or prizes of real-world value. No cash-out or in-app purchases. In-game credits have no real-world value.</p>
    </div>
    <div class="ply-preview-6y4p7n">
-    <img src="dice.webp" alt="Dice Drift artwork">
+    <img src="winterland.webp" alt="Finnish Winter Land preview">
     <div class="ply-infobox-5r8d1f">
-     <strong>Best total</strong>
-     <span>Try to hit 12</span>
+     <strong>Winter vibes</strong>
+     <span>Quick sessions</span>
     </div>
    </div>
   </section>
 
-  <!-- Game play area: dice roll results are shown on screen only. -->
+  <!-- Game play area: embedded game. -->
   <section class="ply-gamegrid-8h2w5s">
-   <h2>Roll the dice</h2>
-   <p>Press Roll to throw both dice and track your best total.</p>
-   <div class="dice-panel-7p2h5n">
-    <div class="dice-display-6t1m4b">
-     <div class="dice-face-9k3p1x" data-die="1">1</div>
-     <div class="dice-face-9k3p1x" data-die="2">1</div>
-    </div>
-    <div class="dice-stats-3f8q2z">
-     <div class="dice-stat-2m7k1v">
-      <span>Last total</span>
-      <strong data-total>2</strong>
-     </div>
-     <div class="dice-stat-2m7k1v">
-      <span>Best total</span>
-      <strong data-best>2</strong>
-     </div>
-     <div class="dice-stat-2m7k1v">
-      <span>Rolls</span>
-      <strong data-rolls>0</strong>
-     </div>
-    </div>
-    <div class="dice-controls-8h4p6d">
-     <button type="button" data-roll>Roll dice</button>
-     <button type="button" data-reset>Reset</button>
-    </div>
+   <h2>Play Finnish Winter Land</h2>
+   <p>Use the embedded window below to start playing. If it does not load, open it in a new tab.</p>
+   <div class="ply-frameinner-1n5b8x">
+    <iframe src="https://socialgamesstudio.com/winterland" title="Finnish Winter Land game" loading="lazy" allowfullscreen></iframe>
    </div>
-   <p>Tip: Doubles feel great. A 12 is the max.</p>
+   <div class="ply-controls-9p6d2f">
+    <a href="https://socialgamesstudio.com/winterland" target="_blank" rel="noopener noreferrer">Open in a new tab</a>
+   </div>
   </section>
 
   <section class="ply-framewrap-8h2w5s">
    <h2>How it works</h2>
-   <p>Each roll is random. There is no real money gambling, no prizes of real-world value, and no cash-out.</p>
+   <p>Finnish Winter Land is embedded for free-play only, with no real money, prizes, or cash-out.</p>
    <p>Play for a few minutes and step away whenever you want.</p>
   </section>
  </main>
@@ -743,62 +673,6 @@
    </div>
   </div>
  </div>
-
- <script>
-  // Dice Drift: simple dice roll game (free-play only).
-  // This script is client-side only and does not make network calls or payments.
-  (function () {
-   // Grab the on-page elements used by the game.
-   const dieA = document.querySelector('[data-die="1"]');
-   const dieB = document.querySelector('[data-die="2"]');
-   const totalEl = document.querySelector('[data-total]');
-   const bestEl = document.querySelector('[data-best]');
-   const rollsEl = document.querySelector('[data-rolls]');
-   const rollBtn = document.querySelector('[data-roll]');
-   const resetBtn = document.querySelector('[data-reset]');
-
-   // Exit early if the controls are missing.
-   if (!rollBtn || !resetBtn) {
-    return;
-   }
-
-   // Track best total and roll count for this session.
-   let best = 2;
-   let rolls = 0;
-
-   // Update the UI with the current dice values and totals.
-   const setValues = (a, b) => {
-    const total = a + b;
-    dieA.textContent = String(a);
-    dieB.textContent = String(b);
-    totalEl.textContent = String(total);
-    if (total > best) {
-     best = total;
-     bestEl.textContent = String(best);
-    }
-   };
-
-   // Randomly roll two dice and refresh the display.
-   const roll = () => {
-    const a = Math.floor(Math.random() * 6) + 1;
-    const b = Math.floor(Math.random() * 6) + 1;
-    rolls += 1;
-    rollsEl.textContent = String(rolls);
-    setValues(a, b);
-   };
-
-   // Wire up the buttons.
-   rollBtn.addEventListener('click', roll);
-   resetBtn.addEventListener('click', () => {
-    // Reset the session stats and the visible dice.
-    best = 2;
-    rolls = 0;
-    rollsEl.textContent = '0';
-    bestEl.textContent = '2';
-    setValues(1, 1);
-   });
-  })();
- </script>
 
  <script>
   // Simple front-end helpers for cookie choice and newsletter.
