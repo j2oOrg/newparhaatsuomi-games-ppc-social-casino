@@ -3,8 +3,8 @@
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Match Mosaic | Newparhaatsuomi</title>
- <meta name="description" content="Play Match Mosaic at Newparhaatsuomi. Free-play only, 18+ only. No real money, prizes, or cash-out.">
+ <title>Cinnimon Bun Drop | Newparhaatsuomi</title>
+ <meta name="description" content="Play Cinnimon Bun Drop at Newparhaatsuomi. Free-play only, 18+ only. No real money, prizes, or cash-out.">
  <style>
  @font-face {
   font-family: "Sefairy";
@@ -265,63 +265,6 @@
    letter-spacing: 1.2px;
    width: fit-content;
   }
-  .match-stats-5q9k2v {
-   display: grid;
-   gap: 12px;
-   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-   margin-top: 12px;
-  }
-  .match-stat-1f7p3n {
-   background: rgba(31, 158, 160, 0.12);
-   border-radius: 12px;
-   padding: 10px 12px;
-   display: grid;
-   gap: 6px;
-   font-size: 0.85rem;
-   color: var(--ink-soft);
-  }
-  .match-stat-1f7p3n strong {
-   font-size: 1.2rem;
-   color: var(--ink);
-  }
-  .match-grid-7p2h5n {
-   display: grid;
-   gap: 12px;
-   grid-template-columns: repeat(4, minmax(60px, 1fr));
-   margin-top: 16px;
-  }
-  .match-card-2m8q4b {
-   aspect-ratio: 1 / 1;
-   border-radius: 14px;
-   border: 2px solid var(--ink);
-   background: #fffef5;
-   font-weight: 700;
-   font-size: 1.3rem;
-   color: var(--ink);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   transition: transform 0.15s ease;
-  }
-  .match-card-2m8q4b[data-state="revealed"] {
-   background: #fff;
-  }
-  .match-card-2m8q4b[data-state="matched"] {
-   background: rgba(31, 158, 160, 0.18);
-  }
-  .match-controls-8h4p6d {
-   display: flex;
-   gap: 12px;
-   flex-wrap: wrap;
-   margin-top: 16px;
-  }
-  .match-controls-8h4p6d button {
-   padding: 10px 16px;
-   border-radius: 999px;
-   background: var(--ink);
-   color: #fff;
-   font-weight: 700;
-  }
   .ply-framewrap-8h2w5s {
    margin-top: 32px;
    background: #fff;
@@ -336,11 +279,17 @@
   }
   .ply-frameinner-1n5b8x {
    width: 100%;
-   aspect-ratio: 16 / 9;
+   aspect-ratio: 4 / 3;
+   min-height: 560px;
    border-radius: 16px;
    overflow: hidden;
    border: 1px solid rgba(27, 26, 22, 0.12);
    background: #000;
+  }
+  .ply-frameinner-1n5b8x iframe {
+   width: 100%;
+   height: 100%;
+   border: 0;
   }
 .ply-footer-7m2v6b {
    margin-top: 80px;
@@ -635,48 +584,41 @@
  <main>
   <section class="ply-hero-3v9k2q">
    <div class="ply-herocopy-7g5m1d">
-    <h1>Match Mosaic</h1>
-    <p>Flip cards, find pairs, clear the grid.</p>
+    <h1>Cinnimon Bun Drop</h1>
+    <p>A cozy bun-drop challenge with quick sessions.</p>
     <p>Short rounds and easy to pause.</p>
     <div class="ply-notices-2t8c9r">
-     <span>Practice mode only</span>
+     <span>Embedded game</span>
      <span>18+ only</span>
      <span>For entertainment only</span>
     </div>
     <p>18+ only. Intended for users over the legal gambling age. Not for minors. Free-play only. No real money gambling or prizes of real-world value. No cash-out or in-app purchases. In-game credits have no real-world value.</p>
    </div>
    <div class="ply-preview-6y4p7n">
-    <img src="match.webp" alt="Match Mosaic artwork">
+    <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview">
     <div class="ply-infobox-5r8d1f">
-     <strong>Find pairs</strong>
-     <span>Clear all 6 matches</span>
+     <strong>Sweet drops</strong>
+     <span>Quick runs</span>
     </div>
    </div>
   </section>
 
-  <!-- Game play area: matching results are shown on screen only. -->
+  <!-- Game play area: embedded game. -->
   <section class="ply-gamegrid-8h2w5s">
-   <h2>Find the pairs</h2>
-   <p>Tap two cards to reveal them. Match all pairs to clear the board.</p>
-   <div class="match-stats-5q9k2v">
-    <div class="match-stat-1f7p3n">
-     <span>Moves</span>
-     <strong data-moves>0</strong>
-    </div>
-    <div class="match-stat-1f7p3n">
-     <span>Matches</span>
-     <strong data-matches>0</strong>
-    </div>
+   <h2>Play Cinnimon Bun Drop</h2>
+   <p>Use the embedded window below to start playing. Toggle fullscreen for a larger view.</p>
+   <p>Press Esc to exit fullscreen.</p>
+   <div class="ply-frameinner-1n5b8x" data-embed-wrap>
+    <iframe src="https://socialgamesstudio.com/embed/cinnimon-bun-drop" title="Cinnimon Bun Drop game" loading="lazy" allow="fullscreen" allowfullscreen data-embed-frame></iframe>
    </div>
-   <div class="match-grid-7p2h5n" data-match-grid></div>
-   <div class="match-controls-8h4p6d">
-    <button type="button" data-reset>Shuffle cards</button>
+   <div class="ply-controls-9p6d2f">
+    <button type="button" data-fullscreen>Fullscreen</button>
    </div>
   </section>
 
   <section class="ply-framewrap-8h2w5s">
    <h2>How it works</h2>
-   <p>The grid is randomized each time you shuffle. No real money gambling, no prizes of real-world value, and no cash-out.</p>
+   <p>Cinnimon Bun Drop is embedded for free-play only, with no real money, prizes, or cash-out.</p>
    <p>Play for a few minutes and step away whenever you want.</p>
   </section>
  </main>
@@ -734,136 +676,30 @@
  </div>
 
  <script>
-  // Match Mosaic: simple memory match game (free-play only).
-  // This script is client-side only and does not make network calls or payments.
+  // Embedded fullscreen toggle for the game iframe.
   (function () {
-   // Grab the on-page elements used by the game.
-   const grid = document.querySelector('[data-match-grid]');
-   const movesEl = document.querySelector('[data-moves]');
-   const matchesEl = document.querySelector('[data-matches]');
-   const resetBtn = document.querySelector('[data-reset]');
-
-   // Exit early if the grid or controls are missing.
-   if (!grid || !resetBtn) {
+   const button = document.querySelector('[data-fullscreen]');
+   const frame = document.querySelector('[data-embed-frame]');
+   const wrap = document.querySelector('[data-embed-wrap]');
+   if (!button || (!frame && !wrap)) {
     return;
    }
-
-   // Symbols for the matching pairs.
-   const symbols = ['A', 'B', 'C', 'D', 'E', 'F'];
-   // Game state for the current session.
-   let cards = [];
-   let firstIndex = null;
-   let secondIndex = null;
-   let lock = false;
-   let moves = 0;
-   let matches = 0;
-
-   // Shuffle helper to randomize the cards.
-   const shuffle = (array) => {
-    const copy = array.slice();
-    for (let i = copy.length - 1; i > 0; i -= 1) {
-     const j = Math.floor(Math.random() * (i + 1));
-     [copy[i], copy[j]] = [copy[j], copy[i]];
+   const target = frame || wrap;
+   const request = target.requestFullscreen
+    || target.webkitRequestFullscreen
+    || target.mozRequestFullScreen
+    || target.msRequestFullscreen;
+   if (!request) {
+    button.disabled = true;
+    button.textContent = 'Fullscreen unavailable';
+    return;
+   }
+   button.addEventListener('click', () => {
+    try {
+     request.call(target);
+    } catch (e) {
     }
-    return copy;
-   };
-
-   // Update the move/match counters on screen.
-   const updateStats = () => {
-    movesEl.textContent = String(moves);
-    matchesEl.textContent = String(matches);
-   };
-
-   // Render the grid buttons and attach click handlers.
-   const render = () => {
-    grid.innerHTML = '';
-    cards.forEach((card, index) => {
-     const btn = document.createElement('button');
-     btn.type = 'button';
-     btn.className = 'match-card-2m8q4b';
-     btn.dataset.index = String(index);
-     btn.dataset.state = card.matched ? 'matched' : 'hidden';
-     btn.textContent = card.matched ? card.value : '?';
-     btn.addEventListener('click', () => handleClick(index));
-     grid.appendChild(btn);
-    });
-   };
-
-   // Reveal a card's symbol.
-   const reveal = (index) => {
-    const btn = grid.querySelector('[data-index="' + index + '"]');
-    if (!btn) return;
-    btn.dataset.state = 'revealed';
-    btn.textContent = cards[index].value;
-   };
-
-   // Hide a card if it's not matched.
-   const hide = (index) => {
-    const btn = grid.querySelector('[data-index="' + index + '"]');
-    if (!btn) return;
-    btn.dataset.state = cards[index].matched ? 'matched' : 'hidden';
-    btn.textContent = cards[index].matched ? cards[index].value : '?';
-   };
-
-   // Core click handler: reveal, compare, then match or hide.
-   const handleClick = (index) => {
-    if (lock || cards[index].matched) {
-     return;
-    }
-    if (firstIndex === index) {
-     return;
-    }
-
-    reveal(index);
-
-    if (firstIndex === null) {
-     firstIndex = index;
-     return;
-    }
-
-    secondIndex = index;
-    moves += 1;
-    updateStats();
-
-    // If the symbols match, keep them revealed and count the match.
-    if (cards[firstIndex].value === cards[secondIndex].value) {
-     cards[firstIndex].matched = true;
-     cards[secondIndex].matched = true;
-     hide(firstIndex);
-     hide(secondIndex);
-     matches += 1;
-     updateStats();
-     firstIndex = null;
-     secondIndex = null;
-     return;
-    }
-
-    // If they do not match, briefly show both then hide again.
-    lock = true;
-    setTimeout(() => {
-     hide(firstIndex);
-     hide(secondIndex);
-     firstIndex = null;
-     secondIndex = null;
-     lock = false;
-    }, 700);
-   };
-
-   // Shuffle and reset the board.
-   const reset = () => {
-    cards = shuffle([...symbols, ...symbols]).map((value) => ({ value, matched: false }));
-    firstIndex = null;
-    secondIndex = null;
-    lock = false;
-    moves = 0;
-    matches = 0;
-    updateStats();
-    render();
-   };
-
-   // Wire up the controls and start the first game.
-   resetBtn.addEventListener('click', reset);
-   reset();
+   });
   })();
  </script>
 
