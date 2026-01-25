@@ -551,7 +551,61 @@ ul {
   .age-locked {
    overflow: hidden;
   }
- </style>
+   .site-disclaimer {
+   font-size: 0.75rem;
+   color: var(--ink-soft);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  .site-footer {
+   margin-top: 80px;
+   padding: 36px 20px 28px;
+   background: linear-gradient(120deg, rgba(255, 247, 234, 0.95), rgba(214, 248, 255, 0.95));
+   border-top: 3px solid var(--ink);
+  }
+  .site-footer__top {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   gap: 24px;
+  }
+  .site-footer__brand a {
+   font-family: var(--font-display);
+   font-size: 1.2rem;
+   display: inline-block;
+   margin-bottom: 8px;
+  }
+  .site-footer__brand p {
+   margin: 0;
+   color: var(--ink-soft);
+  }
+  .site-footer__links,
+  .site-footer__legal {
+   display: grid;
+   gap: 8px;
+   font-size: 0.95rem;
+  }
+  .site-footer__links a {
+   color: var(--ink);
+  }
+  .site-footer__legal p {
+   margin: 0;
+   color: var(--ink-soft);
+  }
+  .site-footer__bottom {
+   max-width: 1200px;
+   margin: 24px auto 0;
+   padding-top: 14px;
+   border-top: 1px dashed rgba(27, 26, 22, 0.2);
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+  }
+  @media (min-width: 900px) {
+   .site-footer__top {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    align-items: start;
+   }
+  }</style>
 </head>
 <body>
 
@@ -580,6 +634,7 @@ ul {
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </nav>
+   <div class="site-disclaimer">18+ only. Entertainment only. No real money, prizes, or purchases</div>
    <div class="abt-ctabox-4p7d1x">
     <a href="games.html">See games</a>
    </div>
@@ -590,12 +645,12 @@ ul {
   <section class="abt-hero-3v9k2q">
    <div>
     <h1>About Newparhaatsuomi</h1>
-    <p>Newparhaatsuomi is a free-play lounge for people who like the retro vibe but want low pressure and clear rules.</p>
+    <p>Newparhaatsuomi is a free-play lounge for people who like the retro look but want low pressure and clear rules.</p>
     <p>It started as a late-night idea: make something that feels arcade-bright without the money side.</p>
     <p>If you have five minutes between things, that is enough time to play a round and close the tab.</p>
     <p>18+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
     <p>We like the retro look because it feels friendly and a little nostalgic without being busy.</p>
-    <p>We try to keep the site simple so it feels calm and easy to read.</p>
+    <p>The site is designed to be simple and easy to read.</p>
    </div>
    <ul>
     <li>Free-play access</li>
@@ -612,8 +667,7 @@ ul {
    <p>The first layout was sketched in a notebook, and the retro lounge theme stuck because it felt bold but friendly, like old arcade posters.</p>
     <p>Some of us grew up using the word "kasinot" for casinos back home, but this site is free-play only, for users over the legal gambling age (18+), with no real money, prizes, or cash-out.</p>
    <p>Over time that idea turned into two compact games: Finnish Winter Land and Cinnimon Bun Drop.</p>
-    <p>We trimmed until everything read clearly and the buttons felt obvious.</p>
-    <p>Most feedback came from friends who were half awake and still got it, which felt like a win.</p>
+    <p>We refined the layout until the buttons and spacing felt clear.</p>
     <p>When something felt too loud or cramped, we simplified it and moved on.</p>
    </div>
    <article>
@@ -657,7 +711,7 @@ ul {
    <div class="abt-notesgrid-9v1t6b">
     <div>
      <p>We are not trying to build a giant lobby. Two games let us focus on the little things: spacing, contrast, and how clearly the screen explains itself.</p>
-     <p>We keep the scope realistic so updates stay steady and the site stays clean.</p>
+     <p>We focus on small updates so the site stays clean and readable.</p>
      <p>Small also means calm. You open the page and you are not hit with ten options you did not ask for.</p>
     </div>
     <div>
@@ -719,13 +773,13 @@ ul {
   </section>
  </main>
 
- <footer class="abt-footer-7m2v6b">
-  <div class="abt-footergrid-1p5r8d">
-   <div class="abt-footerbrand-0q6t3x">
+  <footer class="site-footer">
+  <div class="site-footer__top">
+   <div class="site-footer__brand">
     <a href="index.html">Newparhaatsuomi</a>
-    <p>Retro-style free-play lounge with a small set of low-key games.</p>
+    <p>Free-play lounge with a small set of games.</p>
    </div>
-   <div class="abt-footerlinks-4c8h2n">
+   <div class="site-footer__links">
     <strong>Explore</strong>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -734,11 +788,13 @@ ul {
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
+   <div class="site-footer__legal">
+    <strong>Play info</strong>
+    <p>18+ only. Entertainment only. No real money, prizes, or purchases.</p>
+    <p>Free-play only. No cash-out.</p>
+   </div>
   </div>
-  <div class="abt-disclaimer-5l1x8c">
-   <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
-  </div>
-  <div class="abt-footnote-8w4q7b">
+  <div class="site-footer__bottom">
    <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
   </div>
  </footer>
@@ -857,6 +913,8 @@ ul {
 
 </body>
 </html>
+
+
 
 
 

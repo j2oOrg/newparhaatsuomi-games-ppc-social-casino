@@ -601,7 +601,61 @@
   .age-locked {
    overflow: hidden;
   }
- </style>
+   .site-disclaimer {
+   font-size: 0.75rem;
+   color: var(--ink-soft);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  .site-footer {
+   margin-top: 80px;
+   padding: 36px 20px 28px;
+   background: linear-gradient(120deg, rgba(255, 247, 234, 0.95), rgba(214, 248, 255, 0.95));
+   border-top: 3px solid var(--ink);
+  }
+  .site-footer__top {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   gap: 24px;
+  }
+  .site-footer__brand a {
+   font-family: var(--font-display);
+   font-size: 1.2rem;
+   display: inline-block;
+   margin-bottom: 8px;
+  }
+  .site-footer__brand p {
+   margin: 0;
+   color: var(--ink-soft);
+  }
+  .site-footer__links,
+  .site-footer__legal {
+   display: grid;
+   gap: 8px;
+   font-size: 0.95rem;
+  }
+  .site-footer__links a {
+   color: var(--ink);
+  }
+  .site-footer__legal p {
+   margin: 0;
+   color: var(--ink-soft);
+  }
+  .site-footer__bottom {
+   max-width: 1200px;
+   margin: 24px auto 0;
+   padding-top: 14px;
+   border-top: 1px dashed rgba(27, 26, 22, 0.2);
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+  }
+  @media (min-width: 900px) {
+   .site-footer__top {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    align-items: start;
+   }
+  }</style>
 </head>
 <body>
 
@@ -630,6 +684,7 @@
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </nav>
+   <div class="site-disclaimer">18+ only. Entertainment only. No real money, prizes, or purchases</div>
    <div class="ply-ctabox-4p7d1x">
     <a href="games.html">See games</a>
    </div>
@@ -686,13 +741,13 @@
   </section>
  </main>
 
- <footer class="ply-footer-7m2v6b">
-  <div class="ply-footergrid-1p5r8d">
-   <div class="ply-footerbrand-0q6t3x">
+  <footer class="site-footer">
+  <div class="site-footer__top">
+   <div class="site-footer__brand">
     <a href="index.html">Newparhaatsuomi</a>
-    <p>Retro-style free-play lounge with a small set of low-key games.</p>
+    <p>Free-play lounge with a small set of games.</p>
    </div>
-   <div class="ply-footerlinks-4c8h2n">
+   <div class="site-footer__links">
     <strong>Explore</strong>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -701,11 +756,13 @@
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
+   <div class="site-footer__legal">
+    <strong>Play info</strong>
+    <p>18+ only. Entertainment only. No real money, prizes, or purchases.</p>
+    <p>Free-play only. No cash-out.</p>
+   </div>
   </div>
-  <div class="ply-disclaimer-5l1x8c">
-   <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
-  </div>
-  <div class="ply-footnote-8w4q7b">
+  <div class="site-footer__bottom">
    <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
   </div>
  </footer>
@@ -890,6 +947,8 @@
 
 </body>
 </html>
+
+
 
 
 

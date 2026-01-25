@@ -888,7 +888,61 @@ ul {
   .age-locked {
    overflow: hidden;
   }
- </style>
+   .site-disclaimer {
+   font-size: 0.75rem;
+   color: var(--ink-soft);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+  }
+  .site-footer {
+   margin-top: 80px;
+   padding: 36px 20px 28px;
+   background: linear-gradient(120deg, rgba(255, 247, 234, 0.95), rgba(214, 248, 255, 0.95));
+   border-top: 3px solid var(--ink);
+  }
+  .site-footer__top {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   gap: 24px;
+  }
+  .site-footer__brand a {
+   font-family: var(--font-display);
+   font-size: 1.2rem;
+   display: inline-block;
+   margin-bottom: 8px;
+  }
+  .site-footer__brand p {
+   margin: 0;
+   color: var(--ink-soft);
+  }
+  .site-footer__links,
+  .site-footer__legal {
+   display: grid;
+   gap: 8px;
+   font-size: 0.95rem;
+  }
+  .site-footer__links a {
+   color: var(--ink);
+  }
+  .site-footer__legal p {
+   margin: 0;
+   color: var(--ink-soft);
+  }
+  .site-footer__bottom {
+   max-width: 1200px;
+   margin: 24px auto 0;
+   padding-top: 14px;
+   border-top: 1px dashed rgba(27, 26, 22, 0.2);
+   font-size: 0.85rem;
+   color: var(--ink-soft);
+  }
+  @media (min-width: 900px) {
+   .site-footer__top {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    align-items: start;
+   }
+  }</style>
 </head>
 <body>
 
@@ -917,6 +971,7 @@ ul {
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </nav>
+   <div class="site-disclaimer">18+ only. Entertainment only. No real money, prizes, or purchases</div>
    <div class="idx-ctabox-4p7d1x">
     <a href="games.html">See games</a>
    </div>
@@ -928,7 +983,7 @@ ul {
     <span class="idx-herobadge-2t8c9r">Free-play lounge</span>
     <h1>Free-play games for short breaks.</h1>
     <p>18+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
-    <p>Pick Finnish Winter Land or Cinnimon Bun Drop. Each one is easy to learn, and you can stop whenever.</p>
+    <p>Pick Finnish Winter Land or Cinnimon Bun Drop. Both are free-play only, and you can stop whenever.</p>
     <div class="idx-heroactions-6y4p7n">
      <a href="play.html">Play now</a>
      <a href="games.html">See the games</a>
@@ -937,8 +992,8 @@ ul {
    <div class="idx-heroart-8h2w5s">
     <img src="fungames.webp" alt="Colorful game collage">
     <div class="idx-herocard-9p6d2f">
-     <strong>Tonight's vibe</strong>
-     <span>Two small games with a retro glow</span>
+     <strong>Featured now</strong>
+     <span>Two free-play games, ready to play</span>
     </div>
    </div>
   </section>
@@ -947,8 +1002,8 @@ ul {
    <div class="idx-highlights-head">
     <div>
      <span class="idx-highlights-badge">Game highlights</span>
-     <h2>Two signature games built for fast, feel-good play.</h2>
-     <p>Each title is free-play only with clear rules, quick sessions, and crisp visuals. Pick the mood, press play.</p>
+     <h2>Two featured games built for short sessions and clear rules.</h2>
+     <p>Each title is free-play only with clear rules and short sessions. Choose a game and press play.</p>
     </div>
     <div class="idx-highlights-actions">
      <a class="idx-highlights-primary" href="play.html">Play now</a>
@@ -967,8 +1022,8 @@ ul {
       <h3>Finnish Winter Land</h3>
       <p>Finnish winter-themed slot game with no cash, money, or prizes.</p>
       <ul class="idx-highlight-bullets">
-       <li>Snowy glow visuals</li>
-       <li>Readable symbols and calm pacing</li>
+       <li>Finnish winter theme</li>
+       <li>Slot-style play with clear symbols</li>
        <li>Free-play only, 18+ only</li>
       </ul>
       <div class="idx-highlight-actions">
@@ -988,8 +1043,8 @@ ul {
       <h3>Cinnimon Bun Drop</h3>
       <p>Drop a cinnamon roll from a plane. The longer you fall, the more points you earn, but don't hit the planes or balloons below.</p>
       <ul class="idx-highlight-bullets">
-       <li>Risk-reward free-fall scoring</li>
-       <li>One-button, quick-start play</li>
+       <li>Longer fall equals more points</li>
+       <li>Avoid planes and balloons</li>
        <li>Free-play only, 18+ only</li>
       </ul>
       <div class="idx-highlight-actions">
@@ -1014,7 +1069,7 @@ ul {
    </div>
    <div class="idx-gametext-v6b2x8">
     <h2 class="idx-gametitle-s3h9j4">Pick your game</h2>
-    <p>Pick a vibe and jump in. The rounds are short and the rules are simple.</p>
+    <p>Choose a game and start playing. The rules are simple and the sessions are short.</p>
     <ul class="idx-gamelist-3h9x2k">
      <li><strong>Finnish Winter Land:</strong> Finnish winter-themed slot game with no cash, money, or prizes.</li>
      <li><strong>Cinnimon Bun Drop:</strong> Drop a cinnamon roll from a plane. The longer you fall, the more points you earn, but don't hit the planes or balloons below.</li>
@@ -1064,7 +1119,7 @@ ul {
      <span>Games</span>
     </div>
    </div>
-   <p>We keep the stats simple so nothing feels hidden.</p>
+   <p>The basics are listed up front.</p>
   </section>
 
   <section class="idx-how-8c4l1y">
@@ -1086,12 +1141,12 @@ ul {
      <p>Stop whenever you want and come back later.</p>
     </article>
    </div>
-   <p>That is the loop: open a game, play a bit, and close the tab when you are done.</p>
+   <p>Open a game, play a few rounds, and close the tab when you are done.</p>
   </section>
 
   <section class="idx-notes-7f3k1m">
    <h2>Notes from the lounge</h2>
-   <p>We keep the lineup small so the pacing stays tight and the pages stay clean.</p>
+   <p>The lineup is small so the menu stays simple and the pages stay focused.</p>
    <p>Think of it as a small reset when you have a few minutes to spare.</p>
    <p>Any on-screen credits are just for play and have no real-world value.</p>
    <p>If something feels off, tell us. We actually read it.</p>
@@ -1107,7 +1162,7 @@ ul {
    <h2>Why it feels different</h2>
    <div class="idx-longgrid-7p1c8d">
     <div>
-     <p>We built Newparhaatsuomi for short breaks. It is the kind of site you open while waiting for a ride or while your coffee cools down.</p>
+     <p>The site is built for short breaks and quick sessions.</p>
      <p>Two games keep the menu simple and the page easy on the eyes.</p>
      <p>Finnish Winter Land brings a snowy glow, and Cinnimon Bun Drop adds a sweet drop challenge.</p>
     </div>
@@ -1133,13 +1188,13 @@ ul {
   </section>
  </main>
 
- <footer class="idx-footer-7m2v6b">
-  <div class="idx-footergrid-1p5r8d">
-   <div class="idx-footerbrand-0q6t3x">
+  <footer class="site-footer">
+  <div class="site-footer__top">
+   <div class="site-footer__brand">
     <a href="index.html">Newparhaatsuomi</a>
-    <p>Retro-style free-play lounge with a small set of low-key games.</p>
+    <p>Free-play lounge with a small set of games.</p>
    </div>
-   <div class="idx-footerlinks-4c8h2n">
+   <div class="site-footer__links">
     <strong>Explore</strong>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -1148,11 +1203,13 @@ ul {
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
+   <div class="site-footer__legal">
+    <strong>Play info</strong>
+    <p>18+ only. Entertainment only. No real money, prizes, or purchases.</p>
+    <p>Free-play only. No cash-out.</p>
+   </div>
   </div>
-  <div class="idx-disclaimer-5l1x8c">
-   <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
-  </div>
-  <div class="idx-footnote-8w4q7b">
+  <div class="site-footer__bottom">
    <p>(c) 2026 Newparhaatsuomi. All rights reserved.</p>
   </div>
  </footer>
@@ -1271,6 +1328,8 @@ ul {
 
 </body>
 </html>
+
+
 
 
 
