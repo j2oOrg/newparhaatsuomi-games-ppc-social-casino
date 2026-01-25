@@ -6,6 +6,7 @@
  <title>Privacy Policy | Newparhaatsuomi</title>
  <meta name="description" content="Read the Privacy Policy for the Newparhaatsuomi free-play lounge. 18+ only. No real money, prizes, or cash-out.">
  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
  @font-face {
   font-family: "Sefairy";
   src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
@@ -27,7 +28,7 @@
    --radius-lg: 28px;
    --radius-md: 18px;
    --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
-   --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
+   --font-body: "Poppins", "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
   }
   * {
    box-sizing: border-box;
@@ -68,8 +69,13 @@
   section {
    margin-top: 56px;
   }
-  h1, h2, h3 {
+  h1, h2 {
    font-family: var(--font-display);
+   margin: 0 0 12px;
+   color: var(--ink);
+  }
+  h3 {
+   font-family: var(--font-body);
    margin: 0 0 12px;
    color: var(--ink);
   }
@@ -78,7 +84,10 @@
    line-height: 1.6;
    color: var(--ink-soft);
   }
-  :focus-visible {
+    [data-cookie-banner] p {
+   color: #fff;
+  }
+:focus-visible {
    outline: 2px solid var(--teal);
    outline-offset: 3px;
   }
@@ -112,7 +121,7 @@
    gap: 12px 20px;
   }
   .pol-brandbox-1c8f2a a {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-size: 1.35rem;
    letter-spacing: 1px;
    text-transform: none;
@@ -197,7 +206,7 @@
    gap: 24px;
   }
   .pol-footerbrand-0q6t3x a {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-size: 1.2rem;
    display: inline-block;
    margin-bottom: 10px;
@@ -210,7 +219,6 @@
   .pol-footerlinks-4c8h2n a {
    color: var(--ink-soft);
   }
-  .pol-footernews-9z1s5w {
    display: grid;
    gap: 10px;
   }
@@ -296,7 +304,7 @@
     padding: 40px;
    }
    .pol-footergrid-1p5r8d {
-    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
    }
    .pol-cookieinner-1k9d5v {
     flex-direction: row;
@@ -319,7 +327,7 @@
    --radius-lg: 6px;
    --radius-md: 4px;
    --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
-   --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
+   --font-body: "Poppins", "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
   }
   body {
    background:
@@ -327,7 +335,7 @@
     repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
     linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
   }
-  h1, h2, h3 {
+  h1, h2 {
    text-transform: uppercase;
    letter-spacing: 0.08em;
   }
@@ -489,14 +497,12 @@
       <h2>Information We Collect</h2>
       <p>We do not collect information through on-page forms.</p>
       <p>If you email us, we receive your email address and message so we can respond.</p>
-      <p>The newsletter form stores your entry locally in your browser and does not send data anywhere.</p>
       <p>We do not collect payment details because there is no real-money play.</p>
      </li>
      <li>
       <h2>Local Storage</h2>
       <p>We use local storage to remember preferences like your banner choice and basic site settings.</p>
       <p>The banner stores your choice in local storage so it does not pop up every visit.</p>
-      <p>Newsletter entries are stored locally in your browser so you can see a confirmation.</p>
       <p>We do not use third-party analytics or ad trackers.</p>
      </li>
      <li>
@@ -513,7 +519,7 @@
       <h2>Retention</h2>
       <p>We keep personal information only as long as necessary for the purposes described in this policy.</p>
       <p>We do not receive or store on-page form submissions on our servers.</p>
-      <p>Newsletter entries and your banner choice stay in local storage until you clear them.</p>
+      <p>Your banner choice stays in local storage until you clear it.</p>
      </li>
      <li>
       <h2>Security</h2>
@@ -555,24 +561,6 @@
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
-   <div class="pol-footernews-9z1s5w">
-    <strong>Newsletter</strong>
-    <p>A few updates about new games and site tweaks. Signups are stored locally on your device.</p>
-    <form class="pol-newsform-6e3k9p" data-newsletter-form>
-     <label>
-      <span>Name</span>
-      <input type="text" name="name" autocomplete="name" required>
-     </label>
-     <label>
-      <span>Email</span>
-      <input type="email" name="email" autocomplete="email" required>
-     </label>
-     <button type="submit">Sign up</button>
-    </form>
-    <div class="pol-newssuccess-2n7d4r" data-newsletter-success hidden>
-     <p>Thanks for signing up. We store this on your device only.</p>
-    </div>
-   </div>
   </div>
   <div class="pol-disclaimer-5l1x8c">
    <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
@@ -584,7 +572,7 @@
 
  <div class="pol-cookie-6f3t1m" data-cookie-banner hidden>
   <div class="pol-cookieinner-1k9d5v">
-   <p>shite</p>
+   <p>We use local storage to remember your choices. Accept to continue.</p>
    <div class="pol-cookieactions-4b7h0n">
     <button type="button" data-cookie-accept>Accept</button>
     <button type="button" data-cookie-decline>Decline</button>
@@ -593,7 +581,7 @@
  </div>
 
  <script>
-  // Simple front-end helpers for cookie choice and newsletter.
+  // Simple front-end helpers for cookie choice.
   // Client-side only: uses local storage, no network calls, no payments.
   (function () {
    // Cookie banner: remember the choice and hide the banner.
@@ -620,28 +608,6 @@
     declineBtn.addEventListener('click', () => setChoice('declined'));
    }
 
-   // Newsletter form: store locally and show a success state.
-   const newsForm = document.querySelector('[data-newsletter-form]');
-   const newsSuccess = document.querySelector('[data-newsletter-success]');
-   if (newsForm && newsSuccess) {
-    newsForm.addEventListener('submit', (event) => {
-     event.preventDefault();
-     try {
-      const nameField = newsForm.elements.name;
-      const emailField = newsForm.elements.email;
-      const payload = {
-       name: nameField ? nameField.value.trim() : '',
-       email: emailField ? emailField.value.trim() : '',
-       ts: new Date().toISOString()
-      };
-      localStorage.setItem('nps-newsletter', JSON.stringify(payload));
-     } catch (e) {
-     }
-     newsForm.reset();
-     newsForm.hidden = true;
-     newsSuccess.hidden = false;
-    });
-   }
   })();
  </script>
 
@@ -718,6 +684,13 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

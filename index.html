@@ -4,8 +4,9 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Newparhaatsuomi | Retro free-play lounge</title>
- <meta name="description" content="Newparhaatsuomi is a retro free-play lounge with Finnish Winter Land, Cinnimon Bun Drop, and Retro Reels. 18+ only. No real money, prizes, or cash-out.">
+ <meta name="description" content="Newparhaatsuomi is a retro free-play lounge with Finnish Winter Land and Cinnimon Bun Drop. 18+ only. No real money, prizes, or cash-out.">
  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
  @font-face {
   font-family: "Sefairy";
   src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
@@ -27,7 +28,7 @@
    --radius-lg: 28px;
    --radius-md: 18px;
    --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
-   --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
+   --font-body: "Poppins", "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
   }
   * {
    box-sizing: border-box;
@@ -68,8 +69,13 @@
   section {
    margin-top: 56px;
   }
-  h1, h2, h3 {
+  h1, h2 {
    font-family: var(--font-display);
+   margin: 0 0 12px;
+   color: var(--ink);
+  }
+  h3 {
+   font-family: var(--font-body);
    margin: 0 0 12px;
    color: var(--ink);
   }
@@ -78,7 +84,10 @@
    line-height: 1.6;
    color: var(--ink-soft);
   }
-  ul {
+    [data-cookie-banner] p {
+   color: #fff;
+  }
+ul {
    margin: 0;
    padding: 0;
    list-style: none;
@@ -121,7 +130,7 @@
    gap: 12px 20px;
   }
   .idx-brandbox-1c8f2a a {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-size: 1.35rem;
    letter-spacing: 1px;
    text-transform: none;
@@ -236,7 +245,7 @@
   }
  .idx-gameimggrid-6p3k8x {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   padding: 10px;
  }
@@ -336,8 +345,195 @@
   border-radius: 14px;
   border: 1px solid rgba(27, 26, 22, 0.15);
  }
+ .idx-featuredgrid-1n5b8x video {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(27, 26, 22, 0.15);
+  background: #000;
+ }
  .idx-featuredgrid-1n5b8x a.preview {
   display: block;
+ }
+ .idx-highlights-neo {
+  margin-top: 56px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background:
+   radial-gradient(circle at 15% 10%, rgba(255, 61, 143, 0.18), transparent 55%),
+   radial-gradient(circle at 85% 0%, rgba(0, 182, 182, 0.18), transparent 50%),
+   linear-gradient(140deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+ }
+ .idx-highlights-neo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 16px);
+  opacity: 0.25;
+  pointer-events: none;
+ }
+ .idx-highlights-head {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+ }
+ .idx-highlights-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: fit-content;
+ }
+ .idx-highlights-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+ }
+ .idx-highlights-primary,
+ .idx-highlights-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: var(--shadow);
+ }
+ .idx-highlights-primary {
+  background: var(--ink);
+  color: #fff;
+ }
+ .idx-highlights-secondary {
+  background: var(--cream);
+  color: var(--ink);
+ }
+ .idx-highlights-grid {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ }
+ .idx-highlight-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow);
+  display: grid;
+  overflow: hidden;
+ }
+ .idx-highlight-media {
+  position: relative;
+  background: #000;
+ }
+ .idx-highlight-link {
+  display: block;
+ }
+ .idx-highlight-media img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+ }
+ .idx-highlight-video {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  background: #000;
+ }
+ .idx-highlight-chip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+ }
+ .idx-highlight-body {
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+ }
+ .idx-highlight-body h3 {
+  font-size: 1.2rem;
+ }
+ .idx-highlight-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+ }
+ .idx-highlight-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+ }
+ .idx-highlight-bullets li::before {
+  content: "◆";
+  color: var(--accent);
+  font-size: 0.6rem;
+  line-height: 1.6;
+ }
+ .idx-highlight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+ }
+ .idx-highlight-cta,
+ .idx-highlight-secondarylink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+ }
+ .idx-highlight-cta {
+  background: var(--accent);
+  color: #1b1433;
+ }
+ .idx-highlight-secondarylink {
+  background: transparent;
+  color: var(--ink);
+ }
+ @media (min-width: 900px) {
+  .idx-highlights-head {
+   grid-template-columns: 1.3fr 0.7fr;
+   align-items: end;
+  }
+  .idx-highlights-actions {
+   justify-content: flex-end;
+  }
  }
   .idx-featuredgrid-1n5b8x a {
    display: inline-flex;
@@ -363,7 +559,7 @@
   .idx-statsgrid-7t2f5m strong {
    display: block;
    font-size: 1.8rem;
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    color: var(--ink);
   }
   .idx-how-8c4l1y {
@@ -383,7 +579,7 @@
    gap: 8px;
   }
   .idx-stepsgrid-2p9h6d span {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-weight: 700;
    color: var(--coral);
    text-transform: uppercase;
@@ -445,7 +641,7 @@
    gap: 24px;
   }
   .idx-footerbrand-0q6t3x a {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-size: 1.2rem;
    display: inline-block;
    margin-bottom: 10px;
@@ -458,7 +654,6 @@
   .idx-footerlinks-4c8h2n a {
    color: var(--ink-soft);
   }
-  .idx-footernews-9z1s5w {
    display: grid;
    gap: 10px;
   }
@@ -552,7 +747,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
    }
    .idx-footergrid-1p5r8d {
-    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
    }
    .idx-cookieinner-1k9d5v {
     flex-direction: row;
@@ -575,7 +770,7 @@
    --radius-lg: 6px;
    --radius-md: 4px;
    --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
-   --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
+   --font-body: "Poppins", "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
   }
   body {
    background:
@@ -583,7 +778,7 @@
     repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
     linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
   }
-  h1, h2, h3 {
+  h1, h2 {
    text-transform: uppercase;
    letter-spacing: 0.08em;
   }
@@ -733,7 +928,7 @@
     <span class="idx-herobadge-2t8c9r">Free-play lounge</span>
     <h1>Free-play games for short breaks.</h1>
     <p>18+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
-    <p>Pick Finnish Winter Land, Cinnimon Bun Drop, or Retro Reels. Each one is easy to learn, and you can stop whenever.</p>
+    <p>Pick Finnish Winter Land or Cinnimon Bun Drop. Each one is easy to learn, and you can stop whenever.</p>
     <div class="idx-heroactions-6y4p7n">
      <a href="play.html">Play now</a>
      <a href="games.html">See the games</a>
@@ -743,8 +938,66 @@
     <img src="fungames.webp" alt="Colorful game collage">
     <div class="idx-herocard-9p6d2f">
      <strong>Tonight's vibe</strong>
-     <span>Three small games with a retro glow</span>
+     <span>Two small games with a retro glow</span>
     </div>
+   </div>
+  </section>
+ 
+  <section class="idx-highlights-neo">
+   <div class="idx-highlights-head">
+    <div>
+     <span class="idx-highlights-badge">Game highlights</span>
+     <h2>Two signature games built for fast, feel-good play.</h2>
+     <p>Each title is free-play only with clear rules, quick sessions, and crisp visuals. Pick the mood, press play.</p>
+    </div>
+    <div class="idx-highlights-actions">
+     <a class="idx-highlights-primary" href="play.html">Play now</a>
+     <a class="idx-highlights-secondary" href="games.html">Browse all games</a>
+    </div>
+   </div>
+   <div class="idx-highlights-grid">
+    <article class="idx-highlight-card" style="--accent: #00b6b6;">
+     <div class="idx-highlight-media">
+      <a class="idx-highlight-link" href="dice.html" aria-label="Play Finnish Winter Land">
+       <img src="winterland.webp" alt="Finnish Winter Land preview">
+      </a>
+      <span class="idx-highlight-chip">Winter Slot</span>
+     </div>
+     <div class="idx-highlight-body">
+      <h3>Finnish Winter Land</h3>
+      <p>Finnish winter-themed slot game with no cash, money, or prizes.</p>
+      <ul class="idx-highlight-bullets">
+       <li>Snowy glow visuals</li>
+       <li>Readable symbols and calm pacing</li>
+       <li>Free-play only, 18+ only</li>
+      </ul>
+      <div class="idx-highlight-actions">
+       <a class="idx-highlight-cta" href="dice.html">Play Finnish Winter Land</a>
+       <a class="idx-highlight-secondarylink" href="games.html">See details</a>
+      </div>
+     </div>
+    </article>
+    <article class="idx-highlight-card" style="--accent: #ff3d8f;">
+     <div class="idx-highlight-media">
+      <video class="idx-highlight-video" controls playsinline preload="metadata" poster="cinnabomber.webp" aria-label="Cinnimon Bun Drop trailer">
+       <source src="https://socialgamesstudio.com/CinnimonBunDrop/img/trailercinnabomber.mp4" type="video/mp4">
+      </video>
+      <span class="idx-highlight-chip">Trailer</span>
+     </div>
+     <div class="idx-highlight-body">
+      <h3>Cinnimon Bun Drop</h3>
+      <p>Drop a cinnamon roll from a plane. The longer you fall, the more points you earn, but don't hit the planes or balloons below.</p>
+      <ul class="idx-highlight-bullets">
+       <li>Risk-reward free-fall scoring</li>
+       <li>One-button, quick-start play</li>
+       <li>Free-play only, 18+ only</li>
+      </ul>
+      <div class="idx-highlight-actions">
+       <a class="idx-highlight-cta" href="match.html">Play Cinnimon Bun Drop</a>
+       <a class="idx-highlight-secondarylink" href="games.html">See details</a>
+      </div>
+     </div>
+    </article>
    </div>
   </section>
 
@@ -757,18 +1010,14 @@
      <a href="match.html" aria-label="Play Cinnimon Bun Drop">
       <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview">
      </a>
-     <a href="reels.html" aria-label="Play Retro Reels">
-      <img src="reels.webp" alt="Retro Reels preview">
-     </a>
     </div>
    </div>
    <div class="idx-gametext-v6b2x8">
     <h2 class="idx-gametitle-s3h9j4">Pick your game</h2>
     <p>Pick a vibe and jump in. The rounds are short and the rules are simple.</p>
     <ul class="idx-gamelist-3h9x2k">
-     <li><strong>Finnish Winter Land:</strong> Winter-themed free-play embedded on the page.</li>
-     <li><strong>Cinnimon Bun Drop:</strong> Sweet drops with quick, cozy runs.</li>
-     <li><strong>Retro Reels:</strong> A reel-style spin with bold, readable symbols.</li>
+     <li><strong>Finnish Winter Land:</strong> Finnish winter-themed slot game with no cash, money, or prizes.</li>
+     <li><strong>Cinnimon Bun Drop:</strong> Drop a cinnamon roll from a plane. The longer you fall, the more points you earn, but don't hit the planes or balloons below.</li>
     </ul>
     <a class="idx-gamecta-l5d8w2" href="games.html">Browse games</a>
    </div>
@@ -798,37 +1047,7 @@
    <p>The goal is a relaxed break, not a time sink.</p>
   </section>
 
-  <section class="idx-featured-4m7c2v">
-   <h2>Game highlights</h2>
-   <p>Three vibes, same low-key pace. Pick what fits.</p>
-   <div class="idx-featuredgrid-1n5b8x">
-    <article>
-     <a class="preview" href="dice.html" aria-label="Play Finnish Winter Land">
-      <img src="winterland.webp" alt="Finnish Winter Land preview">
-     </a>
-     <h3>Finnish Winter Land</h3>
-     <p>Winter-themed play with a calm, easy-to-pause rhythm.</p>
-     <a href="dice.html">Play Finnish Winter Land</a>
-    </article>
-    <article>
-     <a class="preview" href="match.html" aria-label="Play Cinnimon Bun Drop">
-      <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview">
-     </a>
-     <h3>Cinnimon Bun Drop</h3>
-     <p>Sweet drops and an easy pace for short sessions.</p>
-     <a href="match.html">Play Cinnimon Bun Drop</a>
-    </article>
-    <article>
-     <a class="preview" href="reels.html" aria-label="Play Retro Reels">
-      <img src="reels.webp" alt="Retro Reels preview">
-     </a>
-     <h3>Retro Reels</h3>
-     <p>A reel-style spin with bold symbols and simple outcomes.</p>
-     <a href="reels.html">Play Retro Reels</a>
-    </article>
-   </div>
-   <p>We keep this short on purpose. Try one and see what clicks.</p>
-  </section>
+  
 
   <section class="idx-stats-3q6j9a">
    <div class="idx-statsgrid-7t2f5m">
@@ -841,7 +1060,7 @@
      <span>Real money</span>
     </div>
     <div>
-     <strong>3</strong>
+     <strong>2</strong>
      <span>Games</span>
     </div>
    </div>
@@ -854,7 +1073,7 @@
     <article>
      <span>Step 1</span>
      <h3>Choose a game</h3>
-     <p>Pick Finnish Winter Land, Cinnimon Bun Drop, or Retro Reels.</p>
+     <p>Pick Finnish Winter Land or Cinnimon Bun Drop.</p>
     </article>
     <article>
      <span>Step 2</span>
@@ -889,8 +1108,8 @@
    <div class="idx-longgrid-7p1c8d">
     <div>
      <p>We built Newparhaatsuomi for short breaks. It is the kind of site you open while waiting for a ride or while your coffee cools down.</p>
-     <p>Three games keep the menu simple and the page easy on the eyes.</p>
-     <p>Finnish Winter Land brings a snowy glow, Cinnimon Bun Drop adds a sweet drop challenge, and Retro Reels keeps symbols chunky and readable.</p>
+     <p>Two games keep the menu simple and the page easy on the eyes.</p>
+     <p>Finnish Winter Land brings a snowy glow, and Cinnimon Bun Drop adds a sweet drop challenge.</p>
     </div>
     <div>
      <p>We try it the way we actually use it and keep it readable across different screens.</p>
@@ -929,24 +1148,6 @@
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
-   <div class="idx-footernews-9z1s5w">
-    <strong>Newsletter</strong>
-    <p>A few updates about new games and site tweaks. Signups are stored locally on your device.</p>
-    <form class="idx-newsform-6e3k9p" data-newsletter-form>
-     <label>
-      <span>Name</span>
-      <input type="text" name="name" autocomplete="name" required>
-     </label>
-     <label>
-      <span>Email</span>
-      <input type="email" name="email" autocomplete="email" required>
-     </label>
-     <button type="submit">Sign up</button>
-    </form>
-    <div class="idx-newssuccess-2n7d4r" data-newsletter-success hidden>
-     <p>Thanks for signing up. We store this on your device only.</p>
-    </div>
-   </div>
   </div>
   <div class="idx-disclaimer-5l1x8c">
    <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
@@ -958,7 +1159,7 @@
 
  <div class="idx-cookie-6f3t1m" data-cookie-banner hidden>
   <div class="idx-cookieinner-1k9d5v">
-   <p>shite</p>
+   <p>We use local storage to remember your choices. Accept to continue.</p>
    <div class="idx-cookieactions-4b7h0n">
     <button type="button" data-cookie-accept>Accept</button>
     <button type="button" data-cookie-decline>Decline</button>
@@ -967,7 +1168,7 @@
  </div>
 
  <script>
-  // Simple front-end helpers for cookie choice and newsletter.
+  // Simple front-end helpers for cookie choice.
   // Client-side only: uses local storage, no network calls, no payments.
   (function () {
    // Cookie banner: remember the choice and hide the banner.
@@ -994,28 +1195,6 @@
     declineBtn.addEventListener('click', () => setChoice('declined'));
    }
 
-   // Newsletter form: store locally and show a success state.
-   const newsForm = document.querySelector('[data-newsletter-form]');
-   const newsSuccess = document.querySelector('[data-newsletter-success]');
-   if (newsForm && newsSuccess) {
-    newsForm.addEventListener('submit', (event) => {
-     event.preventDefault();
-     try {
-      const nameField = newsForm.elements.name;
-      const emailField = newsForm.elements.email;
-      const payload = {
-       name: nameField ? nameField.value.trim() : '',
-       email: emailField ? emailField.value.trim() : '',
-       ts: new Date().toISOString()
-      };
-      localStorage.setItem('nps-newsletter', JSON.stringify(payload));
-     } catch (e) {
-     }
-     newsForm.reset();
-     newsForm.hidden = true;
-     newsSuccess.hidden = false;
-    });
-   }
   })();
  </script>
 
@@ -1092,6 +1271,14 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

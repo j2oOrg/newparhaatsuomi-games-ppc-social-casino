@@ -4,8 +4,9 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Games | Newparhaatsuomi</title>
- <meta name="description" content="Explore Finnish Winter Land, Cinnimon Bun Drop, and Retro Reels. Free-play only, 18+ only. No real money, prizes, or cash-out.">
+ <meta name="description" content="Explore Finnish Winter Land and Cinnimon Bun Drop. Free-play only, 18+ only. No real money, prizes, or cash-out.">
  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
  @font-face {
   font-family: "Sefairy";
   src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
@@ -27,7 +28,7 @@
    --radius-lg: 28px;
    --radius-md: 18px;
    --font-display: "Sefairy", "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
-   --font-body: "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
+   --font-body: "Poppins", "Sefairy", "Georgia", "Cambria", "Times New Roman", serif;
   }
   * {
    box-sizing: border-box;
@@ -68,8 +69,13 @@
   section {
    margin-top: 56px;
   }
-  h1, h2, h3 {
+  h1, h2 {
    font-family: var(--font-display);
+   margin: 0 0 12px;
+   color: var(--ink);
+  }
+  h3 {
+   font-family: var(--font-body);
    margin: 0 0 12px;
    color: var(--ink);
   }
@@ -78,7 +84,10 @@
    line-height: 1.6;
    color: var(--ink-soft);
   }
-  ul {
+    [data-cookie-banner] p {
+   color: #fff;
+  }
+ul {
    margin: 0;
    padding: 0;
    list-style: none;
@@ -117,7 +126,7 @@
    gap: 12px 20px;
   }
   .gms-brandbox-1c8f2a a {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-size: 1.35rem;
    letter-spacing: 1px;
    text-transform: none;
@@ -292,7 +301,7 @@
    gap: 24px;
   }
   .gms-footerbrand-0q6t3x a {
-   font-family: var(--font-display);
+   font-family: var(--font-body);
    font-size: 1.2rem;
    display: inline-block;
    margin-bottom: 10px;
@@ -305,7 +314,6 @@
   .gms-footerlinks-4c8h2n a {
    color: var(--ink-soft);
   }
-  .gms-footernews-9z1s5w {
    display: grid;
    gap: 10px;
   }
@@ -394,7 +402,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
    }
    .gms-footergrid-1p5r8d {
-    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
    }
    .gms-cookieinner-1k9d5v {
     flex-direction: row;
@@ -417,7 +425,7 @@
    --radius-lg: 6px;
    --radius-md: 4px;
    --font-display: "Sefairy", "Lucida Console", "Courier New", monospace;
-   --font-body: "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
+   --font-body: "Poppins", "Sefairy", "Verdana", "Geneva", "Tahoma", sans-serif;
   }
   body {
    background:
@@ -425,7 +433,7 @@
     repeating-linear-gradient(0deg, rgba(27, 20, 51, 0.08) 0 2px, transparent 2px 24px),
     linear-gradient(135deg, #fff3c9 0%, #d6f8ff 52%, #ffe3f1 100%);
   }
-  h1, h2, h3 {
+  h1, h2 {
    text-transform: uppercase;
    letter-spacing: 0.08em;
   }
@@ -573,13 +581,12 @@
  <main>
   <section class="gms-hero-3v9k2q">
    <h1>Games</h1>
-   <p>Three small games built for short breaks: Finnish Winter Land, Cinnimon Bun Drop, and Retro Reels.</p>
+   <p>Two small games built for short breaks: Finnish Winter Land and Cinnimon Bun Drop.</p>
    <p>Each game has its own page with clear rules and a relaxed pace.</p>
    <p>18+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
    <div class="gms-chips-7g5m1d">
     <span>Winter</span>
     <span>Bun Drop</span>
-    <span>Reels</span>
     <span>Short rounds</span>
     <span>Practice mode</span>
    </div>
@@ -589,7 +596,7 @@
 
   <section>
    <h2>Play the lineup</h2>
-   <p>Three small games, three different rhythms. Go with whatever sounds good.</p>
+   <p>Two small games, two different rhythms. Go with whatever sounds good.</p>
    <div class="gms-grid-2t8c9r">
     <article style="--accent: var(--teal);">
      <figure>
@@ -599,7 +606,7 @@
      </figure>
      <span>Winter</span>
      <h3>Finnish Winter Land</h3>
-     <p>Winter-themed play with quick sessions.</p>
+     <p>Finnish winter-themed slot game with no cash, money, or prizes.</p>
      <p>Easy pacing and a clean layout.</p>
      <a href="dice.html">Play</a>
     </article>
@@ -611,21 +618,9 @@
      </figure>
      <span>Bun Drop</span>
      <h3>Cinnimon Bun Drop</h3>
-     <p>Sweet drops with quick, cozy runs.</p>
-     <p>Easy pacing and a sugary vibe.</p>
+     <p>Drop a cinnamon roll from a plane.</p>
+     <p>The longer you fall, the more points you earn, but don't hit the planes or balloons below.</p>
      <a href="match.html">Play</a>
-    </article>
-    <article style="--accent: var(--gold);">
-     <figure>
-      <a href="reels.html" aria-label="Play Retro Reels">
-       <img src="reels.webp" alt="Retro Reels preview">
-      </a>
-     </figure>
-     <span>Reels</span>
-     <h3>Retro Reels</h3>
-     <p>A reel-style spin with bold, readable symbols.</p>
-     <p>Simple outcomes and an easy place to stop.</p>
-     <a href="reels.html">Play</a>
     </article>
    </div>
    <p>Each game runs directly in the page with no downloads.</p>
@@ -635,9 +630,9 @@
    <h2>More about the lineup</h2>
    <div class="gms-notesgrid-4q9m2d">
     <div>
-     <p>We keep the lineup tight on purpose. Three games give you variety without the noise.</p>
+     <p>We keep the lineup tight on purpose. Two games give you variety without the noise.</p>
      <p>The retro arcade vibe is still there, just toned down so your eyes do not get tired.</p>
-     <p>Finnish Winter Land brings a snowy glow, Cinnimon Bun Drop adds a sweet drop challenge, and Retro Reels keeps symbols chunky and easy to read.</p>
+     <p>Finnish Winter Land brings a snowy glow, and Cinnimon Bun Drop adds a sweet drop challenge.</p>
      <p>There is no pressure to stick around. Each game is a short loop you can leave anytime.</p>
     </div>
     <div>
@@ -674,24 +669,6 @@
     <a href="terms.html">Terms</a>
     <a href="policy.html">Privacy</a>
    </div>
-   <div class="gms-footernews-9z1s5w">
-    <strong>Newsletter</strong>
-    <p>A few updates about new games and site tweaks. Signups are stored locally on your device.</p>
-    <form class="gms-newsform-6e3k9p" data-newsletter-form>
-     <label>
-      <span>Name</span>
-      <input type="text" name="name" autocomplete="name" required>
-     </label>
-     <label>
-      <span>Email</span>
-      <input type="email" name="email" autocomplete="email" required>
-     </label>
-     <button type="submit">Sign up</button>
-    </form>
-    <div class="gms-newssuccess-2n7d4r" data-newsletter-success hidden>
-     <p>Thanks for signing up. We store this on your device only.</p>
-    </div>
-   </div>
   </div>
   <div class="gms-disclaimer-5l1x8c">
    <p>18+ only. Entertainment only. No real money, prizes, or cash-out. Please play responsibly and take breaks.</p>
@@ -703,7 +680,7 @@
 
  <div class="gms-cookie-6f3t1m" data-cookie-banner hidden>
   <div class="gms-cookieinner-1k9d5v">
-   <p>shite</p>
+   <p>We use local storage to remember your choices. Accept to continue.</p>
    <div class="gms-cookieactions-4b7h0n">
     <button type="button" data-cookie-accept>Accept</button>
     <button type="button" data-cookie-decline>Decline</button>
@@ -712,7 +689,7 @@
  </div>
 
  <script>
-  // Simple front-end helpers for cookie choice and newsletter.
+  // Simple front-end helpers for cookie choice.
   // Client-side only: uses local storage, no network calls, no payments.
   (function () {
    // Cookie banner: remember the choice and hide the banner.
@@ -739,28 +716,6 @@
     declineBtn.addEventListener('click', () => setChoice('declined'));
    }
 
-   // Newsletter form: store locally and show a success state.
-   const newsForm = document.querySelector('[data-newsletter-form]');
-   const newsSuccess = document.querySelector('[data-newsletter-success]');
-   if (newsForm && newsSuccess) {
-    newsForm.addEventListener('submit', (event) => {
-     event.preventDefault();
-     try {
-      const nameField = newsForm.elements.name;
-      const emailField = newsForm.elements.email;
-      const payload = {
-       name: nameField ? nameField.value.trim() : '',
-       email: emailField ? emailField.value.trim() : '',
-       ts: new Date().toISOString()
-      };
-      localStorage.setItem('nps-newsletter', JSON.stringify(payload));
-     } catch (e) {
-     }
-     newsForm.reset();
-     newsForm.hidden = true;
-     newsSuccess.hidden = false;
-    });
-   }
   })();
  </script>
 
@@ -837,6 +792,13 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
