@@ -5,9 +5,12 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Newparhaatsuomi | Retro free-play lounge</title>
  <meta name="description" content="Newparhaatsuomi is a free-play social casino with Finnish Winter Land and Cinnimon Bun Drop. 18+ only. No real money, prizes, or cash-out.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preload" href="otf/sefairy-sefairy-svg-400.otf" as="font" type="font/otf">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
  <link rel="canonical" href="https://newparhaatsuomi.games/">
  <style>
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
  @font-face {
   font-family: "Sefairy";
   src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
@@ -97,6 +100,11 @@ ul {
    outline: 2px solid var(--teal);
    outline-offset: 3px;
   }
+  main section {
+   content-visibility: auto;
+   contain-intrinsic-size: 1px 800px;
+  }
+
   @keyframes rise {
    from { opacity: 0; transform: translateY(16px); }
    to { opacity: 1; transform: translateY(0); }
@@ -995,7 +1003,7 @@ ul {
     </div>
   </div>
    <div class="idx-heroart-8h2w5s">
-    <img src="fungames.webp" alt="Colorful game collage">
+    <img src="fungames.webp" alt="Colorful game collage" width="1800" height="1200" decoding="async" fetchpriority="high">
     <div class="idx-herocard-9p6d2f">
      <strong>Featured now</strong>
      <span>Two free-play games, ready to play</span>
@@ -1019,7 +1027,7 @@ ul {
     <article class="idx-highlight-card" style="--accent: #00b6b6;">
      <div class="idx-highlight-media">
       <a class="idx-highlight-link" href="winterland.html" aria-label="Play Finnish Winter Land">
-       <img src="winterland.webp" alt="Finnish Winter Land preview">
+       <img src="winterland.webp" alt="Finnish Winter Land preview" width="1536" height="1024" decoding="async" loading="lazy">
       </a>
       <span class="idx-highlight-chip">Winter Slot</span>
      </div>
@@ -1065,10 +1073,10 @@ ul {
    <div class="idx-gameimgwrap-m4q8t2">
     <div class="idx-gameimggrid-6p3k8x" aria-label="Game previews">
      <a href="winterland.html" aria-label="Play Finnish Winter Land">
-      <img src="winterland.webp" alt="Finnish Winter Land preview">
+      <img src="winterland.webp" alt="Finnish Winter Land preview" width="1536" height="1024" decoding="async" loading="lazy">
      </a>
      <a href="cinnimon-bun-drop.html" aria-label="Play Cinnimon Bun Drop">
-      <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview">
+      <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview" width="1457" height="1161" decoding="async" loading="lazy">
      </a>
     </div>
    </div>

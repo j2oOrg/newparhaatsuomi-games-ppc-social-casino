@@ -5,9 +5,12 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Games | Newparhaatsuomi</title>
  <meta name="description" content="Explore Finnish Winter Land and Cinnimon Bun Drop in our free-play social casino. 18+ only. No real money, prizes, or cash-out.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preload" href="otf/sefairy-sefairy-svg-400.otf" as="font" type="font/otf">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
  <link rel="canonical" href="https://newparhaatsuomi.games/games.html">
  <style>
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
  @font-face {
   font-family: "Sefairy";
   src: url("otf/sefairy-sefairy-svg-400.otf") format("opentype");
@@ -97,6 +100,11 @@ ul {
    outline: 2px solid var(--teal);
    outline-offset: 3px;
   }
+  main section {
+   content-visibility: auto;
+   contain-intrinsic-size: 1px 800px;
+  }
+
   @keyframes rise {
    from { opacity: 0; transform: translateY(16px); }
    to { opacity: 1; transform: translateY(0); }
@@ -661,7 +669,7 @@ ul {
     <article style="--accent: var(--teal);">
      <figure>
       <a href="winterland.html" aria-label="Play Finnish Winter Land">
-       <img src="winterland.webp" alt="Finnish Winter Land preview">
+       <img src="winterland.webp" alt="Finnish Winter Land preview" width="1536" height="1024" decoding="async" fetchpriority="high">
       </a>
      </figure>
      <span>Finnish Winter Land</span>
@@ -673,7 +681,7 @@ ul {
     <article style="--accent: var(--coral);">
      <figure>
       <a href="cinnimon-bun-drop.html" aria-label="Play Cinnimon Bun Drop">
-       <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview">
+       <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview" width="1457" height="1161" decoding="async" loading="lazy">
       </a>
      </figure>
      <span>Cinnimon Bun Drop</span>
