@@ -252,6 +252,13 @@
    gap: 10px;
    background: #fff;
   }
+  .ply-card-3m6p2q img {
+   width: 100%;
+   height: 140px;
+   object-fit: cover;
+   border-radius: 14px;
+   border: 1px solid rgba(27, 26, 22, 0.15);
+  }
   .ply-card-3m6p2q a {
    display: inline-flex;
    align-items: center;
@@ -554,11 +561,14 @@
    text-transform: uppercase;
    letter-spacing: 0.08em;
   }
+  
   .site-footer {
-   margin-top: 80px;
-   padding: 36px 20px 28px;
-   background: linear-gradient(120deg, rgba(255, 247, 234, 0.95), rgba(214, 248, 255, 0.95));
-   border-top: 3px solid var(--ink);
+   padding: 48px 24px 32px;
+   background-image: linear-gradient(135deg, rgba(11, 10, 8, 0.94), rgba(11, 10, 8, 0.82)), url('word-game-red-cubes.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   color: #f6f1e8;
   }
   .site-footer__top {
    max-width: 1200px;
@@ -571,10 +581,11 @@
    font-size: 1.2rem;
    display: inline-block;
    margin-bottom: 8px;
+   color: #fff;
   }
   .site-footer__brand p {
    margin: 0;
-   color: var(--ink-soft);
+   color: rgba(246, 241, 232, 0.78);
   }
   .site-footer__links,
   .site-footer__legal {
@@ -583,19 +594,19 @@
    font-size: 0.95rem;
   }
   .site-footer__links a {
-   color: var(--ink);
+   color: #f6f1e8;
   }
   .site-footer__legal p {
    margin: 0;
-   color: var(--ink-soft);
+   color: rgba(246, 241, 232, 0.7);
   }
   .site-footer__bottom {
    max-width: 1200px;
    margin: 24px auto 0;
    padding-top: 14px;
-   border-top: 1px dashed rgba(27, 26, 22, 0.2);
+   border-top: 1px dashed rgba(246, 241, 232, 0.35);
    font-size: 0.85rem;
-   color: var(--ink-soft);
+   color: rgba(246, 241, 232, 0.7);
   }
   @media (min-width: 900px) {
    .site-footer__top {
@@ -652,9 +663,10 @@
     <p>18+ only. Free-play only. No real money, prizes, cash-out, purchases, or in-app purchases. In-game credits have no real-world value.</p>
    </div>
    <div class="ply-preview-6y4p7n">
+    <img src="funny.jpg" alt="Two games preview">
     <div class="ply-infobox-5r8d1f">
      <strong>Two games</strong>
-     <span>Winter and Bun Drop</span>
+     <span>Finnish Winter Land and Cinnimon Bun Drop</span>
     </div>
    </div>
   </section>
@@ -664,15 +676,21 @@
    <p>Each game has its own page so the rules stay close to the action.</p>
    <div class="ply-cards-9p6d2f">
     <article class="ply-card-3m6p2q">
-     <span class="ply-tag-1n5b8x">Winter</span>
+     <a href="dice.html" aria-label="Play Finnish Winter Land">
+      <img src="winterland.webp" alt="Finnish Winter Land preview">
+     </a>
+     <span class="ply-tag-1n5b8x">Finnish Winter Land</span>
      <h3>Finnish Winter Land</h3>
      <p>Finnish winter-themed slot game with no cash, money, or prizes.</p>
      <a href="dice.html">Play Finnish Winter Land</a>
     </article>
     <article class="ply-card-3m6p2q">
-     <span class="ply-tag-1n5b8x">Bun Drop</span>
+     <a href="match.html" aria-label="Play Cinnimon Bun Drop">
+      <img src="cinnabomber.webp" alt="Cinnimon Bun Drop preview">
+     </a>
+     <span class="ply-tag-1n5b8x">Cinnimon Bun Drop</span>
      <h3>Cinnimon Bun Drop</h3>
-     <p>Drop a cinnamon roll from a plane. The longer you fall, the more points you earn, but don't hit the planes or balloons below.</p>
+     <p>Playful risk-reward drop game: choose how long to fall before opening the parachute and banking points.</p>
      <a href="match.html">Play Cinnimon Bun Drop</a>
     </article>
    </div>
@@ -819,6 +837,8 @@
 
 </body>
 </html>
+
+
 
 
 
