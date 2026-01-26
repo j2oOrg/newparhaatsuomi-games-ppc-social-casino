@@ -724,6 +724,11 @@
     <strong>Play info</strong>
     <p>18+ only. Entertainment only. No real money, prizes, or purchases.</p>
     <p>Free-play only. No cash-out.</p>
+    <p>Practice or success at social casino gaming does not imply future success at real money gambling.</p>
+    <p>Non-essential cookies or scripts are only enabled after you click Accept on the consent banner.</p>
+    <p lang="fi">Ei-välttämättömät evästeet tai skriptit otetaan käyttöön vasta, kun hyväksyt evästebannerin.</p>
+    <p><a href="https://www.peluuri.fi/" rel="noopener" target="_blank">Peluuri (Finland) – support resource</a></p>
+    <p><a href="https://www.begambleaware.org/" rel="noopener" target="_blank">BeGambleAware – support resource</a></p>
    </div>
   </div>
   <div class="site-footer__bottom">
@@ -734,6 +739,7 @@
  <div class="ply-cookie-6f3t1m" data-cookie-banner hidden>
   <div class="ply-cookieinner-1k9d5v">
    <p>We use local storage to remember your choices. Accept to continue.</p>
+   <p lang="fi">Ei-välttämättömät evästeet tai skriptit otetaan käyttöön vasta, kun hyväksyt evästebannerin.</p>
    <div class="ply-cookieactions-4b7h0n">
     <button type="button" data-cookie-accept>Accept</button>
     <button type="button" data-cookie-decline>Decline</button>
@@ -771,32 +777,59 @@
 
  <script>
   // Simple front-end helpers for cookie choice.
-  // Client-side only: uses local storage, no network calls, no payments.
+  // Client-side only: uses local storage. Non-essential resources stay blocked until acceptance.
   (function () {
-   // Cookie banner: remember the choice and hide the banner.
    const banner = document.querySelector('[data-cookie-banner]');
    const acceptBtn = document.querySelector('[data-cookie-accept]');
    const declineBtn = document.querySelector('[data-cookie-decline]');
    const key = 'nps-cookie-choice';
 
+   const enableOptionalResources = () => {
+    document.querySelectorAll('[data-consent-src]').forEach((el) => {
+     const src = el.getAttribute('data-consent-src');
+     if (src) {
+      el.setAttribute('src', src);
+      el.removeAttribute('data-consent-src');
+     }
+    });
+    document.querySelectorAll('script[data-consent-script]').forEach((el) => {
+     const code = el.textContent;
+     if (code && code.trim()) {
+      const script = document.createElement('script');
+      script.textContent = code;
+      document.head.appendChild(script);
+     }
+     el.remove();
+    });
+   };
+
    if (banner && acceptBtn && declineBtn) {
+    let stored = null;
     try {
-     const stored = localStorage.getItem(key);
+     stored = localStorage.getItem(key);
      banner.hidden = !!stored;
     } catch (e) {
      banner.hidden = false;
     }
+
+    if (stored === 'accepted') {
+     enableOptionalResources();
+    }
+
     const setChoice = (value) => {
      try {
       localStorage.setItem(key, value);
      } catch (e) {
      }
+     if (value === 'accepted') {
+      enableOptionalResources();
+     }
      banner.hidden = true;
     };
+
     acceptBtn.addEventListener('click', () => setChoice('accepted'));
     declineBtn.addEventListener('click', () => setChoice('declined'));
    }
-
   })();
  </script>
 
