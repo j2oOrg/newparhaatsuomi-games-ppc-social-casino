@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newparhaatsuomi-games-ppc-social
+  name: talvipelit-games-ppc-social
   labels:
-    app: newparhaatsuomi-games-ppc-social
+    app: talvipelit-games-ppc-social
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: newparhaatsuomi-games-ppc-social
+      app: talvipelit-games-ppc-social
   template:
     metadata:
       labels:
-        app: newparhaatsuomi-games-ppc-social
+        app: talvipelit-games-ppc-social
     spec:
       containers:
-        - name: newparhaatsuomi-games-ppc-social
+        - name: talvipelit-games-ppc-social
           image: IMAGE_PLACEHOLDER
           ports:
             - containerPort: 80
@@ -23,13 +23,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: newparhaatsuomi-games-ppc-social
+  name: talvipelit-games-ppc-social
   labels:
-    app: newparhaatsuomi-games-ppc-social
+    app: talvipelit-games-ppc-social
 spec:
   type: LoadBalancer
   selector:
-    app: newparhaatsuomi-games-ppc-social
+    app: talvipelit-games-ppc-social
   ports:
     - name: http
       protocol: TCP

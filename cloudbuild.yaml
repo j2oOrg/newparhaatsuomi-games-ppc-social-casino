@@ -7,13 +7,13 @@ substitutions:
   _CLUSTER_NAME: ppcluster-1
   _CLUSTER_REGION: europe-north1
   _K8S_NAMESPACE: default
-  _APP_NAME: newparhaatsuomi-games-ppc-social
+  _APP_NAME: talvipelit-games-ppc-social
   _CONTAINER_PORT: "80"
   _SERVICE_PORT: "80"
   _AR_LOCATION: europe-north1
   _AR_REPOSITORY: ourimages
-  _HOSTNAME: newparhaatsuomi.games
-  _ALT_HOSTNAME: www.newparhaatsuomi.games
+  _HOSTNAME: talvipelit.games
+  _ALT_HOSTNAME: www.talvipelit.games
   # optional DNS automation, fill only if you want it
 
 steps:
