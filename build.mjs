@@ -37,6 +37,10 @@ for (const entry of htmlEntries) {
     throw new Error(`${entry.name} has an unexpected public wordmark.`);
   }
 
+  if (/\b(?:coin|coins|credit|credits)\b/i.test(html)) {
+    throw new Error(`${entry.name} contains a prohibited money-like game-unit name.`);
+  }
+
   for (const copy of requiredPublicCopy) {
     if (!html.includes(copy)) {
       throw new Error(`${entry.name} is missing required public copy: ${copy}`);
@@ -88,6 +92,20 @@ function secure(response, status = response.status) {
   const headers = new Headers(response.headers);
   for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
     headers.set(name, value);
+  }
+  const contentType = headers.get("Content-Type") || "";
+  if (contentType.includes("text/html")) {
+    headers.set("Cache-Control", "private, no-store, max-age=0");
+    headers.set("CDN-Cache-Control", "no-store");
+    headers.set("Cloudflare-CDN-Cache-Control", "no-store");
+    headers.set("Pragma", "no-cache");
+    headers.set("Expires", "0");
+    headers.delete("ETag");
+    headers.delete("Last-Modified");
+  } else {
+    headers.set("Cache-Control", "public, no-cache, max-age=0, must-revalidate");
+    headers.set("CDN-Cache-Control", "no-cache");
+    headers.set("Cloudflare-CDN-Cache-Control", "no-cache");
   }
   return new Response(response.body, { status, statusText: response.statusText, headers });
 }
