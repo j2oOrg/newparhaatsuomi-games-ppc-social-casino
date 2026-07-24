@@ -1335,8 +1335,13 @@ main {
   box-shadow: var(--shadow);
 }
 
+#play-game {
+  scroll-margin-top: 96px;
+}
+
 .play-stage__top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
@@ -1345,10 +1350,26 @@ main {
   color: var(--paper-bright);
 }
 
+.play-stage__identity {
+  min-width: 0;
+  display: grid;
+  flex: 1 1 520px;
+  gap: 4px;
+}
+
 .play-stage__top strong {
   font-family: var(--mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.play-stage__notice {
+  color: rgba(255, 250, 240, 0.65);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.035em;
+  line-height: 1.45;
   text-transform: uppercase;
 }
 
