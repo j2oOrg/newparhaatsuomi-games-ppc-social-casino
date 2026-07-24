@@ -8,7 +8,14 @@ const client = join(dist, "client");
 const server = join(dist, "server");
 
 const rootExtensions = new Set([".html", ".webp"]);
-const rootFiles = ["styles.css", "site.js", "robots.txt", "sitemap.xml", "license.pdf"];
+const rootFiles = [
+  "styles.css",
+  "site.js",
+  "robots.txt",
+  "sitemap.xml",
+  "license.pdf",
+  "_headers"
+];
 const assetFiles = ["og.png", "talvipelit-nordic-night.webp"];
 
 await rm(dist, { recursive: true, force: true });
