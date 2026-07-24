@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readdir, rm, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -17,6 +17,44 @@ const rootFiles = [
   "_headers"
 ];
 const assetFiles = ["og.png", "centrallion-nordic-night.webp"];
+const entries = await readdir(root, { withFileTypes: true });
+const htmlEntries = entries.filter((entry) => entry.isFile() && extname(entry.name) === ".html");
+
+const requiredPublicCopy = [
+  "18+ only",
+  "Free social casino",
+  "No real-money gambling",
+  "No prizes of real-world value",
+  "IRONCLAD SYSTEMS LTD",
+  "contact@centrallion.com",
+  "support@centrallion.com"
+];
+
+for (const entry of htmlEntries) {
+  const html = await readFile(join(root, entry.name), "utf8");
+  const wordmarks = [...html.matchAll(/<span class="brand__type">([^<]+)<\/span>/g)];
+  if (!wordmarks.length || wordmarks.some((match) => match[1] !== "Centrallion")) {
+    throw new Error(`${entry.name} has an unexpected public wordmark.`);
+  }
+
+  for (const copy of requiredPublicCopy) {
+    if (!html.includes(copy)) {
+      throw new Error(`${entry.name} is missing required public copy: ${copy}`);
+    }
+  }
+
+  for (const frame of html.matchAll(/<iframe\b[^>]*data-game-frame[^>]*>/gi)) {
+    const withoutDeferredSource = frame[0].replace(/\sdata-src\s*=\s*(["']).*?\1/i, "");
+    if (/\ssrc\s*=/i.test(withoutDeferredSource)) {
+      throw new Error(`${entry.name} eagerly loads a game iframe before age confirmation.`);
+    }
+  }
+}
+
+const siteScript = await readFile(join(root, "site.js"), "utf8");
+if (/navigator\.userAgent|Googlebot|AdsBot/i.test(siteScript)) {
+  throw new Error("site.js contains user-agent-specific behavior. Keep one experience for people and crawlers.");
+}
 
 await rm(dist, { recursive: true, force: true });
 await mkdir(client, { recursive: true });
@@ -25,7 +63,7 @@ await mkdir(server, { recursive: true });
 await mkdir(join(dist, ".openai"), { recursive: true });
 await copyFile(join(root, ".openai", "hosting.json"), join(dist, ".openai", "hosting.json"));
 
-for (const entry of await readdir(root, { withFileTypes: true })) {
+for (const entry of entries) {
   if (!entry.isFile() || !rootExtensions.has(extname(entry.name))) continue;
   await copyFile(join(root, entry.name), join(client, entry.name));
 }

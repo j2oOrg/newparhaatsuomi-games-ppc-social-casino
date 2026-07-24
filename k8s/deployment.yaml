@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: centrallion-coins-social-casino
+  name: centrallion-social-casino
   labels:
-    app: centrallion-coins-social-casino
+    app: centrallion-social-casino
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: centrallion-coins-social-casino
+      app: centrallion-social-casino
   template:
     metadata:
       labels:
-        app: centrallion-coins-social-casino
+        app: centrallion-social-casino
     spec:
       containers:
-        - name: centrallion-coins-social-casino
+        - name: centrallion-social-casino
           image: IMAGE_PLACEHOLDER
           ports:
             - containerPort: 80
@@ -23,13 +23,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: centrallion-coins-social-casino
+  name: centrallion-social-casino
   labels:
-    app: centrallion-coins-social-casino
+    app: centrallion-social-casino
 spec:
   type: LoadBalancer
   selector:
-    app: centrallion-coins-social-casino
+    app: centrallion-social-casino
   ports:
     - name: http
       protocol: TCP
