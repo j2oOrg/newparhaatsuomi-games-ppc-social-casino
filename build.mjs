@@ -22,6 +22,8 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(client, { recursive: true });
 await mkdir(join(client, "assets"), { recursive: true });
 await mkdir(server, { recursive: true });
+await mkdir(join(dist, ".openai"), { recursive: true });
+await copyFile(join(root, ".openai", "hosting.json"), join(dist, ".openai", "hosting.json"));
 
 for (const entry of await readdir(root, { withFileTypes: true })) {
   if (!entry.isFile() || !rootExtensions.has(extname(entry.name))) continue;
