@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.wrangler/
+*.tar.gz
+*.log
+
+# Retain the optimized WebP in source; the uncompressed generated master stays local.
+assets/talvipelit-nordic-night.png

@@ -1,0 +1,8 @@
+.git
+.gitignore
+node_modules
+dist
+.wrangler
+assets/talvipelit-nordic-night.png
+*.tar.gz
+*.log
