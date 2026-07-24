@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Talvi Display";
+  font-family: "Centrallion Display";
   src: local("Arial Narrow Bold"), local("Aptos Display");
   font-weight: 700 900;
   font-style: normal;
@@ -25,7 +25,7 @@
   --radius-xl: 36px;
   --radius-lg: 24px;
   --radius-md: 15px;
-  --display: "Talvi Display", "Arial Narrow", "Aptos Display", "Segoe UI", sans-serif;
+  --display: "Centrallion Display", "Arial Narrow", "Aptos Display", "Segoe UI", sans-serif;
   --body: "Aptos", "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
   --page: min(1240px, calc(100vw - 40px));
@@ -145,13 +145,16 @@ button {
   min-height: 34px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px 10px;
+  padding: 7px 0;
   font-family: var(--mono);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1.35;
   text-align: center;
   text-transform: uppercase;
 }
@@ -163,6 +166,25 @@ button {
   border-radius: 50%;
   background: currentColor;
   opacity: 0.5;
+}
+
+.compliance-bar__links {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 3px;
+}
+
+.compliance-bar__links a {
+  border: 1px solid rgba(11, 24, 44, 0.42);
+  border-radius: 999px;
+  padding: 2px 7px;
+  text-decoration: none;
+}
+
+.compliance-bar__links a:hover {
+  background: var(--night);
+  color: var(--acid);
 }
 
 .site-header {
@@ -212,15 +234,15 @@ button {
 .brand__type {
   display: grid;
   font-family: var(--display);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 900;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.065em;
   line-height: 0.96;
   text-transform: uppercase;
 }
 
 .brand__type span:last-child {
-  margin-left: 13px;
+  margin-left: 11px;
 }
 
 .nav-links {
@@ -356,7 +378,7 @@ main {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background: url("assets/talvipelit-nordic-night.webp") 52% center / cover no-repeat;
+  background: url("assets/centrallion-nordic-night.webp") 52% center / cover no-repeat;
   content: "";
   transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -1441,6 +1463,31 @@ main {
   color: rgba(11, 24, 44, 0.78);
 }
 
+.contact-routes {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.contact-route {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.contact-route > strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.contact-route p {
+  max-width: 580px;
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+}
+
 .contact-email {
   display: inline-block;
   margin-top: 10px;
@@ -1548,8 +1595,8 @@ main {
   width: var(--page);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.65fr 1.2fr;
-  gap: clamp(35px, 7vw, 90px);
+  grid-template-columns: 1fr 0.55fr 1.45fr;
+  gap: clamp(35px, 5vw, 70px);
   padding: 74px 0 52px;
 }
 
@@ -1762,15 +1809,21 @@ main {
   }
 
   .compliance-bar__inner {
-    min-height: 40px;
-    gap: 6px;
+    min-height: 42px;
+    gap: 4px 6px;
+    padding: 7px 0;
     font-size: 0.58rem;
     letter-spacing: 0.045em;
   }
 
-  .compliance-bar__dot:nth-of-type(2),
-  .compliance-bar__dot:nth-of-type(3) {
-    display: none;
+  .compliance-bar__links {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .brand__type {
+    font-size: 0.76rem;
   }
 
   .site-nav {

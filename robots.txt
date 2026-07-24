@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://talvipelit.games/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+Sitemap: https://centrallion.com/sitemap.xml

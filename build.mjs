@@ -16,7 +16,7 @@ const rootFiles = [
   "license.pdf",
   "_headers"
 ];
-const assetFiles = ["og.png", "talvipelit-nordic-night.webp"];
+const assetFiles = ["og.png", "centrallion-nordic-night.webp"];
 
 await rm(dist, { recursive: true, force: true });
 await mkdir(client, { recursive: true });
@@ -60,7 +60,12 @@ export default {
     }
 
     const assetRequest = url.href === request.url ? request : new Request(url, request);
-    const response = await env.ASSETS.fetch(assetRequest);
+    let response = await env.ASSETS.fetch(assetRequest);
+    if (response.status === 404 && !url.pathname.endsWith("/") && !url.pathname.split("/").pop().includes(".")) {
+      const htmlUrl = new URL(url);
+      htmlUrl.pathname = url.pathname + ".html";
+      response = await env.ASSETS.fetch(new Request(htmlUrl, request));
+    }
     if (response.status !== 404) {
       return secure(response);
     }

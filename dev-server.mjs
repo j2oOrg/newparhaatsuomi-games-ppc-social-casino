@@ -29,13 +29,26 @@ createServer(async (request, response) => {
   const url = new URL(request.url || "/", "http://localhost");
   const requested = url.pathname === "/" ? "/index.html" : decodeURIComponent(url.pathname);
   const safePath = normalize(requested).replace(/^(\.\.[/\\])+/, "");
-  let file = join(root, safePath);
+  const candidates = extname(safePath)
+    ? [safePath]
+    : [safePath, `${safePath}.html`, join(safePath, "index.html")];
+  let file;
   let status = 200;
 
-  try {
-    const info = await stat(file);
-    if (!info.isFile()) throw new Error("Not a file");
-  } catch {
+  for (const candidate of candidates) {
+    const candidateFile = join(root, candidate);
+    try {
+      const info = await stat(candidateFile);
+      if (info.isFile()) {
+        file = candidateFile;
+        break;
+      }
+    } catch {
+      // Try the next clean-URL candidate.
+    }
+  }
+
+  if (!file) {
     file = join(root, "404.html");
     status = 404;
   }

@@ -5,5 +5,5 @@ dist/
 *.log
 
 # Retain the optimized WebP in source; the uncompressed generated master stays local.
-assets/talvipelit-nordic-night.png
+assets/centrallion-nordic-night.png
 assets/og.optimized.png

@@ -49,7 +49,7 @@
   const modal = document.querySelector("[data-age-modal]");
   const confirmButton = modal?.querySelector("[data-age-confirm]");
   const cancelButton = modal?.querySelector("[data-age-cancel]");
-  const AGE_KEY = "talvipelit-age-confirmed";
+  const AGE_KEY = "centrallion-age-confirmed";
   let pendingAction = null;
   let returnFocus = null;
 

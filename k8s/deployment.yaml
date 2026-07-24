@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: talvipelit-games-ppc-social
+  name: centrallion-coins-social-casino
   labels:
-    app: talvipelit-games-ppc-social
+    app: centrallion-coins-social-casino
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: talvipelit-games-ppc-social
+      app: centrallion-coins-social-casino
   template:
     metadata:
       labels:
-        app: talvipelit-games-ppc-social
+        app: centrallion-coins-social-casino
     spec:
       containers:
-        - name: talvipelit-games-ppc-social
+        - name: centrallion-coins-social-casino
           image: IMAGE_PLACEHOLDER
           ports:
             - containerPort: 80
@@ -23,13 +23,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: talvipelit-games-ppc-social
+  name: centrallion-coins-social-casino
   labels:
-    app: talvipelit-games-ppc-social
+    app: centrallion-coins-social-casino
 spec:
   type: LoadBalancer
   selector:
-    app: talvipelit-games-ppc-social
+    app: centrallion-coins-social-casino
   ports:
     - name: http
       protocol: TCP
